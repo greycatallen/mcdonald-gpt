@@ -15,7 +15,7 @@ import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-MODEL = sys.argv[1] if len(sys.argv) > 1 else "evidence/experiment3b-targeted-v2/model.pt"
+MODEL = sys.argv[1] if len(sys.argv) > 1 else "evidence/experiment3-targeted/model.pt"
 TRANSCRIPT = sys.argv[2] if len(sys.argv) > 2 else "evidence/chat/chat_transcript.json"
 
 LONG = " ".join(["the customer reviewed the service and the product at the store today"] * 6)

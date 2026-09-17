@@ -2,18 +2,18 @@
 Tiny language model: short continuations, not a general assistant.
 Each prompt starts fresh. Context: 48 tokens. Type /quit to exit.
 You: the customer
-Model: selected the merchandise after checking the price .
+Model: ordered the product after checking the price .
 You: the opposite of big is
-Model: oak is old .
+Model: noisy .
 You: the spoon is inside the drawer . the drawer contains the
-Model: vehicle .
+Model: cotton .
 You: an oak is a tree . a pine is a
 Model: bird .
 You: quantum entanglement causes decoherence in
-Model: the air cold hammer old .
+Model: the
 Unknown words: causes, decoherence, entanglement, quantum
 You: the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today
-Model: the price the important product after checking the design was mentioned in the price report yesterday .
+Model: the at the team discussed discussed discussed discussed discussed discussed discussed discussed the at the new client focused on support at the local educator
 Long prompt: only the most recent context tokens were used.
 You: /quit
 Saved transcript: evidence/chat/chat_transcript.json

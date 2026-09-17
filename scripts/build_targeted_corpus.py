@@ -216,17 +216,19 @@ write("categories_and_analogies.txt", lines * 6)
 print("\nControl categories intentionally NOT taught: grammar, negation, reference, sequence")
 
 
-# ------------------------------------------------- Experiment 3b: word forms ---
-# Experiment 3 taught every FACT the everyday_knowledge cases need, yet all three
-# scored out_of_vocabulary. The eval reports showed why: a single missing word form
-# each -- 'freezes', 'uses', 'turn'. The corpus had taught 'freeze', 'opened' and
-# 'turned'. Word-level tokenization treats 'freeze' and 'freezes' as unrelated IDs,
-# so an inflection the corpus never used simply does not exist to the model.
+# ------------------------------------------------------------- word forms ---
+# A first version of this corpus taught every FACT the everyday_knowledge cases
+# need, yet all three still scored out_of_vocabulary. The eval reports showed why:
+# one missing word form each -- 'freezes', 'uses', 'turn' -- where the corpus had
+# taught 'freeze', 'opened' and 'turned'. Word-level tokenization treats 'freeze'
+# and 'freezes' as unrelated token IDs, so an inflection the corpus never uses
+# simply does not exist to the model.
 #
-# This file teaches those three exact forms in ordinary sentences that do NOT
-# reproduce any eval prompt. This is development guided by eval feedback and is
-# reported as a separate run (Experiment 3b), never merged into Experiment 3.
-if TARGET.endswith("_v2"):
+# These sentences teach those three forms without reproducing any eval prompt.
+# Adding them raises coverage from 68.8% to ~74% but does NOT raise the score
+# (see evidence/variance/seed_variance.json) -- the newly readable cases are
+# answered at roughly chance.
+if True:
     lines = [
         "the lake freezes when winter arrives .",
         "a puddle freezes overnight in cold weather .",

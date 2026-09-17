@@ -1,6 +1,6 @@
 {
-  "model": "evidence/experiment3b-targeted-v2/model.pt",
-  "model_sha256": "e3d36097bbd2bc7f6467d1dbb67ff5945ac0c3e9b6a3b91c14d8d34095a89823",
+  "model": "evidence/experiment3-targeted/model.pt",
+  "model_sha256": "204fd529826cb11f8f8635be844f48332761e5fbdef815d7f2c9c009f552b591",
   "completed_steps": 3000,
   "fresh_context_per_prompt": true,
   "temperature": 0.8,
@@ -9,21 +9,21 @@
     {
       "prompt": "the customer",
       "seed": 2026,
-      "response": "selected the merchandise after checking the price .",
+      "response": "ordered the product after checking the price .",
       "unknown_prompt_words": [],
       "prompt_truncated": false
     },
     {
       "prompt": "the opposite of big is",
       "seed": 2027,
-      "response": "oak is old .",
+      "response": "noisy .",
       "unknown_prompt_words": [],
       "prompt_truncated": false
     },
     {
       "prompt": "the spoon is inside the drawer . the drawer contains the",
       "seed": 2028,
-      "response": "vehicle .",
+      "response": "cotton .",
       "unknown_prompt_words": [],
       "prompt_truncated": false
     },
@@ -37,7 +37,7 @@
     {
       "prompt": "quantum entanglement causes decoherence in",
       "seed": 2030,
-      "response": "the air cold hammer old .",
+      "response": "the",
       "unknown_prompt_words": [
         "causes",
         "decoherence",
@@ -49,7 +49,7 @@
     {
       "prompt": "the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today the customer reviewed the service and the product at the store today",
       "seed": 2031,
-      "response": "the price the important product after checking the design was mentioned in the price report yesterday .",
+      "response": "the at the team discussed discussed discussed discussed discussed discussed discussed discussed the at the new client focused on support at the local educator",
       "unknown_prompt_words": [],
       "prompt_truncated": true
     }

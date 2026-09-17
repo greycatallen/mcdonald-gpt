@@ -18,7 +18,7 @@ then submit the URL).
 | # | Requirement | Where | State |
 |---|---|---|---|
 | A1 | Executed `custom_llm.ipynb` for the **starter** experiment, outputs not cleared | `notebooks/experiment1-starter.executed.ipynb` | ✅ `notebooks/experiment1-starter.executed.ipynb` |
-| A2 | Executed `custom_llm.ipynb` for the **extension** experiment, outputs not cleared | `notebooks/experiment2-extended.executed.ipynb` | ✅ Exp 2, 3 and 3b notebooks |
+| A2 | Executed `custom_llm.ipynb` for the **extension** experiments, outputs not cleared | `notebooks/experiment2-mcdonalds.executed.ipynb`, `notebooks/experiment3-targeted.executed.ipynb` | ✅ |
 | A3 | Readable source code in repo | `custom_llm.py`, `run_evals.py`, `chat.py`, `nanogpt_model.py`, `scripts/` | ✅ |
 | A4 | Corpus sources, permissions, and choices explained | README §5 | ✅ README §5 + `docs/corpus-sources.md` |
 | A5 | Clear README as grading entry point | `README.md` | ✅ results filled in |
@@ -33,10 +33,10 @@ then submit the URL).
 |---|---|---|---|
 | B1 | All 48 cases, unchanged, run **before** training — starter | `evidence/experiment1-starter/language_evals/untrained/` | ✅ |
 | B2 | All 48 cases, unchanged, run **after** training — starter | `evidence/experiment1-starter/language_evals/final/` | ✅ |
-| B3 | All 48 cases, unchanged, run **before** training — extended | `evidence/experiment2-extended/language_evals/untrained/` | ✅ (Exp 2, 3 and 3b) |
-| B4 | All 48 cases, unchanged, run **after** training — extended | `evidence/experiment2-extended/language_evals/final/` | ✅ (Exp 2, 3 and 3b) |
+| B3 | All 48 cases, unchanged, run **before** training — extended | `evidence/experiment2-mcdonalds/`, `evidence/experiment3-targeted/` | ✅ (both extensions) |
+| B4 | All 48 cases, unchanged, run **after** training — extended | `evidence/experiment2-mcdonalds/`, `evidence/experiment3-targeted/` | ✅ (both extensions) |
 | B5 | Suite provably unmodified | SHA-256 `e8affcd7…3e17f7`, verified in README §2 | ✅ |
-| B6 | Four-row comparison table in README | README §8 | ✅ 8 rows (4 experiments × 2 stages) |
+| B6 | Four-row comparison table in README | README §8 | ✅ 6 rows (3 experiments × 2 stages) + diagnostics table |
 | B7 | All-case success **and** scorable accuracy **and** coverage reported | README §8 | ✅ README §8 |
 | B8 | Group/category breakdowns | README §8 | ✅ README §8, §9 |
 | B9 | Actual free continuations shown, distinct from MC score | README §8 | ✅ README §8 table |
@@ -56,7 +56,7 @@ then submit the URL).
 | C4 | Launch instructions, tested | README §10 | ✅ tested |
 | C5 | Model / run identity recorded | README §10 | ✅ run + SHA-256 in §10 |
 | C6 | ≥3 real chat interactions | `evidence/*/chat_transcript.json` | ✅ 6 interactions |
-| C7 | Screenshot or recording of the interface | `evidence/chat-screenshot.*` | ✅ typescript recording + SVG |
+| C7 | Screenshot or recording of the interface | `evidence/chat/chat-session.typescript` + `.svg` | ✅ script(1) recording + rendering |
 
 ## D. Specific evidence artifacts
 
@@ -117,3 +117,12 @@ then submit the URL).
 - **Do not** place any `.md`/`.txt`/`.pdf` documentation inside `corpus/` subfolders.
   `custom_llm.py:175` exempts only the top-level `corpus/README.md`; anything else under
   `corpus/` becomes training text. Notes about the corpus belong in `docs/`.
+
+## G. Added beyond the brief
+
+| # | Item | Where |
+|---|---|---|
+| G1 | Seed sweep (42–45) establishing a ~0.5-case noise floor, so 1-case differences are not reported as findings | [`evidence/variance/`](../evidence/variance/) |
+| G2 | Pre-flight leakage audit over every corpus file, including PDFs, against all 48 cases | [`scripts/check_leakage.py`](../scripts/check_leakage.py) |
+| G3 | PDF text recovery for 5 reports with broken font encodings | [`scripts/recover_pdf_text.py`](../scripts/recover_pdf_text.py) |
+| G4 | Diagnostic runs preserved but excluded from results tables | [`evidence/diagnostics/`](../evidence/diagnostics/) |

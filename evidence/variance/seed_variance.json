@@ -1,0 +1,117 @@
+{
+  "purpose": "Run-to-run variance of Experiments 3 and 3b across seeds 42-45, to test whether their 1-case score difference is meaningful.",
+  "method": "Identical corpus and settings; only the notebook SEED was varied via scripts/run_experiment.py --seed. Pre-grammar-fix runs are labelled and excluded from the summary statistics.",
+  "finding": "Score difference is within noise (means 30.25 vs 30.50, stdev ~0.5). Coverage difference is reproducible and does not overlap (68.8% vs 72.9-75.0%).",
+  "runs": [
+    {
+      "run": "20260917T205313_630391Z",
+      "corpus_files": 4,
+      "experiment": "3",
+      "seed": 42,
+      "vocabulary_size": 466,
+      "correct": 29,
+      "coverage": 0.6875,
+      "accuracy_scorable": 0.8787878787878788,
+      "corpus_generation": "pre-grammar-fix"
+    },
+    {
+      "run": "20260917T205838_143591Z",
+      "corpus_files": 5,
+      "experiment": "3b",
+      "seed": 42,
+      "vocabulary_size": 482,
+      "correct": 32,
+      "coverage": 0.75,
+      "accuracy_scorable": 0.8888888888888888,
+      "corpus_generation": "pre-grammar-fix"
+    },
+    {
+      "run": "20260917T211931_570569Z",
+      "corpus_files": 4,
+      "experiment": "3",
+      "seed": 42,
+      "vocabulary_size": 460,
+      "correct": 31,
+      "coverage": 0.6875,
+      "accuracy_scorable": 0.9393939393939394,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T211955_844327Z",
+      "corpus_files": 5,
+      "experiment": "3b",
+      "seed": 42,
+      "vocabulary_size": 490,
+      "correct": 30,
+      "coverage": 0.75,
+      "accuracy_scorable": 0.8333333333333334,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T214251_535216Z",
+      "corpus_files": 4,
+      "experiment": "3",
+      "seed": 43,
+      "vocabulary_size": 450,
+      "correct": 30,
+      "coverage": 0.6875,
+      "accuracy_scorable": 0.9090909090909091,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T214311_000796Z",
+      "corpus_files": 5,
+      "experiment": "3b",
+      "seed": 43,
+      "vocabulary_size": 471,
+      "correct": 30,
+      "coverage": 0.7291666666666666,
+      "accuracy_scorable": 0.8571428571428571,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T214333_705340Z",
+      "corpus_files": 4,
+      "experiment": "3",
+      "seed": 44,
+      "vocabulary_size": 465,
+      "correct": 30,
+      "coverage": 0.6875,
+      "accuracy_scorable": 0.9090909090909091,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T214356_633279Z",
+      "corpus_files": 5,
+      "experiment": "3b",
+      "seed": 44,
+      "vocabulary_size": 487,
+      "correct": 31,
+      "coverage": 0.7291666666666666,
+      "accuracy_scorable": 0.8857142857142857,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T214417_673245Z",
+      "corpus_files": 4,
+      "experiment": "3",
+      "seed": 45,
+      "vocabulary_size": 465,
+      "correct": 30,
+      "coverage": 0.6875,
+      "accuracy_scorable": 0.9090909090909091,
+      "corpus_generation": "current"
+    },
+    {
+      "run": "20260917T214440_856814Z",
+      "corpus_files": 5,
+      "experiment": "3b",
+      "seed": 45,
+      "vocabulary_size": 488,
+      "correct": 31,
+      "coverage": 0.75,
+      "accuracy_scorable": 0.8611111111111112,
+      "corpus_generation": "current"
+    }
+  ]
+}

@@ -33,6 +33,8 @@ def main():
     ap.add_argument("chat_prompt", nargs="?", default="the customer")
     ap.add_argument("--corpus-mode", default="classroom", choices=["classroom", "folder"])
     ap.add_argument("--source", default="custom_llm.ipynb")
+    ap.add_argument("--seed", type=int, default=None,
+                    help="Override the notebook's SEED (42) to measure run-to-run variance.")
     args = ap.parse_args()
 
     folder = Path(args.corpus_folder)
@@ -50,6 +52,12 @@ def main():
         f'TRAINING_STEPS = {args.steps}\n'
         f'LEARNING_RATE = {args.learning_rate}\n'
     )
+    if args.seed is not None:
+        nb.cells[3].source = nb.cells[3].source.replace(
+            "SEED, N_EMBD, N_HEAD, N_LAYER, BLOCK_SIZE, BATCH_SIZE = 42,",
+            f"SEED, N_EMBD, N_HEAD, N_LAYER, BLOCK_SIZE, BATCH_SIZE = {args.seed},")
+        assert f"= {args.seed}," in nb.cells[3].source, "seed override failed to apply"
+
     nb.cells[23].source = re.sub(
         r'^CHAT_PROMPT = ".*?"',
         f'CHAT_PROMPT = "{args.chat_prompt}"',
