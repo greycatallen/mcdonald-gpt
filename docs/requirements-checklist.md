@@ -97,9 +97,9 @@ then submit the URL).
 |---|---|---|
 | F1 | Public GitHub repository | ✅ https://github.com/greycatallen/mcdonald-gpt |
 | F2 | Notebook outputs **not** cleared | ✅ outputs preserved |
-| F3 | Notebook renders on GitHub with plot/samples/losses visible | ⬜ verify before submit |
-| F4 | Repository opens correctly **signed out** | ⬜ verify before submit |
-| F5 | Both results ZIPs kept | ⬜ |
+| F3 | Notebook renders on GitHub with plot/samples/losses visible | ✅ verified — cell outputs render (e.g. `PyTorch: 2.14.0 \| device: cpu`) |
+| F4 | Repository opens correctly **signed out** | ✅ verified signed out (`signedIn: false`), README renders 52.8k chars |
+| F5 | Results ZIPs kept | ✅ kept locally in `llm_runs/`; full contents also committed under `evidence/` |
 | F6 | No eval prompts / answer keys / eval outputs in training corpus | ✅ guard fired once, fixed; `check_leakage.py` CLEAN on all sets |
 | F7 | Submit repo URL through course portal | ⬜ student action |
 
