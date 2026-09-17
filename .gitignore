@@ -1,0 +1,11 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+/llm_runs/
+names.txt
+.DS_Store
+/corpus/*
+!/corpus/README.md
+
+/results/
+/chat_transcript.json
