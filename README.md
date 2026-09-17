@@ -1111,9 +1111,9 @@ training text or as a vocabulary source.
 > **Gotcha worth recording.** `custom_llm.py:175` skips exactly one file — the top-level
 > `corpus/README.md`. Every other `.md`, `.txt`, and `.pdf` under `corpus/`, *including in
 > subfolders*, is ingested as training text. So there is deliberately **no README inside
-> `corpus/extensions/`**: adding one would silently train the model on prose about the
-> assignment. Documentation about the extension material lives in
-> [`docs/`](docs/) and in this README instead, outside the corpus tree.
+> any `corpus_sets/` folder**: adding one would silently train the model on prose about the
+> assignment. Documentation about the corpora lives in [`docs/`](docs/) and in this README
+> instead, outside every corpus tree.
 
 ### Coverage, learned patterns, or both?
 
@@ -1305,7 +1305,7 @@ conclusion is that this model cannot represent cross-clause relations at all.
 | Eval suite (unchanged) | [`evals/language_evals.json`](evals/language_evals.json) |
 | Eval runner (inference only) | [`run_evals.py`](run_evals.py) |
 | All eval results | [`evidence/`](evidence/) |
-| Extension teaching material | [`corpus/extensions/`](corpus/extensions/) |
+| Extension teaching material | [`corpus_sets/targeted/`](corpus_sets/targeted/) · [`corpus_sets/mcdonalds_all/`](corpus_sets/mcdonalds_all/) |
 | Chat interface | [`chat.py`](chat.py) |
 | Embedding viewer | [`embedding-viewer.html`](embedding-viewer.html) — open locally, load a run's `checkpoint.json` |
 | nanoGPT model source | [`nanogpt_model.py`](nanogpt_model.py) (pinned + hash-checked) |
