@@ -1,0 +1,1444 @@
+[
+  {
+    "id": "lang_01",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the customer explains the",
+    "choices": [
+      "service",
+      "traffic",
+      "juice",
+      "code"
+    ],
+    "expected": "service",
+    "predicted_choice": "traffic",
+    "score": 0,
+    "status": "scored",
+    "choice_probabilities": {
+      "service": 0.0016205024439841509,
+      "traffic": 0.0022881755139678717,
+      "juice": 0.0022659553214907646,
+      "code": 0.0017570145428180695
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "dk dej kitchen under per \u0005 \u0010 9kh travel ef : million d9bk term material restaurant fhel investment benefits served fruit dji business care",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs customer with service and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2026
+  },
+  {
+    "id": "lang_02",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the merchandise explains the",
+    "choices": [
+      "patient",
+      "interest",
+      "lesson",
+      "quality"
+    ],
+    "expected": "quality",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "merchandise"
+    ],
+    "unknown_choices": [],
+    "generated_text": "financial learning detail jej7b billion dk 78 do 9khh related quality emd d9o f7hj : growth such december 7bb j management was 2 2019",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs merchandise with quality and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2027
+  },
+  {
+    "id": "lang_03",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the mortgage explains the",
+    "choices": [
+      "route",
+      "security",
+      "payment",
+      "harvest"
+    ],
+    "expected": "payment",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "mortgage"
+    ],
+    "unknown_choices": [
+      "route"
+    ],
+    "generated_text": "9j 7b we report performance station b1d9 7ii by el data benefits taxes ije9a di earnings vice 6 9ji checking result emd millions quality",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs mortgage with payment and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2028
+  },
+  {
+    "id": "lang_04",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the mango explains the",
+    "choices": [
+      "risk",
+      "juice",
+      "support",
+      "code"
+    ],
+    "expected": "juice",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "mango"
+    ],
+    "unknown_choices": [],
+    "generated_text": "information d9o \u0005 2019 ! befc hemj care stock ekh matters d9o per risk je 21 for h7 ed7b different edi fei hi 97i",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs mango with juice and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2029
+  },
+  {
+    "id": "lang_05",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the bicycle explains the",
+    "choices": [
+      "journey",
+      "treatment",
+      "price",
+      "learning"
+    ],
+    "expected": "journey",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bicycle"
+    ],
+    "unknown_choices": [],
+    "generated_text": "s share was “ c c8 9ekb 7bb 9 s & 5 any net is are 2020 ehc7d9 restaurant 79 time explains 7h expense",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs bicycle with journey and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2030
+  },
+  {
+    "id": "lang_06",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the application explains the",
+    "choices": [
+      "taste",
+      "student",
+      "payment",
+      "security"
+    ],
+    "expected": "security",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "application"
+    ],
+    "unknown_choices": [],
+    "generated_text": "m x more on not business 9kh b7j < impact year 87i material \u0005 million hek order je bb > 24 18 understand served",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs application with security and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2031
+  },
+  {
+    "id": "lang_07",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the surgeon explains the",
+    "choices": [
+      "fruit",
+      "traffic",
+      "patient",
+      "delivery"
+    ],
+    "expected": "patient",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "surgeon"
+    ],
+    "unknown_choices": [],
+    "generated_text": "if 8j u consolidated generally ikbji ijh7j were this compared part part be87b focused customer emd stock share \u0007 h7j > corporation h \u0011",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs surgeon with patient and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2032
+  },
+  {
+    "id": "lang_08",
+    "group": "starter_patterns",
+    "category": "domain_context",
+    "prompt": "the report about the tutor explains the",
+    "choices": [
+      "journey",
+      "lesson",
+      "interest",
+      "design"
+    ],
+    "expected": "lesson",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "tutor"
+    ],
+    "unknown_choices": [],
+    "generated_text": "bo and through 4 p than three 9ekb discussion fehj adversely 78 matters reporting restaurant \u000e or change include fair \u0016 discussion affect about",
+    "prompt_truncated": false,
+    "reason": "The starter repeatedly pairs tutor with lesson and related domain words. The other choices belong to different domains.",
+    "stage": "untrained",
+    "sample_seed": 2033
+  },
+  {
+    "id": "lang_09",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the customer and the service at the",
+    "choices": [
+      "store",
+      "market",
+      "bank",
+      "kitchen"
+    ],
+    "expected": "store",
+    "predicted_choice": "bank",
+    "score": 0,
+    "status": "scored",
+    "choice_probabilities": {
+      "store": 0.002432318404316902,
+      "market": 0.001617636764422059,
+      "bank": 0.0025530776474624872,
+      "kitchen": 0.0021774997003376484
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "ik9 under & discussed related fair three provided taste discussion \u0005 constant an 9eiji \u0010 l7j ehfeh7j officer 9edj 2020 18 initiatives through support",
+    "prompt_truncated": false,
+    "reason": "The starter associates customer and service with the store. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2034
+  },
+  {
+    "id": "lang_10",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the merchandise and the quality at the",
+    "choices": [
+      "bank",
+      "kitchen",
+      "station",
+      "market"
+    ],
+    "expected": "market",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "merchandise"
+    ],
+    "unknown_choices": [],
+    "generated_text": "ehfeh7j eh value local 16 dl statements use $ value if \u0010 security deferred di revenues % developmental shopper and activities item i ijc",
+    "prompt_truncated": false,
+    "reason": "The starter associates merchandise and quality with the market. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2035
+  },
+  {
+    "id": "lang_11",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the mortgage and the payment at the",
+    "choices": [
+      "station",
+      "office",
+      "bank",
+      "kitchen"
+    ],
+    "expected": "bank",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "mortgage"
+    ],
+    "unknown_choices": [],
+    "generated_text": "dl explains kh were j7n c7d7 c7d7 restaurants \u0005 \u0015 assets addition over it ecf7do well be ehc7d9 21 operating office kitchen ij7kh7dji dji",
+    "prompt_truncated": false,
+    "reason": "The starter associates mortgage and payment with the bank. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2036
+  },
+  {
+    "id": "lang_12",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the mango and the juice at the",
+    "choices": [
+      "hospital",
+      "kitchen",
+      "station",
+      "office"
+    ],
+    "expected": "kitchen",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "mango"
+    ],
+    "unknown_choices": [],
+    "generated_text": "understand kh = rates 7l patient yesterday 9ecc c8 generally no 9 discussion h checking 6 9kijec 9edj detail 2016 million hemj a 9khh",
+    "prompt_truncated": false,
+    "reason": "The starter associates mango and juice with the kitchen. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2037
+  },
+  {
+    "id": "lang_13",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the bicycle and the journey at the",
+    "choices": [
+      "station",
+      "office",
+      "hospital",
+      "school"
+    ],
+    "expected": "station",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bicycle"
+    ],
+    "unknown_choices": [],
+    "generated_text": "buyer restaurants taste mcdonald’s focused 2020 ik9 ( tax b item ij7kh7dj experience ije9a \u0011 on increased hec credit years ed7b restaurants shopper fhe",
+    "prompt_truncated": false,
+    "reason": "The starter associates bicycle and journey with the station. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2038
+  },
+  {
+    "id": "lang_14",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the application and the security at the",
+    "choices": [
+      "store",
+      "market",
+      "bank",
+      "office"
+    ],
+    "expected": "office",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "application"
+    ],
+    "unknown_choices": [],
+    "generated_text": "results during or lease 9ecc product sales \u0005 87i discussion initiatives client customers return corporation no other matters d9ec matters dj important can time",
+    "prompt_truncated": false,
+    "reason": "The starter associates application and security with the office. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2039
+  },
+  {
+    "id": "lang_15",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the surgeon and the patient at the",
+    "choices": [
+      "bank",
+      "kitchen",
+      "hospital",
+      "market"
+    ],
+    "expected": "hospital",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "surgeon"
+    ],
+    "unknown_choices": [],
+    "generated_text": "“ fehj compensation at c8 h7d9 2017 2018 9 < time \u0014 discussion compensation 2015 review learned tax hj7 as over fehj average 79",
+    "prompt_truncated": false,
+    "reason": "The starter associates surgeon and patient with the hospital. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2040
+  },
+  {
+    "id": "lang_16",
+    "group": "starter_patterns",
+    "category": "domain_place",
+    "prompt": "the team discussed the tutor and the lesson at the",
+    "choices": [
+      "station",
+      "school",
+      "bank",
+      "kitchen"
+    ],
+    "expected": "school",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "tutor"
+    ],
+    "unknown_choices": [],
+    "generated_text": "ji fehj due office f7 quality ed d9h interest x future \u0003 l7j increased treatment eb \u0005 - 2020 used price < based of",
+    "prompt_truncated": false,
+    "reason": "The starter associates tutor and lesson with the school. Sentences containing this exact prompt are reserved before training.",
+    "stage": "untrained",
+    "sample_seed": 2041
+  },
+  {
+    "id": "lang_17",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "our hospital discussed the nurse and the",
+    "choices": [
+      "health",
+      "traffic",
+      "price",
+      "juice"
+    ],
+    "expected": "health",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "nurse"
+    ],
+    "unknown_choices": [],
+    "generated_text": "plans \b taxes ci brand year system review l7j 2 lease rate other discussion \" . buyer results <UNK> tax financial ecf7do support f7hj",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2042
+  },
+  {
+    "id": "lang_18",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "yesterday the school discussed the educator and the",
+    "choices": [
+      "security",
+      "risk",
+      "harvest",
+      "student"
+    ],
+    "expected": "student",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "educator"
+    ],
+    "unknown_choices": [],
+    "generated_text": "our ed comparable continue \" hj7 material \u0005 constant kd to expected kh j7b 0 by juice due 9kijec matters position this business served",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2043
+  },
+  {
+    "id": "lang_19",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "the bank report discussed the bond and the",
+    "choices": [
+      "code",
+      "taste",
+      "return",
+      "care"
+    ],
+    "expected": "return",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bond"
+    ],
+    "unknown_choices": [],
+    "generated_text": "\u0016 today \u001b net t & 9ed your 25 vice ikbji comparable 9eiji i7b ci fruit all rates section patient expense consumer 19 kd",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2044
+  },
+  {
+    "id": "lang_20",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "our kitchen report discussed the pear and the",
+    "choices": [
+      "data",
+      "fruit",
+      "order",
+      "payment"
+    ],
+    "expected": "fruit",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "pear"
+    ],
+    "unknown_choices": [],
+    "generated_text": "ikbji fei hi patient your ecf7doui any rate \u0001 changes \u001a to design fruit operated which 7bb juice president checking 2 investment that ci",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2045
+  },
+  {
+    "id": "lang_21",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "the station report compared the bus and the",
+    "choices": [
+      "route",
+      "lesson",
+      "design",
+      "patient"
+    ],
+    "expected": "route",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bus"
+    ],
+    "unknown_choices": [
+      "route"
+    ],
+    "generated_text": "be question detail program h7j has three question impairment may have today act c cf79j learned may including kh expenses = ed7b customers support",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2046
+  },
+  {
+    "id": "lang_22",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "yesterday our office discussed the platform and the",
+    "choices": [
+      "harvest",
+      "journey",
+      "treatment",
+      "update"
+    ],
+    "expected": "update",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "platform"
+    ],
+    "unknown_choices": [],
+    "generated_text": "fhel plans b1d9 program deferred jo jo learning significant 7bie comparable under bo design at one related c7ha jej7b jo \u0011 @ 9kj suppliers",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2047
+  },
+  {
+    "id": "lang_23",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "the store report discussed the subscriber and the",
+    "choices": [
+      "health",
+      "interest",
+      "support",
+      "traffic"
+    ],
+    "expected": "support",
+    "predicted_choice": "support",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "health": 0.002092415699735284,
+      "interest": 0.0016978937201201916,
+      "support": 0.0027094793040305376,
+      "traffic": 0.001883691642433405
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "order activities 7l dj7b a such 19 impact revenues ij7j section amount b7j compared total understand on <UNK> quarter traffic these your \u000e share",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2048
+  },
+  {
+    "id": "lang_24",
+    "group": "starter_transfer",
+    "category": "new_wording",
+    "prompt": "our market report compared the package and the",
+    "choices": [
+      "code",
+      "delivery",
+      "student",
+      "juice"
+    ],
+    "expected": "delivery",
+    "predicted_choice": "student",
+    "score": 0,
+    "status": "scored",
+    "choice_probabilities": {
+      "code": 0.0018500258447602391,
+      "delivery": 0.001901226001791656,
+      "student": 0.0020497168879956007,
+      "juice": 0.0018833677750080824
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "code time taxes initiatives franchised benefit currency ui use 20 of n ijc internal 9edj support \u0011 jo i",
+    "prompt_truncated": false,
+    "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
+    "stage": "untrained",
+    "sample_seed": 2049
+  },
+  {
+    "id": "lang_25",
+    "group": "extend_corpus",
+    "category": "grammar",
+    "prompt": "one bird",
+    "choices": [
+      "is",
+      "are",
+      "were",
+      "am"
+    ],
+    "expected": "is",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bird"
+    ],
+    "unknown_choices": [
+      "am"
+    ],
+    "generated_text": "related could time \u000e h risk ikbji < high be ! due 7b . 2015 security material nf 19 other billion \u0013 tax continue",
+    "prompt_truncated": false,
+    "reason": "A singular third-person subject takes is in the present tense.",
+    "stage": "untrained",
+    "sample_seed": 2050
+  },
+  {
+    "id": "lang_26",
+    "group": "extend_corpus",
+    "category": "grammar",
+    "prompt": "the dogs",
+    "choices": [
+      "is",
+      "am",
+      "was",
+      "are"
+    ],
+    "expected": "are",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "dogs"
+    ],
+    "unknown_choices": [
+      "am"
+    ],
+    "generated_text": "december earnings & ej7b currencies client billion 9kh restaurant taxes reporting course was about provided di company tax value review ; team \u0007 section",
+    "prompt_truncated": false,
+    "reason": "A plural subject takes are among these present/past singular distractors.",
+    "stage": "untrained",
+    "sample_seed": 2051
+  },
+  {
+    "id": "lang_27",
+    "group": "extend_corpus",
+    "category": "grammar",
+    "prompt": "yesterday she",
+    "choices": [
+      "walking",
+      "walk",
+      "walked",
+      "walks"
+    ],
+    "expected": "walked",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "she"
+    ],
+    "unknown_choices": [
+      "walking",
+      "walk",
+      "walked",
+      "walks"
+    ],
+    "generated_text": "approximately ; our 8o 25 developmental design * your shopper also 9ekb 79 detail position j7n \u001b support eh cash have 14 payment fhel",
+    "prompt_truncated": false,
+    "reason": "The explicit past-time cue calls for the past-tense form walked.",
+    "stage": "untrained",
+    "sample_seed": 2052
+  },
+  {
+    "id": "lang_28",
+    "group": "extend_corpus",
+    "category": "opposites",
+    "prompt": "the opposite of hot is",
+    "choices": [
+      "fast",
+      "cold",
+      "warm",
+      "heavy"
+    ],
+    "expected": "cold",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "hot",
+      "opposite"
+    ],
+    "unknown_choices": [
+      "fast",
+      "cold",
+      "warm",
+      "heavy"
+    ],
+    "generated_text": "hl * < 2015 or businesses billion 7b 10 buyer l ecf7doui \u0006 more company part net restaurant * certain ui net program ki",
+    "prompt_truncated": false,
+    "reason": "Hot and cold form the intended temperature contrast.",
+    "stage": "untrained",
+    "sample_seed": 2053
+  },
+  {
+    "id": "lang_29",
+    "group": "extend_corpus",
+    "category": "opposites",
+    "prompt": "the opposite of empty is",
+    "choices": [
+      "full",
+      "quiet",
+      "early",
+      "soft"
+    ],
+    "expected": "full",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "empty",
+      "opposite"
+    ],
+    "unknown_choices": [
+      "full",
+      "quiet",
+      "early",
+      "soft"
+    ],
+    "generated_text": "subscriber affect customer 2016 costs include percent percent d9h dj7b support growth kh balance these balance helped explains 2020 m7i j7n dj act served",
+    "prompt_truncated": false,
+    "reason": "Empty and full contrast how much a container holds.",
+    "stage": "untrained",
+    "sample_seed": 2054
+  },
+  {
+    "id": "lang_30",
+    "group": "extend_corpus",
+    "category": "opposites",
+    "prompt": "the opposite of noisy is",
+    "choices": [
+      "loud",
+      "round",
+      "late",
+      "quiet"
+    ],
+    "expected": "quiet",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "noisy",
+      "opposite"
+    ],
+    "unknown_choices": [
+      "loud",
+      "round",
+      "late",
+      "quiet"
+    ],
+    "generated_text": "hl f7hj net helped ) you increased due common 2016 hd7j suppliers 9h compared an buyer on cf79j act bb term review learned control",
+    "prompt_truncated": false,
+    "reason": "Noisy and quiet contrast the amount of sound.",
+    "stage": "untrained",
+    "sample_seed": 2055
+  },
+  {
+    "id": "lang_31",
+    "group": "extend_corpus",
+    "category": "negation",
+    "prompt": "the box is not red . it is blue . the box is",
+    "choices": [
+      "green",
+      "yellow",
+      "blue",
+      "red"
+    ],
+    "expected": "blue",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "blue",
+      "box",
+      "red"
+    ],
+    "unknown_choices": [
+      "green",
+      "yellow",
+      "blue",
+      "red"
+    ],
+    "generated_text": "\u0013 consolidated design about percent > long affect are stock / program use 2015 = 2017 across package compared property ki \u0014 16 .",
+    "prompt_truncated": false,
+    "reason": "Use the positive color statement rather than the explicitly rejected color.",
+    "stage": "untrained",
+    "sample_seed": 2056
+  },
+  {
+    "id": "lang_32",
+    "group": "extend_corpus",
+    "category": "negation",
+    "prompt": "ava did not buy tea . she bought milk . ava bought",
+    "choices": [
+      "rice",
+      "milk",
+      "tea",
+      "bread"
+    ],
+    "expected": "milk",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "ava",
+      "bought",
+      "buy",
+      "did",
+      "milk",
+      "she",
+      "tea"
+    ],
+    "unknown_choices": [
+      "rice",
+      "milk",
+      "tea",
+      "bread"
+    ],
+    "generated_text": "c8 report \u0019 j7b earnings $ ehc7j years $ plans l change compensation on hi ended property ) is on market ' credit after",
+    "prompt_truncated": false,
+    "reason": "The purchase is milk; the tea purchase is explicitly negated.",
+    "stage": "untrained",
+    "sample_seed": 2057
+  },
+  {
+    "id": "lang_33",
+    "group": "extend_corpus",
+    "category": "negation",
+    "prompt": "the door is not open . it is closed . the door is",
+    "choices": [
+      "closed",
+      "open",
+      "wide",
+      "missing"
+    ],
+    "expected": "closed",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "closed",
+      "door",
+      "open"
+    ],
+    "unknown_choices": [
+      "closed",
+      "open",
+      "wide",
+      "missing"
+    ],
+    "generated_text": "helped journey affect lesson \u0001 higher ehc7j deferred corporation ddk7b important 7bie across your significant \u0013 d9bk school due understand 9ecf based h7j order",
+    "prompt_truncated": false,
+    "reason": "Respect not open and the explicit statement closed.",
+    "stage": "untrained",
+    "sample_seed": 2058
+  },
+  {
+    "id": "lang_34",
+    "group": "extend_corpus",
+    "category": "reference",
+    "prompt": "maya lent a book to leo . leo thanked",
+    "choices": [
+      "leo",
+      "nora",
+      "omar",
+      "maya"
+    ],
+    "expected": "maya",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "book",
+      "lent",
+      "leo",
+      "maya",
+      "thanked"
+    ],
+    "unknown_choices": [
+      "leo",
+      "nora",
+      "omar",
+      "maya"
+    ],
+    "generated_text": "\u0018 customer do high to including comparable different different design eb may for 7l been ej was : today support h7d9 \" any ehc",
+    "prompt_truncated": false,
+    "reason": "Leo thanks the person who lent the book, Maya.",
+    "stage": "untrained",
+    "sample_seed": 2059
+  },
+  {
+    "id": "lang_35",
+    "group": "extend_corpus",
+    "category": "reference",
+    "prompt": "ella gave finn a pencil . the person who received the pencil was",
+    "choices": [
+      "sara",
+      "noah",
+      "finn",
+      "ella"
+    ],
+    "expected": "finn",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "ella",
+      "finn",
+      "gave",
+      "pencil",
+      "person",
+      "received",
+      "who"
+    ],
+    "unknown_choices": [
+      "sara",
+      "noah",
+      "finn",
+      "ella"
+    ],
+    "generated_text": "j7n 9h important student 16 included value corporate comparable such p 2018 travel equity “ credit you you of j \u0019 9edj company payment",
+    "prompt_truncated": false,
+    "reason": "Finn is the recipient rather than the giver.",
+    "stage": "untrained",
+    "sample_seed": 2060
+  },
+  {
+    "id": "lang_36",
+    "group": "extend_corpus",
+    "category": "reference",
+    "prompt": "omar called nina . nina answered the call from",
+    "choices": [
+      "emma",
+      "omar",
+      "nina",
+      "luca"
+    ],
+    "expected": "omar",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "answered",
+      "call",
+      "called",
+      "nina",
+      "omar"
+    ],
+    "unknown_choices": [
+      "emma",
+      "omar",
+      "nina",
+      "luca"
+    ],
+    "generated_text": "of executive focused new franchised school provided j7b approximately taste 20 operating ecf7doui program eb operated service dj control cf79j \u0016 18 c8 c7h",
+    "prompt_truncated": false,
+    "reason": "Omar is the caller; Nina is the person answering.",
+    "stage": "untrained",
+    "sample_seed": 2061
+  },
+  {
+    "id": "lang_37",
+    "group": "extend_corpus",
+    "category": "sequence",
+    "prompt": "first wash the cup . then dry it . the last action is",
+    "choices": [
+      "dry",
+      "wash",
+      "buy",
+      "fill"
+    ],
+    "expected": "dry",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "action",
+      "cup",
+      "dry",
+      "first",
+      "last",
+      "then",
+      "wash"
+    ],
+    "unknown_choices": [
+      "dry",
+      "wash",
+      "buy",
+      "fill"
+    ],
+    "generated_text": "\u0013 these s us control generally ” 9kj 9h 10 8j i b1d9 di restaurants eb value 0 • all initiatives \u000e during student",
+    "prompt_truncated": false,
+    "reason": "Drying follows washing in the stated sequence.",
+    "stage": "untrained",
+    "sample_seed": 2062
+  },
+  {
+    "id": "lang_38",
+    "group": "extend_corpus",
+    "category": "sequence",
+    "prompt": "lunch happens after breakfast . the earlier meal is",
+    "choices": [
+      "lunch",
+      "dinner",
+      "supper",
+      "breakfast"
+    ],
+    "expected": "breakfast",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "breakfast",
+      "earlier",
+      "happens",
+      "lunch",
+      "meal"
+    ],
+    "unknown_choices": [
+      "lunch",
+      "dinner",
+      "supper",
+      "breakfast"
+    ],
+    "generated_text": "\u0007 \u001b net f7hj future stock to they ije9a benefit common d use 9ecf ee juice per costs • \u0018 increased you lease 5",
+    "prompt_truncated": false,
+    "reason": "The relation after makes breakfast the earlier meal.",
+    "stage": "untrained",
+    "sample_seed": 2063
+  },
+  {
+    "id": "lang_39",
+    "group": "extend_corpus",
+    "category": "sequence",
+    "prompt": "the train arrived before the bus . the vehicle that arrived later was the",
+    "choices": [
+      "taxi",
+      "car",
+      "bus",
+      "train"
+    ],
+    "expected": "bus",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "arrived",
+      "before",
+      "bus",
+      "later",
+      "train",
+      "vehicle"
+    ],
+    "unknown_choices": [
+      "taxi",
+      "car",
+      "bus",
+      "train"
+    ],
+    "generated_text": "harvest dl time oij our as package taxes costs at hj7 ? balance fehj — management balance buyer \u0002 x \u0005 shopper exchange h",
+    "prompt_truncated": false,
+    "reason": "Reverse the stated before relation to identify the later arrival.",
+    "stage": "untrained",
+    "sample_seed": 2064
+  },
+  {
+    "id": "lang_40",
+    "group": "extend_corpus",
+    "category": "spatial_relations",
+    "prompt": "the book is inside the bag . the bag contains the",
+    "choices": [
+      "lamp",
+      "book",
+      "shelf",
+      "desk"
+    ],
+    "expected": "book",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bag",
+      "book",
+      "contains",
+      "inside"
+    ],
+    "unknown_choices": [
+      "lamp",
+      "book",
+      "shelf",
+      "desk"
+    ],
+    "generated_text": "d — period 7ha u : business our c7h 7hi buyer high \u0004 % effective 21 approximately oij may annual hek ej7b bo changes",
+    "prompt_truncated": false,
+    "reason": "Restate inside as the inverse relation contains.",
+    "stage": "untrained",
+    "sample_seed": 2065
+  },
+  {
+    "id": "lang_41",
+    "group": "extend_corpus",
+    "category": "spatial_relations",
+    "prompt": "the lamp is above the desk . the desk is",
+    "choices": [
+      "below",
+      "above",
+      "inside",
+      "beside"
+    ],
+    "expected": "below",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "above",
+      "desk",
+      "lamp"
+    ],
+    "unknown_choices": [
+      "below",
+      "above",
+      "inside",
+      "beside"
+    ],
+    "generated_text": "\u000e yesterday – k vice value 7hi – \u0010 2018 , \u0019 update b including service stock offering fehj rate which",
+    "prompt_truncated": false,
+    "reason": "Above and below are inverse vertical relations.",
+    "stage": "untrained",
+    "sample_seed": 2066
+  },
+  {
+    "id": "lang_42",
+    "group": "extend_corpus",
+    "category": "spatial_relations",
+    "prompt": "the ball is left of the box . the box is to the",
+    "choices": [
+      "left",
+      "north",
+      "south",
+      "right"
+    ],
+    "expected": "right",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "ball",
+      "box",
+      "left"
+    ],
+    "unknown_choices": [
+      "left",
+      "north",
+      "south",
+      "right"
+    ],
+    "generated_text": "c7d7 it student 12 jo operations each 78 ed7b expected to di report \u0003 97j nf included our 9kijec buyer h7 bb – brand",
+    "prompt_truncated": false,
+    "reason": "Reverse the stated horizontal relation; complete with right.",
+    "stage": "untrained",
+    "sample_seed": 2067
+  },
+  {
+    "id": "lang_43",
+    "group": "extend_corpus",
+    "category": "everyday_knowledge",
+    "prompt": "water freezes into",
+    "choices": [
+      "sand",
+      "wood",
+      "ice",
+      "steam"
+    ],
+    "expected": "ice",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "freezes",
+      "into",
+      "water"
+    ],
+    "unknown_choices": [
+      "sand",
+      "wood",
+      "ice",
+      "steam"
+    ],
+    "generated_text": "offset 2016 \" hc all significant d9 per ui well matters 79 ecf7do order these 97i ehfeh7j / f7 include d9h foreign company’s ?",
+    "prompt_truncated": false,
+    "reason": "Freezing changes liquid water into ice.",
+    "stage": "untrained",
+    "sample_seed": 2068
+  },
+  {
+    "id": "lang_44",
+    "group": "extend_corpus",
+    "category": "everyday_knowledge",
+    "prompt": "a person uses an umbrella to stay",
+    "choices": [
+      "asleep",
+      "dry",
+      "wet",
+      "hungry"
+    ],
+    "expected": "dry",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "person",
+      "stay",
+      "umbrella",
+      "uses"
+    ],
+    "unknown_choices": [
+      "asleep",
+      "dry",
+      "wet",
+      "hungry"
+    ],
+    "generated_text": "9edj service fruit restaurants ehc7d9 explains credit - more d7d9 hd7j \u0019 h7j 7ha ij7kh7dji company 18 on and act update dj7b c7j ij7kh7dji",
+    "prompt_truncated": false,
+    "reason": "An umbrella typically keeps a person dry in rain.",
+    "stage": "untrained",
+    "sample_seed": 2069
+  },
+  {
+    "id": "lang_45",
+    "group": "extend_corpus",
+    "category": "everyday_knowledge",
+    "prompt": "to see in a dark room we turn on a",
+    "choices": [
+      "light",
+      "pillow",
+      "spoon",
+      "shoe"
+    ],
+    "expected": "light",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "dark",
+      "room",
+      "see",
+      "turn"
+    ],
+    "unknown_choices": [
+      "light",
+      "pillow",
+      "spoon",
+      "shoe"
+    ],
+    "generated_text": "other h7d9 station team net based fei ; agreement these executive shares for year \u0018 87i \u001b d7j # c7d7 ij7kh7dji h7d9 through it",
+    "prompt_truncated": false,
+    "reason": "A light illuminates a dark room.",
+    "stage": "untrained",
+    "sample_seed": 2070
+  },
+  {
+    "id": "lang_46",
+    "group": "extend_corpus",
+    "category": "categories_and_analogies",
+    "prompt": "a robin is a bird . a salmon is a",
+    "choices": [
+      "bird",
+      "tree",
+      "tool",
+      "fish"
+    ],
+    "expected": "fish",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "bird",
+      "robin",
+      "salmon"
+    ],
+    "unknown_choices": [
+      "bird",
+      "tree",
+      "tool",
+      "fish"
+    ],
+    "generated_text": "9h journey position 2020 ikbji hec jo harvest nf executive the initiatives student code product school h higher jej7b ij based i l compared",
+    "prompt_truncated": false,
+    "reason": "Salmon belongs to the fish category.",
+    "stage": "untrained",
+    "sample_seed": 2071
+  },
+  {
+    "id": "lang_47",
+    "group": "extend_corpus",
+    "category": "categories_and_analogies",
+    "prompt": "a puppy grows into a dog . a kitten grows into a",
+    "choices": [
+      "duck",
+      "goat",
+      "cat",
+      "horse"
+    ],
+    "expected": "cat",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "dog",
+      "grows",
+      "into",
+      "kitten",
+      "puppy"
+    ],
+    "unknown_choices": [
+      "duck",
+      "goat",
+      "cat",
+      "horse"
+    ],
+    "generated_text": "7bb stock 9khh 9ji student about > ej7b following due traffic fruit treatment consolidated your performance 5 purchase ki 20 share ' learned d7j",
+    "prompt_truncated": false,
+    "reason": "Match the young animal to its adult category.",
+    "stage": "untrained",
+    "sample_seed": 2072
+  },
+  {
+    "id": "lang_48",
+    "group": "extend_corpus",
+    "category": "categories_and_analogies",
+    "prompt": "a carrot is a vegetable . an apple is a",
+    "choices": [
+      "fabric",
+      "fruit",
+      "metal",
+      "vehicle"
+    ],
+    "expected": "fruit",
+    "predicted_choice": null,
+    "score": 0,
+    "status": "out_of_vocabulary",
+    "choice_probabilities": {},
+    "unknown_prompt_words": [
+      "apple",
+      "carrot",
+      "vegetable"
+    ],
+    "unknown_choices": [
+      "fabric",
+      "metal",
+      "vehicle"
+    ],
+    "generated_text": "increased 9j program about company current restaurants jo impairment n ej7b 9j information oij than including + cf79j h n h7d9 97j c7j ci",
+    "prompt_truncated": false,
+    "reason": "An apple belongs to the fruit category in this food classification.",
+    "stage": "untrained",
+    "sample_seed": 2073
+  }
+]

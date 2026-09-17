@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "file": "categories_and_analogies.txt",
+      "bytes": 20802,
+      "sha256": "09c22b590f36d9094233183c96cc18bd59cbeb24b32a2fb752c6c3891e2f38eb",
+      "warnings": [],
+      "characters": 20802,
+      "passages": 612,
+      "unique_passages": 102,
+      "preview": "a copper is a metal .\na pine is a tree .\nthe metal called a copper is common here .\nevery hammer belongs to the tool group .\na iron is a metal .\nthe hen was once a chick .\nmetal and fabric are different materials .\nthe tree called a oak is common here .\nthe sheep was once a lamb .\na goat and a horse"
+    },
+    {
+      "file": "everyday_knowledge.txt",
+      "bytes": 13800,
+      "sha256": "e5386bab5d715331e87f74b23b2cbd3dde57ed023e1551a9519df77d3c8f260d",
+      "warnings": [],
+      "characters": 13800,
+      "passages": 372,
+      "unique_passages": 31,
+      "preview": "she was hungry so she ate bread .\na lamp gives light at night .\nafter a long day he felt asleep in the chair .\na wood table and a sand path feel different .\nhe turned on a light so he could see inside the dark room .\nshe tied the shoe before the walk .\nshe rested her head on a soft pillow .\nhe turne"
+    },
+    {
+      "file": "opposites.txt",
+      "bytes": 28176,
+      "sha256": "854b72b074a11c3b3563671ff51b0088dffbb80a68005d8cbaac32171cc34959",
+      "warnings": [],
+      "characters": 28176,
+      "passages": 714,
+      "unique_passages": 119,
+      "preview": "the opposite of thin is thick .\nwhen something is not clean it is dirty .\nbig and small are opposite words .\nheavy and light describe opposite things .\nsomething early is never late at the same time .\na fast river runs beside a slow stream .\nhe walks fast in the morning and slow at night .\nwhen some"
+    },
+    {
+      "file": "spatial_relations.txt",
+      "bytes": 17892,
+      "sha256": "adf35fb7e60922b53e6a9356f7f4525934d30dafd513336d09020f5e8034d68e",
+      "warnings": [],
+      "characters": 17892,
+      "passages": 444,
+      "unique_passages": 66,
+      "preview": "he stood beside the window and looked at the roof .\nshe put the orange into the bowl .\nhe stood beside the door and looked at the clock .\nthe table is to the right of the chair .\nshe put the pencil into the case .\nthe map shows north at the top and south at the bottom .\nthey walked north and then tu"
+    }
+  ],
+  "ignored": [],
+  "external_passages": 2142,
+  "mode": "classroom",
+  "base_passages": 6200,
+  "unique_passages": 4910,
+  "new_unique_passages": 318,
+  "duplicates_removed": 3432,
+  "max_passage_tokens": 47,
+  "split_unit": "deduplicated passage, not source file"
+}

@@ -1,0 +1,16 @@
+{
+  "model_sha256": "837f6cae02fe25b468fb3bc1e6ec5d44dc3111bbce29543262b93b04f1d1c63b",
+  "completed_steps": 3000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the customer",
+      "seed": 2026,
+      "response": "<UNK> the <UNK> in the <UNK> after checking the 7b , we are also <UNK> and <UNK> <UNK> <UNK> .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    }
+  ]
+}

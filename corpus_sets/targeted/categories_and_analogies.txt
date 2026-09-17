@@ -1,0 +1,612 @@
+a copper is a metal .
+a pine is a tree .
+the metal called a copper is common here .
+every hammer belongs to the tool group .
+a iron is a metal .
+the hen was once a chick .
+metal and fabric are different materials .
+the tree called a oak is common here .
+the sheep was once a lamb .
+a goat and a horse are animals .
+every apple belongs to the fruit group .
+every oak belongs to the tree group .
+a trout is a fish .
+a salmon is a fish .
+a hammer is a tool .
+the goat was once a kid .
+a saw is a tool .
+a duck is a bird .
+a calf grows into a cow .
+a tree is a plant and a hammer is a tool .
+a pear is a fruit .
+a kid grows into a goat .
+the fish called a tuna is common here .
+a sparrow is a bird .
+a vehicle carries people from place to place .
+every pear belongs to the fruit group .
+a young horse is called a foal .
+a lamb grows into a sheep .
+the fruit called a pear is common here .
+every pine belongs to the tree group .
+every banana belongs to the fruit group .
+a puppy grows into a dog .
+every iron belongs to the metal group .
+the bird called a robin is common here .
+every cotton belongs to the fabric group .
+a young hen is called a chick .
+a duck is an animal and a carrot is a vegetable .
+a carrot is a vegetable .
+a young dog is called a puppy .
+a young goat is called a kid .
+a robin is a bird .
+every salmon belongs to the fish group .
+the fish called a salmon is common here .
+a young cow is called a calf .
+every car belongs to the vehicle group .
+the tool called a hammer is common here .
+every saw belongs to the tool group .
+the bird called a eagle is common here .
+the vegetable called a onion is common here .
+a apple is a fruit .
+a banana is a fruit .
+the vehicle called a car is common here .
+a young cat is called a kitten .
+every silk belongs to the fabric group .
+a tuna is a fish .
+every potato belongs to the vegetable group .
+the tool called a drill is common here .
+every copper belongs to the metal group .
+the fruit called a apple is common here .
+a bird can fly and a fish can swim .
+a kitten grows into a cat .
+every duck belongs to the bird group .
+a foal grows into a horse .
+a car is a vehicle .
+a oak is a tree .
+every truck belongs to the vehicle group .
+the bird called a duck is common here .
+every drill belongs to the tool group .
+every bus belongs to the vehicle group .
+a cotton is a fabric .
+the fruit called a banana is common here .
+the tool called a saw is common here .
+every carrot belongs to the vegetable group .
+every tuna belongs to the fish group .
+every trout belongs to the fish group .
+a bus is a vehicle .
+a onion is a vegetable .
+the vehicle called a bus is common here .
+the fish called a trout is common here .
+every robin belongs to the bird group .
+the metal called a iron is common here .
+a potato is a vegetable .
+a silk is a fabric .
+a eagle is a bird .
+a truck is a vehicle .
+the horse was once a foal .
+every sparrow belongs to the bird group .
+the vegetable called a carrot is common here .
+the cow was once a calf .
+the vegetable called a potato is common here .
+the bird called a sparrow is common here .
+a drill is a tool .
+the vehicle called a truck is common here .
+every eagle belongs to the bird group .
+a chick grows into a hen .
+a young sheep is called a lamb .
+every onion belongs to the vegetable group .
+the dog was once a puppy .
+the fabric called a silk is common here .
+the tree called a pine is common here .
+the cat was once a kitten .
+the fabric called a cotton is common here .
+a copper is a metal .
+a pine is a tree .
+the metal called a copper is common here .
+every hammer belongs to the tool group .
+a iron is a metal .
+the hen was once a chick .
+metal and fabric are different materials .
+the tree called a oak is common here .
+the sheep was once a lamb .
+a goat and a horse are animals .
+every apple belongs to the fruit group .
+every oak belongs to the tree group .
+a trout is a fish .
+a salmon is a fish .
+a hammer is a tool .
+the goat was once a kid .
+a saw is a tool .
+a duck is a bird .
+a calf grows into a cow .
+a tree is a plant and a hammer is a tool .
+a pear is a fruit .
+a kid grows into a goat .
+the fish called a tuna is common here .
+a sparrow is a bird .
+a vehicle carries people from place to place .
+every pear belongs to the fruit group .
+a young horse is called a foal .
+a lamb grows into a sheep .
+the fruit called a pear is common here .
+every pine belongs to the tree group .
+every banana belongs to the fruit group .
+a puppy grows into a dog .
+every iron belongs to the metal group .
+the bird called a robin is common here .
+every cotton belongs to the fabric group .
+a young hen is called a chick .
+a duck is an animal and a carrot is a vegetable .
+a carrot is a vegetable .
+a young dog is called a puppy .
+a young goat is called a kid .
+a robin is a bird .
+every salmon belongs to the fish group .
+the fish called a salmon is common here .
+a young cow is called a calf .
+every car belongs to the vehicle group .
+the tool called a hammer is common here .
+every saw belongs to the tool group .
+the bird called a eagle is common here .
+the vegetable called a onion is common here .
+a apple is a fruit .
+a banana is a fruit .
+the vehicle called a car is common here .
+a young cat is called a kitten .
+every silk belongs to the fabric group .
+a tuna is a fish .
+every potato belongs to the vegetable group .
+the tool called a drill is common here .
+every copper belongs to the metal group .
+the fruit called a apple is common here .
+a bird can fly and a fish can swim .
+a kitten grows into a cat .
+every duck belongs to the bird group .
+a foal grows into a horse .
+a car is a vehicle .
+a oak is a tree .
+every truck belongs to the vehicle group .
+the bird called a duck is common here .
+every drill belongs to the tool group .
+every bus belongs to the vehicle group .
+a cotton is a fabric .
+the fruit called a banana is common here .
+the tool called a saw is common here .
+every carrot belongs to the vegetable group .
+every tuna belongs to the fish group .
+every trout belongs to the fish group .
+a bus is a vehicle .
+a onion is a vegetable .
+the vehicle called a bus is common here .
+the fish called a trout is common here .
+every robin belongs to the bird group .
+the metal called a iron is common here .
+a potato is a vegetable .
+a silk is a fabric .
+a eagle is a bird .
+a truck is a vehicle .
+the horse was once a foal .
+every sparrow belongs to the bird group .
+the vegetable called a carrot is common here .
+the cow was once a calf .
+the vegetable called a potato is common here .
+the bird called a sparrow is common here .
+a drill is a tool .
+the vehicle called a truck is common here .
+every eagle belongs to the bird group .
+a chick grows into a hen .
+a young sheep is called a lamb .
+every onion belongs to the vegetable group .
+the dog was once a puppy .
+the fabric called a silk is common here .
+the tree called a pine is common here .
+the cat was once a kitten .
+the fabric called a cotton is common here .
+a copper is a metal .
+a pine is a tree .
+the metal called a copper is common here .
+every hammer belongs to the tool group .
+a iron is a metal .
+the hen was once a chick .
+metal and fabric are different materials .
+the tree called a oak is common here .
+the sheep was once a lamb .
+a goat and a horse are animals .
+every apple belongs to the fruit group .
+every oak belongs to the tree group .
+a trout is a fish .
+a salmon is a fish .
+a hammer is a tool .
+the goat was once a kid .
+a saw is a tool .
+a duck is a bird .
+a calf grows into a cow .
+a tree is a plant and a hammer is a tool .
+a pear is a fruit .
+a kid grows into a goat .
+the fish called a tuna is common here .
+a sparrow is a bird .
+a vehicle carries people from place to place .
+every pear belongs to the fruit group .
+a young horse is called a foal .
+a lamb grows into a sheep .
+the fruit called a pear is common here .
+every pine belongs to the tree group .
+every banana belongs to the fruit group .
+a puppy grows into a dog .
+every iron belongs to the metal group .
+the bird called a robin is common here .
+every cotton belongs to the fabric group .
+a young hen is called a chick .
+a duck is an animal and a carrot is a vegetable .
+a carrot is a vegetable .
+a young dog is called a puppy .
+a young goat is called a kid .
+a robin is a bird .
+every salmon belongs to the fish group .
+the fish called a salmon is common here .
+a young cow is called a calf .
+every car belongs to the vehicle group .
+the tool called a hammer is common here .
+every saw belongs to the tool group .
+the bird called a eagle is common here .
+the vegetable called a onion is common here .
+a apple is a fruit .
+a banana is a fruit .
+the vehicle called a car is common here .
+a young cat is called a kitten .
+every silk belongs to the fabric group .
+a tuna is a fish .
+every potato belongs to the vegetable group .
+the tool called a drill is common here .
+every copper belongs to the metal group .
+the fruit called a apple is common here .
+a bird can fly and a fish can swim .
+a kitten grows into a cat .
+every duck belongs to the bird group .
+a foal grows into a horse .
+a car is a vehicle .
+a oak is a tree .
+every truck belongs to the vehicle group .
+the bird called a duck is common here .
+every drill belongs to the tool group .
+every bus belongs to the vehicle group .
+a cotton is a fabric .
+the fruit called a banana is common here .
+the tool called a saw is common here .
+every carrot belongs to the vegetable group .
+every tuna belongs to the fish group .
+every trout belongs to the fish group .
+a bus is a vehicle .
+a onion is a vegetable .
+the vehicle called a bus is common here .
+the fish called a trout is common here .
+every robin belongs to the bird group .
+the metal called a iron is common here .
+a potato is a vegetable .
+a silk is a fabric .
+a eagle is a bird .
+a truck is a vehicle .
+the horse was once a foal .
+every sparrow belongs to the bird group .
+the vegetable called a carrot is common here .
+the cow was once a calf .
+the vegetable called a potato is common here .
+the bird called a sparrow is common here .
+a drill is a tool .
+the vehicle called a truck is common here .
+every eagle belongs to the bird group .
+a chick grows into a hen .
+a young sheep is called a lamb .
+every onion belongs to the vegetable group .
+the dog was once a puppy .
+the fabric called a silk is common here .
+the tree called a pine is common here .
+the cat was once a kitten .
+the fabric called a cotton is common here .
+a copper is a metal .
+a pine is a tree .
+the metal called a copper is common here .
+every hammer belongs to the tool group .
+a iron is a metal .
+the hen was once a chick .
+metal and fabric are different materials .
+the tree called a oak is common here .
+the sheep was once a lamb .
+a goat and a horse are animals .
+every apple belongs to the fruit group .
+every oak belongs to the tree group .
+a trout is a fish .
+a salmon is a fish .
+a hammer is a tool .
+the goat was once a kid .
+a saw is a tool .
+a duck is a bird .
+a calf grows into a cow .
+a tree is a plant and a hammer is a tool .
+a pear is a fruit .
+a kid grows into a goat .
+the fish called a tuna is common here .
+a sparrow is a bird .
+a vehicle carries people from place to place .
+every pear belongs to the fruit group .
+a young horse is called a foal .
+a lamb grows into a sheep .
+the fruit called a pear is common here .
+every pine belongs to the tree group .
+every banana belongs to the fruit group .
+a puppy grows into a dog .
+every iron belongs to the metal group .
+the bird called a robin is common here .
+every cotton belongs to the fabric group .
+a young hen is called a chick .
+a duck is an animal and a carrot is a vegetable .
+a carrot is a vegetable .
+a young dog is called a puppy .
+a young goat is called a kid .
+a robin is a bird .
+every salmon belongs to the fish group .
+the fish called a salmon is common here .
+a young cow is called a calf .
+every car belongs to the vehicle group .
+the tool called a hammer is common here .
+every saw belongs to the tool group .
+the bird called a eagle is common here .
+the vegetable called a onion is common here .
+a apple is a fruit .
+a banana is a fruit .
+the vehicle called a car is common here .
+a young cat is called a kitten .
+every silk belongs to the fabric group .
+a tuna is a fish .
+every potato belongs to the vegetable group .
+the tool called a drill is common here .
+every copper belongs to the metal group .
+the fruit called a apple is common here .
+a bird can fly and a fish can swim .
+a kitten grows into a cat .
+every duck belongs to the bird group .
+a foal grows into a horse .
+a car is a vehicle .
+a oak is a tree .
+every truck belongs to the vehicle group .
+the bird called a duck is common here .
+every drill belongs to the tool group .
+every bus belongs to the vehicle group .
+a cotton is a fabric .
+the fruit called a banana is common here .
+the tool called a saw is common here .
+every carrot belongs to the vegetable group .
+every tuna belongs to the fish group .
+every trout belongs to the fish group .
+a bus is a vehicle .
+a onion is a vegetable .
+the vehicle called a bus is common here .
+the fish called a trout is common here .
+every robin belongs to the bird group .
+the metal called a iron is common here .
+a potato is a vegetable .
+a silk is a fabric .
+a eagle is a bird .
+a truck is a vehicle .
+the horse was once a foal .
+every sparrow belongs to the bird group .
+the vegetable called a carrot is common here .
+the cow was once a calf .
+the vegetable called a potato is common here .
+the bird called a sparrow is common here .
+a drill is a tool .
+the vehicle called a truck is common here .
+every eagle belongs to the bird group .
+a chick grows into a hen .
+a young sheep is called a lamb .
+every onion belongs to the vegetable group .
+the dog was once a puppy .
+the fabric called a silk is common here .
+the tree called a pine is common here .
+the cat was once a kitten .
+the fabric called a cotton is common here .
+a copper is a metal .
+a pine is a tree .
+the metal called a copper is common here .
+every hammer belongs to the tool group .
+a iron is a metal .
+the hen was once a chick .
+metal and fabric are different materials .
+the tree called a oak is common here .
+the sheep was once a lamb .
+a goat and a horse are animals .
+every apple belongs to the fruit group .
+every oak belongs to the tree group .
+a trout is a fish .
+a salmon is a fish .
+a hammer is a tool .
+the goat was once a kid .
+a saw is a tool .
+a duck is a bird .
+a calf grows into a cow .
+a tree is a plant and a hammer is a tool .
+a pear is a fruit .
+a kid grows into a goat .
+the fish called a tuna is common here .
+a sparrow is a bird .
+a vehicle carries people from place to place .
+every pear belongs to the fruit group .
+a young horse is called a foal .
+a lamb grows into a sheep .
+the fruit called a pear is common here .
+every pine belongs to the tree group .
+every banana belongs to the fruit group .
+a puppy grows into a dog .
+every iron belongs to the metal group .
+the bird called a robin is common here .
+every cotton belongs to the fabric group .
+a young hen is called a chick .
+a duck is an animal and a carrot is a vegetable .
+a carrot is a vegetable .
+a young dog is called a puppy .
+a young goat is called a kid .
+a robin is a bird .
+every salmon belongs to the fish group .
+the fish called a salmon is common here .
+a young cow is called a calf .
+every car belongs to the vehicle group .
+the tool called a hammer is common here .
+every saw belongs to the tool group .
+the bird called a eagle is common here .
+the vegetable called a onion is common here .
+a apple is a fruit .
+a banana is a fruit .
+the vehicle called a car is common here .
+a young cat is called a kitten .
+every silk belongs to the fabric group .
+a tuna is a fish .
+every potato belongs to the vegetable group .
+the tool called a drill is common here .
+every copper belongs to the metal group .
+the fruit called a apple is common here .
+a bird can fly and a fish can swim .
+a kitten grows into a cat .
+every duck belongs to the bird group .
+a foal grows into a horse .
+a car is a vehicle .
+a oak is a tree .
+every truck belongs to the vehicle group .
+the bird called a duck is common here .
+every drill belongs to the tool group .
+every bus belongs to the vehicle group .
+a cotton is a fabric .
+the fruit called a banana is common here .
+the tool called a saw is common here .
+every carrot belongs to the vegetable group .
+every tuna belongs to the fish group .
+every trout belongs to the fish group .
+a bus is a vehicle .
+a onion is a vegetable .
+the vehicle called a bus is common here .
+the fish called a trout is common here .
+every robin belongs to the bird group .
+the metal called a iron is common here .
+a potato is a vegetable .
+a silk is a fabric .
+a eagle is a bird .
+a truck is a vehicle .
+the horse was once a foal .
+every sparrow belongs to the bird group .
+the vegetable called a carrot is common here .
+the cow was once a calf .
+the vegetable called a potato is common here .
+the bird called a sparrow is common here .
+a drill is a tool .
+the vehicle called a truck is common here .
+every eagle belongs to the bird group .
+a chick grows into a hen .
+a young sheep is called a lamb .
+every onion belongs to the vegetable group .
+the dog was once a puppy .
+the fabric called a silk is common here .
+the tree called a pine is common here .
+the cat was once a kitten .
+the fabric called a cotton is common here .
+a copper is a metal .
+a pine is a tree .
+the metal called a copper is common here .
+every hammer belongs to the tool group .
+a iron is a metal .
+the hen was once a chick .
+metal and fabric are different materials .
+the tree called a oak is common here .
+the sheep was once a lamb .
+a goat and a horse are animals .
+every apple belongs to the fruit group .
+every oak belongs to the tree group .
+a trout is a fish .
+a salmon is a fish .
+a hammer is a tool .
+the goat was once a kid .
+a saw is a tool .
+a duck is a bird .
+a calf grows into a cow .
+a tree is a plant and a hammer is a tool .
+a pear is a fruit .
+a kid grows into a goat .
+the fish called a tuna is common here .
+a sparrow is a bird .
+a vehicle carries people from place to place .
+every pear belongs to the fruit group .
+a young horse is called a foal .
+a lamb grows into a sheep .
+the fruit called a pear is common here .
+every pine belongs to the tree group .
+every banana belongs to the fruit group .
+a puppy grows into a dog .
+every iron belongs to the metal group .
+the bird called a robin is common here .
+every cotton belongs to the fabric group .
+a young hen is called a chick .
+a duck is an animal and a carrot is a vegetable .
+a carrot is a vegetable .
+a young dog is called a puppy .
+a young goat is called a kid .
+a robin is a bird .
+every salmon belongs to the fish group .
+the fish called a salmon is common here .
+a young cow is called a calf .
+every car belongs to the vehicle group .
+the tool called a hammer is common here .
+every saw belongs to the tool group .
+the bird called a eagle is common here .
+the vegetable called a onion is common here .
+a apple is a fruit .
+a banana is a fruit .
+the vehicle called a car is common here .
+a young cat is called a kitten .
+every silk belongs to the fabric group .
+a tuna is a fish .
+every potato belongs to the vegetable group .
+the tool called a drill is common here .
+every copper belongs to the metal group .
+the fruit called a apple is common here .
+a bird can fly and a fish can swim .
+a kitten grows into a cat .
+every duck belongs to the bird group .
+a foal grows into a horse .
+a car is a vehicle .
+a oak is a tree .
+every truck belongs to the vehicle group .
+the bird called a duck is common here .
+every drill belongs to the tool group .
+every bus belongs to the vehicle group .
+a cotton is a fabric .
+the fruit called a banana is common here .
+the tool called a saw is common here .
+every carrot belongs to the vegetable group .
+every tuna belongs to the fish group .
+every trout belongs to the fish group .
+a bus is a vehicle .
+a onion is a vegetable .
+the vehicle called a bus is common here .
+the fish called a trout is common here .
+every robin belongs to the bird group .
+the metal called a iron is common here .
+a potato is a vegetable .
+a silk is a fabric .
+a eagle is a bird .
+a truck is a vehicle .
+the horse was once a foal .
+every sparrow belongs to the bird group .
+the vegetable called a carrot is common here .
+the cow was once a calf .
+the vegetable called a potato is common here .
+the bird called a sparrow is common here .
+a drill is a tool .
+the vehicle called a truck is common here .
+every eagle belongs to the bird group .
+a chick grows into a hen .
+a young sheep is called a lamb .
+every onion belongs to the vegetable group .
+the dog was once a puppy .
+the fabric called a silk is common here .
+the tree called a pine is common here .
+the cat was once a kitten .
+the fabric called a cotton is common here .
