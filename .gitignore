@@ -18,3 +18,10 @@ names.txt
 /corpus/*
 !/corpus/README.md
 !/corpus/extensions/
+
+# --- Corpus sets -------------------------------------------------------------
+# Third-party McDonald's annual reports / CEO letters: NOT redistributed here.
+# ~46 MB of copyrighted investor-relations PDFs. Sources listed in docs/corpus-sources.md.
+/corpus_sets/mcdonalds/
+# Our own synthetic teaching material IS published, so the grader can read it.
+!/corpus_sets/targeted/
