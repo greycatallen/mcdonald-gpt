@@ -93,9 +93,9 @@ repository, so the 48 cases are provably unchanged across every run below.
 
 | Choice | Value | Reason |
 |---|---|---|
-| Corpus | ⬜ PENDING | |
-| Training steps | ⬜ PENDING | |
-| Learning rate | ⬜ PENDING | |
+| Corpus | Experiment 1: `classroom` (starter only) · Experiment 2: `classroom` + McDonald's financial statements and CEO letters · Experiment 3: `classroom` + material targeted at ≥2 eval categories | Three runs, because "does adding data help?" and "does adding *task-matched* data help?" are different questions and a single extension run cannot separate them. |
+| Training steps | 3000 | The notebook's designated main-experiment budget (`# 10 for setup; 3000 for the main experiment`) ≈ 23 passes over the corpus at batch size 32. A 10-step smoke test was run first and is reported below as a null result. Runtime is ~8 s, so the budget was not chosen to save time — it was chosen to be comparable to the reference configuration. |
+| Learning rate | 0.001 | The standard AdamW default and well-matched to a 112k-parameter model. Held **identical across all three experiments** so that any difference between them is attributable to the corpus, not the optimizer. |
 
 **On the learning rate specifically** — why too large or too small is a problem: the learning
 rate scales every weight update. Too large and the optimizer overshoots the minimum it is
@@ -128,10 +128,65 @@ is not a training budget. Full output: [`evidence/smoke-10-steps/`](evidence/smo
 
 ## 4. My prediction, written before training
 
-⬜ **PENDING** — must be committed before Experiment 1 runs, and not edited afterward.
+> Committed in this repository **before any graded run**, and not edited afterward. Git
+> history is the timestamp: this section was committed at the tip named in §6, before the
+> Experiment 1 commit that follows it.
 
-Will state expected changes in generated text, validation loss, and the nearest neighbours
-of one chosen word, with reasons.
+### My prediction (Allen)
+
+**P1. Adding new training material will significantly improve the evaluation results.**
+
+**P2. Training on McDonald's financial statements and CEO letters to consumers will be
+enough, on its own, to produce that significant improvement.**
+
+My reasoning: the starter corpus is small and narrow. Real business prose is far larger and
+more varied than synthetic classroom sentences, so a model trained on it should have more
+language to draw on and should therefore do better on a general language test.
+
+**What counts as "significant", agreed before the run:** an increase of **at least 5 cases
+out of 48** in all-case success over the Experiment 1 trained baseline. Anything smaller is
+noise at this scale — a single case is 2.1 percentage points.
+
+### Recorded disagreement (assistant), before the run
+
+I expect **P2 to be falsified**, and I am recording why in advance so the comparison is
+honest rather than reconstructed afterward:
+
+1. The 24 `extend_corpus` cases need words like `salmon`, `robin`, `freezes`, `opposite`,
+   `lent`, `thanked`, `cold`, `ice`, `blue`. None of these occur in a 10-K or a shareholder
+   letter, so those cases should stay **out of vocabulary and score 0**.
+2. The tokenizer keeps only the **509 most frequent training token types**. Financial
+   vocabulary competes for those slots, so adding a large off-topic corpus can *evict*
+   starter words and **reduce** coverage — making the score go **down**, not up.
+3. Therefore I expect Experiment 3 (task-matched material) to beat Experiment 2
+   (more, off-topic material), even though Experiment 2 adds far more text.
+
+If P1/P2 hold and this is wrong, that is the more interesting result and it gets reported
+as plainly as the reverse.
+
+### Shared predictions for Experiment 1 (starter corpus)
+
+| # | Claim | Committed value |
+|---|---|---|
+| 1 | Validation loss falls from ~4.93 | to **1.6 – 2.2** |
+| 2 | Train/validation gap stays small — **no real overfitting**, because both splits come from the same template generator | gap **< 0.2** |
+| 3 | `extend_corpus` cannot improve — the words are absent from the vocabulary | **0 / 24, 0% coverage** |
+| 4 | `starter_patterns` improves substantially | 37.5% → **60 – 85%** |
+| 5 | `starter_transfer` improves less, since it reuses known words in new sentence shapes | 37.5% → **40 – 60%** |
+| 6 | Overall, hard-capped at 24/48 by out-of-vocabulary cases | **14 – 19 / 48** |
+| 7 | `customer`'s nearest neighbours become its slot-mates, not its synonyms | `shopper`, `client`, `buyer`, `consumer`, `subscriber` |
+
+Claim 7 is the conceptual one: these vectors encode **interchangeability in context**, not
+meaning. The model should learn that `customer` and `shopper` are similar because they fill
+the same blank — never because it knows what a customer is.
+
+Generated text should go from word salad at step 0 to locally grammatical but semantically
+repetitive template sentences. Temperature should trade repetition for variety, and **no
+weights should change during generation**.
+
+*Note on method: the upstream repo ships `examples/reference/history.json`, a reference run
+at this exact configuration. It was deliberately not opened before these numbers were
+committed, so these are predictions rather than lookups.*
 
 ---
 
