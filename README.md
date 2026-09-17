@@ -1169,11 +1169,23 @@ weights and not from canned text or another model.
 
 ### Evidence
 
-![Recorded chat session](evidence/chat/chat-session.svg)
+**Screenshot** of the session running in Terminal
+([`chat-screenshot.png`](evidence/chat/chat-screenshot.png), 1720×998):
 
-*Rendered from [`chat-session.typescript`](evidence/chat/chat-session.typescript), a real
-`script(1)` recording of the session — replay it with
-`scriptreplay` or `cat evidence/chat/chat-session.typescript`. Not a mock-up.*
+![Chat session screenshot](evidence/chat/chat-screenshot.png)
+
+Two further forms of the same session are included, so none of this rests on a single artifact:
+
+| Artifact | What it is |
+|---|---|
+| [`chat-screenshot.png`](evidence/chat/chat-screenshot.png) | Screen capture of Terminal running `scripts/demo_chat.sh` |
+| [`chat-session.typescript`](evidence/chat/chat-session.typescript) | A real `script(1)` terminal recording — replay with `scriptreplay`, or `cat` it |
+| [`chat_transcript.json`](evidence/chat/chat_transcript.json) | `chat.py`'s own log: every prompt, reply, per-turn seed, and the model SHA-256 |
+
+All three agree because generation is deterministic given the model and per-turn seeds
+(`2026 + turn index`). The transcript records model hash
+`204fd529…552b591`, which matches [`evidence/experiment3-targeted/model.pt`](evidence/experiment3-targeted/model.pt) —
+so the replies are verifiably from those weights, not canned text or another model.
 
 ### Six real interactions
 

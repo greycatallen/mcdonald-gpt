@@ -56,7 +56,7 @@ then submit the URL).
 | C4 | Launch instructions, tested | README §10 | ✅ tested |
 | C5 | Model / run identity recorded | README §10 | ✅ run + SHA-256 in §10 |
 | C6 | ≥3 real chat interactions | `evidence/*/chat_transcript.json` | ✅ 6 interactions |
-| C7 | Screenshot or recording of the interface | `evidence/chat/chat-session.typescript` + `.svg` | ✅ script(1) recording + rendering |
+| C7 | Screenshot or recording of the interface | `evidence/chat/` | ✅ PNG screenshot **and** script(1) recording **and** JSON transcript |
 
 ## D. Specific evidence artifacts
 
