@@ -32,6 +32,12 @@ OUT = Path(__file__).resolve().parent.parent / "corpus_sets" / TARGET
 random.seed(2026)
 
 
+def art(word):
+    """Correct indefinite article. Word-level tokenization has no morphology, so
+    'a apple' would be taught as-is; the model would learn ungrammatical English."""
+    return "an" if word[0] in "aeiou" else "a"
+
+
 def write(name, lines):
     OUT.mkdir(parents=True, exist_ok=True)
     text = "\n".join(lines) + "\n"
@@ -189,19 +195,21 @@ GROWS = [("puppy", "dog"), ("kitten", "cat"), ("calf", "cow"), ("lamb", "sheep")
 
 lines = []
 for small, kind in IS_A:
-    lines += [f"a {small} is a {kind} .",
-              f"the {kind} called a {small} is common here .",
+    lines += [f"{art(small)} {small} is {art(kind)} {kind} .",
+              f"the {kind} called {art(small)} {small} is common here .",
               f"every {small} belongs to the {kind} group ."]
 for young, grown in GROWS:
-    lines += [f"a {young} grows into a {grown} .",
-              f"the {grown} was once a {young} .",
-              f"a young {grown} is called a {young} ."]
+    lines += [f"{art(young)} {young} grows into {art(grown)} {grown} .",
+              f"the {grown} was once {art(young)} {young} .",
+              f"a young {grown} is called {art(young)} {young} ."]
 lines += ["a bird can fly and a fish can swim .",
           "a tree is a plant and a hammer is a tool .",
+          "an oak is a tree and an eagle is a bird .",
           "metal and fabric are different materials .",
           "a vehicle carries people from place to place .",
           "a goat and a horse are animals .",
-          "a duck is an animal and a carrot is a vegetable ."]
+          "a duck is an animal and a carrot is a vegetable .",
+          "an onion is a vegetable and an apple is a fruit ."]
 random.shuffle(lines)
 write("categories_and_analogies.txt", lines * 6)
 

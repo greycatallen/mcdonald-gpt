@@ -1,5 +1,5 @@
 {
-  "model_sha256": "80b3a691ca8e6a17635ba04f4b060c4a93eacfb553fcb56f70fa0ce96de2baa9",
+  "model_sha256": "94a3652c6c61c98f303147c6787e02ab3db5e46827add38e3746e58185b02c32",
   "completed_steps": 3000,
   "fresh_context_per_prompt": true,
   "temperature": 0.8,

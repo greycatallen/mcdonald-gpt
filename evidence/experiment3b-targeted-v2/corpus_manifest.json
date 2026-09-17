@@ -2,13 +2,13 @@
   "files": [
     {
       "file": "categories_and_analogies.txt",
-      "bytes": 20802,
-      "sha256": "09c22b590f36d9094233183c96cc18bd59cbeb24b32a2fb752c6c3891e2f38eb",
+      "bytes": 21414,
+      "sha256": "333639a1eba24f6d5125c0cb153e0af8d129306ca2a75876978c0c996cda93ee",
       "warnings": [],
-      "characters": 20802,
-      "passages": 612,
-      "unique_passages": 102,
-      "preview": "a copper is a metal .\na pine is a tree .\nthe metal called a copper is common here .\nevery hammer belongs to the tool group .\na iron is a metal .\nthe hen was once a chick .\nmetal and fabric are different materials .\nthe tree called a oak is common here .\nthe sheep was once a lamb .\na goat and a horse"
+      "characters": 21414,
+      "passages": 624,
+      "unique_passages": 104,
+      "preview": "a young cow is called a calf .\na goat and a horse are animals .\nthe tree called an oak is common here .\na saw is a tool .\na calf grows into a cow .\na lamb grows into a sheep .\nevery apple belongs to the fruit group .\nevery oak belongs to the tree group .\nevery banana belongs to the fruit group .\na y"
     },
     {
       "file": "everyday_knowledge.txt",
@@ -52,12 +52,12 @@
     }
   ],
   "ignored": [],
-  "external_passages": 2430,
+  "external_passages": 2442,
   "mode": "classroom",
   "base_passages": 6200,
-  "unique_passages": 4922,
-  "new_unique_passages": 330,
-  "duplicates_removed": 3708,
+  "unique_passages": 4924,
+  "new_unique_passages": 332,
+  "duplicates_removed": 3718,
   "max_passage_tokens": 47,
   "split_unit": "deduplicated passage, not source file"
 }

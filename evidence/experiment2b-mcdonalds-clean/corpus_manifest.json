@@ -1,0 +1,105 @@
+{
+  "files": [
+    {
+      "file": "2016 Annual Report1.pdf",
+      "bytes": 1088810,
+      "sha256": "b325386d426dda792160ff6336e21cedaaddd2b71a8204ea12b3d881536adb1b",
+      "warnings": [],
+      "pages": 68,
+      "characters": 571339,
+      "passages": 14123,
+      "unique_passages": 5334,
+      "preview": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, DC 20549\nFORM 10-K\n \n  ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the fiscal year ended December 31, 2016 \nor\n \n  TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE AC"
+    },
+    {
+      "file": "2019 Annual Report.pdf",
+      "bytes": 3744516,
+      "sha256": "2f5714c588d9ea11c3396c60fbdb31b4ac8c3e454d199b48643b35e6a2e89630",
+      "warnings": [],
+      "pages": 79,
+      "characters": 299302,
+      "passages": 7043,
+      "unique_passages": 4096,
+      "preview": "2019 ANNUAL REPORT\nAnnual Letter  \nto Stakeholders\nIt is an enormous privilege to lead this great company. \nMcDonald’s is one of the world’s great brands, but our \nimpact is so much more. We don’t just operate nearly \n40,000 restaurants, we offer 40,000 community centers \nthat create opportunities, "
+    },
+    {
+      "file": "2020 Annual Report.pdf",
+      "bytes": 2606175,
+      "sha256": "992c8c5ca2d5d860b6c0602a6dbb9c8381eba1443e73fc02adeeb435aa828eaf",
+      "warnings": [
+        "Page 98: no text extracted (blank or scanned); OCR may be needed."
+      ],
+      "pages": 98,
+      "characters": 375078,
+      "passages": 8243,
+      "unique_passages": 5156,
+      "preview": "cover\nAnnual Report\n2020\n\nAnnual Letter to Shareholders\nDear Shareholders, \nthe Global McFamily \nand our Customers,\nAt McDonald’s, we are privileged to be active \nparticipants in the local communities where we live, \nwork and serve. That means we reflect the values and \nunderstand the needs of the c"
+    },
+    {
+      "file": "2023 CEO Letter_vf.pdf",
+      "bytes": 846476,
+      "sha256": "b82a68de989bb9c51eee3aaf61436d58260077c5b1f53bee6b3d08bfb820fb4b",
+      "warnings": [],
+      "pages": 4,
+      "characters": 12242,
+      "passages": 320,
+      "unique_passages": 194,
+      "preview": "of the entire McDonald’s System — over two million \ncrew members, the industry’s best franchisees, and \nour network of global suppliers — backed by a talented \nsenior leadership team, dedicated Board of Directors \nand standout growth strategy, Accelerating the Arches.  \nOne constant throughout my te"
+    },
+    {
+      "file": "MCD 2025 CEO Letter.pdf",
+      "bytes": 2985474,
+      "sha256": "deb3e53d136d02bc4a2c1ae030b2a3f096f695d506439d11f6d268155e31a9bc",
+      "warnings": [],
+      "pages": 6,
+      "characters": 11373,
+      "passages": 321,
+      "unique_passages": 315,
+      "preview": "What I love most about McDonald’s is that \nmore than 70 years after the first McDonald’s \nopened, that restless ambition still runs \nthrough our System.\nThe fact that a company with our legacy and \nscale with over $139 billion in systemwide \nsales can continue to grow is also a \ntestament to the res"
+    },
+    {
+      "file": "McD - 2024 CEO Letter.pdf",
+      "bytes": 2909825,
+      "sha256": "8395b35323aaf083a6e9c9141c0032a260f3557ca7e28b9430f62f7a944b0dee",
+      "warnings": [],
+      "pages": 4,
+      "characters": 9069,
+      "passages": 236,
+      "unique_passages": 233,
+      "preview": "In April 1955, our founder, Ray Kroc, opened \nthe fi  rst McDonald’s restaurant in Des Plaines, \nIllinois. Seventy years later, we continue to live his \nlegacy, defi  ning what it means to be a leader in \nour industry. Amidst shifting global landscapes, \ntechnological booms, and extraordinary challe"
+    },
+    {
+      "file": "McDonald's 2017 Annual Report1.pdf",
+      "bytes": 1018607,
+      "sha256": "f93d65b516c054b0d7d49ca75c90f43b4ec006bf7b70a7cae6bbc4566778b239",
+      "warnings": [],
+      "pages": 72,
+      "characters": 573875,
+      "passages": 14321,
+      "unique_passages": 5401,
+      "preview": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, DC 20549\nFORM 10-K\n \n  ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the fiscal year ended December 31, 2017 \nor\n \n  TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE AC"
+    },
+    {
+      "file": "McDonalds_2018_Annual_Report_unlocked.pdf",
+      "bytes": 882503,
+      "sha256": "1c1ae2ca3d17858699239c6bf41b4beaecaea042afcca8c0963bdb524aba4f3d",
+      "warnings": [
+        "Page 25: no text extracted (blank or scanned); OCR may be needed."
+      ],
+      "pages": 94,
+      "characters": 345397,
+      "passages": 4906,
+      "unique_passages": 4261,
+      "preview": " \nUNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, DC 20549\n \n    FORM 10-K\n \n      \nx\n ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF  THE SECURITIES EXCHANGE ACT OF 1934For the fiscal year ended \nDecember 31, 2018 or\n¨\n  TRANSITION REPORT PURSUANT TO SECTION 13 OR 15( d) OF THE SECUR"
+    }
+  ],
+  "ignored": [],
+  "external_passages": 49513,
+  "mode": "classroom",
+  "base_passages": 6200,
+  "unique_passages": 23319,
+  "new_unique_passages": 18727,
+  "duplicates_removed": 32394,
+  "max_passage_tokens": 47,
+  "split_unit": "deduplicated passage, not source file"
+}

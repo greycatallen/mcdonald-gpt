@@ -34,33 +34,72 @@ Ingest mode: `classroom` · max passage tokens: 47 · split unit: deduplicated p
 
 After de-duplication across all sources: **40,834 unique passages** (36,242 new beyond the classroom base of 6,200; 47,898 duplicates removed).
 
-### Extraction check
+### Extraction check — CORRECTED
 
-All 13 PDFs contain selectable text, so no OCR was required for the bulk of the content.
-Extraction was verified by reading the per-file previews in `corpus_manifest.json` and
-confirming each begins with the expected SEC Form 10-K cover page rather than garbled or
-out-of-order text.
+> **An earlier version of this document stated that extraction was verified clean. That was
+> wrong, and the error mattered.** It was based on the per-file previews in
+> `corpus_manifest.json`, which are the first 300 characters — the SEC cover page — and which
+> do extract cleanly in all 13 files. The corruption begins around page 6. The findings below
+> come from opening every page of every file.
 
-**Four page-level warnings were raised across three files**, and they are resolved as
-follows rather than ignored:
+**Five of the thirteen PDFs do not extract as usable text.** They use a font encoding `pypdf`
+cannot map to Unicode, so `extract_text()` returns control characters and mojibake rather than
+words:
 
-| File | Warning | Resolution |
+```
+eb : ; hi  je  fhel ? : ;  ; nf7d : ; :  : ? i9beikh ;  7d :  ; ij78b ? i >
+*#\x1f)\x1b\x01()\x17)\x1b( (\x1b\x19*'\x1f)\x1f\x1b(\x01\x17#\x1a\x01\x1b-\x19\x1e\x17#\x1d\x1b ...
+```
+
+| File | Pages with text | Garbled | Usable? |
+|---|---:|---:|---|
+| `2016 Annual Report1.pdf` | 68 | 0 | ✅ |
+| `McDonald's 2017 Annual Report1.pdf` | 72 | 0 | ✅ |
+| `McDonalds_2018_Annual_Report_unlocked.pdf` | 93 | 0 | ✅ |
+| `2019 Annual Report.pdf` | 79 | 0 | ✅ |
+| `2020 Annual Report.pdf` | 97 | 0 | ✅ |
+| `2023 CEO Letter_vf.pdf` | 4 | 0 | ✅ |
+| `McD - 2024 CEO Letter.pdf` | 4 | 0 | ✅ |
+| `MCD 2025 CEO Letter.pdf` | 6 | 0 | ✅ |
+| `2023 Annual Report_vf.pdf` | 78 | **51** | ❌ |
+| `MCD 2021 Annual Report.pdf` | 76 | **69** | ❌ |
+| `MCD_2022_Annual_Report.pdf` | 73 | **66** | ❌ |
+| `McD - 2024 Annual Report to Shareholders.pdf` | 82 | **73** | ❌ |
+| `MCD 2025 Annual Report.pdf` | 84 | **73** | ❌ |
+| | | **332 garbled** | |
+
+**Consequence.** In Experiment 2 those bytes were frequent enough to win vocabulary slots:
+**122 of 512 types (23.8%) were control characters**, and 34 starter words were evicted purely
+to make room for them. Experiment 2b re-runs the same experiment on the 8 clean files only
+(`corpus_sets/mcdonalds_clean/`) and scores 23/48 instead of 3/48. Full analysis in README §9.
+
+**Recovering the other five** would need a PDF library with better CMap handling (`pdfplumber`,
+`PyMuPDF`) or OCR. Neither was attempted; the clean subset was sufficient to test the
+hypothesis fairly.
+
+**How to check this yourself** — do not trust the manifest previews:
+
+```bash
+sed -n '20000,20010p' evidence/experiment2-mcdonalds/corpus.txt
+```
+
+### Blank and image-only pages
+
+Separately from the mojibake, four page-level warnings were raised. Each page was opened and
+its character and image counts recorded:
+
+| File | Page | Finding |
 |---|---|---|
-| `2020 Annual Report.pdf` | Page 98: no text extracted | Verified: **0 characters but 12 embedded images** — an image-only back cover, not a blank page. Any text inside those graphics would need OCR to recover. Accepted as a bounded gap: one page of cover art out of ~800 ingested pages. |
-| `MCD 2025 Annual Report.pdf` | Page 2: no text extracted | Verified: 0 characters, 0 images — genuinely blank page facing the cover. Accepted. |
-| `MCD 2025 Annual Report.pdf` | Page 85: no text extracted | Verified: 0 characters, 0 images — genuinely blank, second-to-last page. Accepted. |
-| `McDonalds_2018_Annual_Report_unlocked.pdf` | Page 25: no text extracted | Verified directly: the page contains **0 characters and 0 embedded images** — a genuinely blank separator page between the revenues table (p. 24) and the following section. Nothing to recover. Accepted. |
+| `2020 Annual Report.pdf` | 98 | 0 characters, **12 images** — graphical back cover, not blank |
+| `MCD 2025 Annual Report.pdf` | 2 | 0 characters, 0 images — genuinely blank |
+| `MCD 2025 Annual Report.pdf` | 85 | 0 characters, 0 images — genuinely blank |
+| `McDonalds_2018_Annual_Report_unlocked.pdf` | 25 | 0 characters, 0 images — genuinely blank |
 
-All four pages were opened individually with `pypdf` and their character and image counts
-recorded. **Three are genuinely blank** (0 characters, 0 images). **One — page 98 of the 2020
-report — is image-only** (0 characters, 12 images): a graphical back cover whose text, if any,
-sits inside the images and would require OCR. That is the single acknowledged gap, and it is
-one page of cover art out of roughly 800 ingested pages, immaterial to a word-frequency
-vocabulary. No file was dropped, and `ignored` in the manifest is empty.
+Three are truly blank; one is image-only. Immaterial next to the mojibake finding above.
 
-*Two corrections were made to this section rather than left standing: an initial draft claimed
-no warnings were raised at all, and a second draft described page 25 of the 2018 report as a
-financial chart needing OCR. Both were assumptions. The counts above are measured.*
+*Two earlier drafts of this section were also wrong and were corrected rather than left
+standing: one claimed no warnings were raised at all, and one described page 25 of the 2018
+report as a financial chart needing OCR. Both were assumptions. Every count here is measured.*
 
 ### The one file that needed intervention
 
