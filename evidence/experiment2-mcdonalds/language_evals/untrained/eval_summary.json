@@ -12,12 +12,12 @@
   "generation_note": "Generated text is saved for inspection and is not the multiple-choice score.",
   "missing_note": "Unknown-word and overlong cases get zero in all-case success, not guessed UNK credit.",
   "overall": {
-    "correct": 1,
+    "correct": 7,
     "total": 48,
-    "scorable": 4,
-    "success_rate_all_cases": 0.020833333333333332,
-    "accuracy_scorable_cases": 0.25,
-    "coverage": 0.08333333333333333
+    "scorable": 24,
+    "success_rate_all_cases": 0.14583333333333334,
+    "accuracy_scorable_cases": 0.2916666666666667,
+    "coverage": 0.5
   },
   "by_group": {
     "extend_corpus": {
@@ -29,20 +29,20 @@
       "coverage": 0.0
     },
     "starter_patterns": {
-      "correct": 0,
+      "correct": 4,
       "total": 16,
-      "scorable": 2,
-      "success_rate_all_cases": 0.0,
-      "accuracy_scorable_cases": 0.0,
-      "coverage": 0.125
+      "scorable": 16,
+      "success_rate_all_cases": 0.25,
+      "accuracy_scorable_cases": 0.25,
+      "coverage": 1.0
     },
     "starter_transfer": {
-      "correct": 1,
+      "correct": 3,
       "total": 8,
-      "scorable": 2,
-      "success_rate_all_cases": 0.125,
-      "accuracy_scorable_cases": 0.5,
-      "coverage": 0.25
+      "scorable": 8,
+      "success_rate_all_cases": 0.375,
+      "accuracy_scorable_cases": 0.375,
+      "coverage": 1.0
     }
   },
   "by_category": {
@@ -55,20 +55,20 @@
       "coverage": 0.0
     },
     "domain_context": {
-      "correct": 0,
+      "correct": 2,
       "total": 8,
-      "scorable": 1,
-      "success_rate_all_cases": 0.0,
-      "accuracy_scorable_cases": 0.0,
-      "coverage": 0.125
+      "scorable": 8,
+      "success_rate_all_cases": 0.25,
+      "accuracy_scorable_cases": 0.25,
+      "coverage": 1.0
     },
     "domain_place": {
-      "correct": 0,
+      "correct": 2,
       "total": 8,
-      "scorable": 1,
-      "success_rate_all_cases": 0.0,
-      "accuracy_scorable_cases": 0.0,
-      "coverage": 0.125
+      "scorable": 8,
+      "success_rate_all_cases": 0.25,
+      "accuracy_scorable_cases": 0.25,
+      "coverage": 1.0
     },
     "everyday_knowledge": {
       "correct": 0,
@@ -95,12 +95,12 @@
       "coverage": 0.0
     },
     "new_wording": {
-      "correct": 1,
+      "correct": 3,
       "total": 8,
-      "scorable": 2,
-      "success_rate_all_cases": 0.125,
-      "accuracy_scorable_cases": 0.5,
-      "coverage": 0.25
+      "scorable": 8,
+      "success_rate_all_cases": 0.375,
+      "accuracy_scorable_cases": 0.375,
+      "coverage": 1.0
     },
     "opposites": {
       "correct": 0,

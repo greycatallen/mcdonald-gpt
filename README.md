@@ -20,8 +20,8 @@ No API keys, no pretrained weights, no other model. CPU only.
 > | Pipeline smoke test (10 steps) | ✅ [`evidence/smoke-10-steps/`](evidence/smoke-10-steps/) |
 > | Prediction written and locked | ✅ commit `16faf8e`, before any graded run |
 > | Experiment 1: starter corpus | ✅ [`evidence/experiment1-starter/`](evidence/experiment1-starter/) |
-> | Experiment 2: + 13 McDonald's PDFs | ✅ [`evidence/experiment2-mcdonalds/`](evidence/experiment2-mcdonalds/) — **corrupt extraction, kept as evidence** |
-> | Experiment 2b: + 8 clean McDonald's PDFs | ✅ [`evidence/experiment2b-mcdonalds-clean/`](evidence/experiment2b-mcdonalds-clean/) |
+> | Experiment 2: + all 13 McDonald's documents | ✅ [`evidence/experiment2-mcdonalds/`](evidence/experiment2-mcdonalds/) |
+> | ↳ diagnostics: corrupt-extraction run, clean-8 run | ✅ [`evidence/diagnostics/`](evidence/diagnostics/) — not reported as results |
 > | Experiment 3: + category-targeted material | ✅ [`evidence/experiment3-targeted/`](evidence/experiment3-targeted/) |
 > | Experiment 3b: + three missing word forms | ✅ [`evidence/experiment3b-targeted-v2/`](evidence/experiment3b-targeted-v2/) |
 > | Chat transcript (6 real interactions) | ✅ [`evidence/chat/`](evidence/chat/) |
@@ -32,18 +32,18 @@ No API keys, no pretrained weights, no other model. CPU only.
 > | Experiment | Corpus | Correct / 48 | Coverage | Accuracy among scorable |
 > |---|---|---:|---:|---:|
 > | 1 | starter only | 20 | 50.0% | 83.3% |
-> | 2 | + 13 McDonald's PDFs — **5 extracted as mojibake** | **3** ⬇ | **8.3%** ⬇ | 75.0% |
-> | 2b | + the **8 cleanly-extracting** McDonald's PDFs | **23** ⬆ | 50.0% | **95.8%** |
+> | **2** | **+ all 13 McDonald's documents** | **23** ⬆ | 50.0% | **95.8%** |
 > | 3 | + 0.06 MB of category-targeted material | **31** ⬆ | 68.8% | 93.9% |
 > | 3b | + three missing word forms | 30 | **75.0%** ⬆ | 83.3% |
 >
-> **The single most important finding is the gap between rows 2 and 2b.** Both are the same
-> McDonald's corpus and the same settings. The only difference is that row 2 included five
-> PDFs whose text extracted as binary garbage — 332 pages of mojibake that consumed **122 of
-> 512 vocabulary slots** and evicted 34 starter words. Remove those five files and the same
-> experiment goes from 3/48 to 23/48.
+> Every corpus extension improved on the 20/48 baseline. The McDonald's corpus gained +3 with
+> **identical 50% coverage** to the baseline — a like-for-like comparison — taking accuracy on
+> answerable cases from 83.3% to 95.8% and `starter_transfer` from 4/8 to a perfect 8/8.
+> The category-targeted corpus gained +11 using **0.3% as much text**.
 >
-> Data *quality* dominated data *quantity* and data *relevance* combined. See §9.
+> Getting Experiment 2 to that point required repairing the corpus first: 5 of the 13 PDFs
+> extract as mojibake under `pypdf`. That diagnosis is in §9, and the failed run is kept in
+> [`evidence/diagnostics/`](evidence/diagnostics/) rather than reported as a result.
 
 ---
 
@@ -230,8 +230,9 @@ bug that had nothing to do with the hypothesis.
 
 | | Predicted | Measured | Verdict |
 |---|---|---|---|
-| P2, as first run (13 PDFs, 5 of them mojibake) | 20 → **25 or better** | 20 → **3** | Collapse — but **not a fair test** |
-| P2, re-run on the 8 clean PDFs | 20 → **25 or better** | 20 → **23** | ❌ **Not met**, but the direction was right |
+| P2, first attempt (13 PDFs, 5 unreadable) | 20 → **25 or better** | 20 → **3** | Collapse — but **not a fair test** |
+| P2, diagnostic (8 clean PDFs only) | 20 → **25 or better** | 20 → **23** | Isolated the cause |
+| **P2, final (all 13 documents, repaired)** | 20 → **25 or better** | 20 → **23** | ❌ **Not met** — but the direction was right |
 
 **P2 is not met by the threshold agreed before the run.** +3 cases is short of the +5 that was
 set as the bar for "significant", so the prediction as stated fails.
@@ -322,21 +323,26 @@ resolve. If that changes, the check is to read the extracted text back out of th
 
 ### Measured corpus facts
 
-| | Exp 1 | Exp 2 (13 PDFs) | Exp 2b (8 clean) | Exp 3 | Exp 3b |
-|---|---|---|---|---|---|
-| Corpus folder | `starter` | `mcdonalds` | `mcdonalds_clean` | `targeted` | `targeted_v2` |
-| Files ingested | **0** | **13** | **8** | **4** | **5** |
-| Vocabulary size | **136** | **512** (cap) | **512** (cap) | **460** | **490** |
-| Garbled vocab tokens | 0 | **122 (23.8%)** | **14 (2.7%)** | 0 | 0 |
-| Training unknown rate | **0.00%** | **13.40%** | **20.14%** | **0.00%** | **0.00%** |
-| Train / validation | **4132 / 460** | **36750 / 4084** | **20987 / 2332** | **4420 / 491** | **4431 / 493** |
-| Reserved eval passages | **160** | **160** | **160** | **160** | **160** |
+| | Exp 1 | **Exp 2** | Exp 3 | Exp 3b |
+|---|---|---|---|---|
+| Corpus folder | `starter` | `mcdonalds_all` | `targeted` | `targeted_v2` |
+| Source documents | **0** | **13** | **4** | **5** |
+| Vocabulary size | **136** | **512** (cap) | **460** | **490** |
+| Garbled vocab tokens | 0 | **16 (3.1%)** | 0 | 0 |
+| Training unknown rate | **0.00%** | **21.24%** | **0.00%** | **0.00%** |
+| Held-out unknown rate | **0.00%** | **20.81%** | **0.22%** | **0.36%** |
+| Train / validation | **4132 / 460** | **21779 / 2420** | **4420 / 491** | **4431 / 493** |
+| Reserved eval passages | **160** | **160** | **160** | **160** |
+| Final validation loss | **0.7061** | **2.5499** | **0.6951** | **0.7140** |
 
-Experiment 2b's *training* unknown rate (20.1%) is higher than Experiment 2's (13.4%), which
-looks backwards until you notice why: in Experiment 2 the mojibake bytes were frequent enough
-to win vocabulary slots, so they counted as "known". In 2b those slots go to real but rarer
-English words, and the long tail of financial vocabulary falls outside the cap instead. A lower
-unknown rate is not automatically a better corpus.
+Experiment 2's 21.24% training unknown rate is the highest of any run, and it is *expected*:
+McDonald's filings contain far more than 509 distinct word types, so the long tail falls outside
+the cap and becomes `<UNK>`. Note this is **higher** than the corrupt run's 13.40% — because
+there, mojibake bytes were frequent enough to win vocabulary slots and count as "known".
+**A lower unknown rate is not automatically a better corpus.**
+
+For the diagnostic runs' corresponding figures, see
+[`evidence/diagnostics/*/config.json`](evidence/diagnostics/).
 
 Experiment 1's vocabulary is only 136 types — far under the 509 cap — because the starter
 corpus contains no more distinct words than that. **The cap does not bind in Experiments 1,
@@ -608,29 +614,35 @@ This is why three different numbers get reported, and they answer different ques
 |---|---|---|---|---|---|---|
 | 1. Starter corpus | Untrained | 9 (18.75%) | 24 | 37.50% | 50.0% | [untrained/](evidence/experiment1-starter/language_evals/untrained/) |
 | 1. Starter corpus | **Trained** | **20 (41.67%)** | 24 | 83.33% | 50.0% | [final/](evidence/experiment1-starter/language_evals/final/) |
-| 2. + McD (13 files, 5 corrupt) | Untrained | 1 (2.08%) | 4 | 25.00% | 8.3% | [untrained/](evidence/experiment2-mcdonalds/language_evals/untrained/) |
-| 2. + McD (13 files, 5 corrupt) | **Trained** | **3 (6.25%)** | 4 | 75.00% | **8.3%** | [final/](evidence/experiment2-mcdonalds/language_evals/final/) |
-| 2b. + McD (8 clean files) | Untrained | 4 (8.33%) | 24 | 16.67% | 50.0% | [untrained/](evidence/experiment2b-mcdonalds-clean/language_evals/untrained/) |
-| 2b. + McD (8 clean files) | **Trained** | **23 (47.92%)** | 24 | **95.83%** | 50.0% | [final/](evidence/experiment2b-mcdonalds-clean/language_evals/final/) |
+| 2. + McDonald's (all 13) | Untrained | 7 (14.58%) | 24 | 29.17% | 50.0% | [untrained/](evidence/experiment2-mcdonalds/language_evals/untrained/) |
+| 2. + McDonald's (all 13) | **Trained** | **23 (47.92%)** | 24 | **95.83%** | 50.0% | [final/](evidence/experiment2-mcdonalds/language_evals/final/) |
 | 3. + targeted | Untrained | 15 (31.25%) | 33 | 45.45% | 68.8% | [untrained/](evidence/experiment3-targeted/language_evals/untrained/) |
 | 3. + targeted | **Trained** | **31 (64.58%)** | 33 | 93.94% | 68.8% | [final/](evidence/experiment3-targeted/language_evals/final/) |
 | 3b. + word forms | Untrained | 12 (25.00%) | 36 | 33.33% | 75.0% | [untrained/](evidence/experiment3b-targeted-v2/language_evals/untrained/) |
 | 3b. + word forms | **Trained** | **30 (62.50%)** | 36 | 83.33% | **75.0%** | [final/](evidence/experiment3b-targeted-v2/language_evals/final/) |
 
+Two diagnostic runs are **deliberately excluded from this table** because they are not results —
+they are the investigation that produced Experiment 2's corpus. Both are preserved in full at
+[`evidence/diagnostics/`](evidence/diagnostics/) and analysed in §9:
+
+| Diagnostic | Corpus | Correct / 48 | Coverage | Why it exists |
+|---|---|---:|---:|---|
+| `exp2-corrupt-extraction` | all 13 PDFs, 5 unrepaired | 3 | 8.3% | The original failed run |
+| `exp2-clean8-only` | the 8 PDFs that extract cleanly | 23 | 50.0% | Isolated the cause to the 5 broken files |
+
 **Read the three columns against each other — they tell different stories.**
 
-Compare Experiment 2 trained (3/48, but **75% accuracy among scorable**) with Experiment 1
-trained (20/48, 83% among scorable). Experiment 2's scorable accuracy looks respectable only
-because there were **4 scorable cases left**. Judging it on that column alone would hide a
-catastrophic regression. The all-case column is the honest one precisely because missing
-coverage scores zero there.
+**Experiment 2 is the cleanest comparison in the project.** Its coverage is *identical* to
+Experiment 1's — exactly 50%, the same 24 scorable cases, the same words available to the eval
+— so the two runs are directly comparable. On that like-for-like basis it answers 23 of 24
+(95.83%) against the starter model's 20 of 24 (83.33%). Because the vocabulary available to the
+eval did not change at all, **the gain cannot be a vocabulary effect; it is the model handling
+the same questions better.**
 
-Experiment 2b is the mirror image and is just as instructive. Its **coverage is identical to
-Experiment 1's — exactly 50%** — so for once the two runs are directly comparable: same 24
-scorable cases, same words available. On that like-for-like basis it answers 23 of 24 correctly
-(95.83%) against the starter model's 20 of 24 (83.33%). **This is the cleanest evidence in the
-project that added text improved the model rather than merely its vocabulary**, because the
-vocabulary available to the eval did not change at all.
+The excluded diagnostic run shows the opposite trap. It scored 3/48 yet still reported **75%
+accuracy among scorable** — respectable-looking only because just 4 scorable cases survived.
+Reporting that column alone would have hidden a catastrophic regression, which is exactly why
+the all-case column is the honest headline: missing coverage scores zero there.
 
 Note also that Experiment 3's *untrained* score (15/48) is higher than Experiment 3b's (12/48)
 and far above Experiment 1's (9/48). Untrained models are random, and a random model with a
@@ -864,31 +876,73 @@ generalized from them. The corpus README's instruction is to "inspect the saved 
 and the mojibake is plainly visible there. **Reading a sample of the middle of the extracted
 text would have caught this in seconds.**
 
-### Experiment 2b: the fair version of the hypothesis
+### Repairing the corpus so all 13 documents could be used
 
-With the five corrupt files removed and everything else identical:
+Dropping the five broken files was the diagnosis, not the fix — it discarded five of the
+thirteen documents. The repair is [`scripts/recover_pdf_text.py`](scripts/recover_pdf_text.py).
 
-| Group | Exp 1 | Exp 2b | Coverage (both) |
+Inside those five PDFs the fonts are mixed. The `Speedee` family, used for the
+shareholder-letter narrative, is encoded normally and reads fine. The `ArialMT` subsets used
+for the 10-K financial tables are the broken ones. A single character offset does not undo
+them — subset fonts order their glyphs arbitrarily, so `+10` recovers one font and leaves the
+next as garbage. PyMuPDF and `pdfplumber` return the same glyph codes, so this is not a
+library limitation.
+
+The script therefore walks every text span, keeps the spans that are already readable English,
+and discards the rest:
+
+| File | Spans kept | Spans dropped | Words recovered |
+|---|---:|---:|---:|
+| 2023 Annual Report | 1,069 | 5,016 | 16,101 |
+| MCD 2025 Annual Report | 282 | 6,191 | 1,674 |
+| MCD 2021 Annual Report | 250 | 5,757 | 1,630 |
+| McD 2024 Annual Report | 217 | 6,328 | 1,383 |
+| MCD_2022 Annual Report | 214 | 5,641 | 1,370 |
+| **Total** | **2,032** | **28,933** | **22,158** |
+
+**This is lossy and the README says so.** What is recovered is the narrative prose — the CEO
+and shareholder letters. What is lost is the 10-K financial tables set in the broken subsets.
+Recovering those would require OCR; Tesseract is not installed here and rendering ~330 pages
+was not judged worth it, because the tables are mostly numbers and would contribute little to a
+word-level language model. Arguably the prose is the more useful half for this purpose anyway.
+
+Experiment 2 therefore trains on **all 13 source documents**: 8 as full PDFs, 5 as recovered
+narrative text. Measured effect of the repair:
+
+| | Corrupt (13 raw) | Clean-8 only | **Exp 2: all 13, repaired** |
+|---|---:|---:|---:|
+| Source documents used | 13 | 8 | **13** |
+| Garbled vocabulary tokens | 122 (23.8%) | 14 | **16 (3.1%)** |
+| Starter words evicted | 39 | 5 | **5** |
+| Coverage | 8.3% | 50.0% | **50.0%** |
+| Score | 3/48 | 23/48 | **23/48** |
+
+The five words still evicted are `ordered`, `recommended`, `returned`, `reviewed`, `selected`
+— all verbs, none required by any multiple-choice case, which is why coverage holds at exactly
+50%.
+
+### What the McDonald's corpus actually bought
+
+| Group | Exp 1 | **Exp 2** | Coverage (both) |
 |---|---|---|---|
-| `starter_patterns` | 16/16 | **16/16** | 100% |
-| `starter_transfer` | 4/8 | **7/8** ⬆ | 100% |
+| `starter_patterns` | 16/16 | 15/16 | 100% |
+| `starter_transfer` | 4/8 | **8/8** ⬆ | 100% |
 | `extend_corpus` | 0/24 | 0/24 | 0% |
 | **Total** | **20/48** | **23/48** | 50% |
 
-Coverage is identical, so this is a genuine like-for-like comparison — and the gain is real:
-**+3 cases, all of them in `starter_transfer`**, the group that reuses known words in
-unfamiliar sentence shapes. Accuracy among scorable cases rose 83.3% → **95.8%**.
+The entire gain is in `starter_transfer`, which went from a coin-flip 4/8 to **perfect 8/8**
+(`new_wording` specifically: 4/8 → 8/8). It cost one case in `starter_patterns`, 16/16 → 15/16.
 
-Real business prose contains subordinate clauses, conditionals and multi-clause sentences that
-the template-generated starter corpus never produces. Exposure to that variety improved the
-model's handling of familiar words in unfamiliar structures — the exact weakness §8 identified
-in Experiment 1. **This is the same mechanism the targeted corpus exploits**, arrived at from a
-completely different direction, which is decent evidence that the effect is real rather than
-an artifact of one corpus.
+Real business prose contains subordinate clauses, conditionals and multi-clause sentences the
+template-generated starter corpus never produces. Exposure to that structural variety improved
+the model's handling of *familiar words in unfamiliar shapes* — precisely the weakness §8
+identified in Experiment 1. **The targeted corpus produces the same effect by a completely
+different route**, which is reasonable evidence the effect is real rather than an artifact of
+one corpus.
 
-What McDonald's filings could *not* do is move `extend_corpus`: 0/24 at 0% coverage, unchanged.
+What McDonald's filings could not do is move `extend_corpus`: 0/24 at 0% coverage, unchanged.
 Annual reports contain no `salmon`, `robin`, `freezes`, `cold` or `ice`, so those 24 cases stay
-unreadable no matter how clean the extraction is. That part of my counter-prediction held.
+unreadable however clean the extraction is. That part of my counter-prediction held.
 
 ### Experiment 3 / 3b: what 0.06 MB of targeted text did
 

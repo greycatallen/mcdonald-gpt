@@ -1,5 +1,5 @@
 {
-  "model_sha256": "837f6cae02fe25b468fb3bc1e6ec5d44dc3111bbce29543262b93b04f1d1c63b",
+  "model_sha256": "20dd5d607a25dc3b8c5008eaa0f3e2bbd3ca9746aefe3760faf3a58359210a78",
   "completed_steps": 3000,
   "fresh_context_per_prompt": true,
   "temperature": 0.8,
@@ -8,7 +8,7 @@
     {
       "prompt": "the customer",
       "seed": 2026,
-      "response": "<UNK> the <UNK> in the <UNK> after checking the 7b , we are also <UNK> and <UNK> <UNK> <UNK> .",
+      "response": "<UNK> the package after checking the price .",
       "unknown_prompt_words": [],
       "prompt_truncated": false
     }

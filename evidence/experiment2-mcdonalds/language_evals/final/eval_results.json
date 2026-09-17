@@ -11,18 +11,18 @@
       "code"
     ],
     "expected": "service",
-    "predicted_choice": "code",
-    "score": 0,
+    "predicted_choice": "service",
+    "score": 1,
     "status": "scored",
     "choice_probabilities": {
-      "service": 0.02625003270804882,
-      "traffic": 0.008043321780860424,
-      "juice": 0.021437056362628937,
-      "code": 0.029616082087159157
+      "service": 0.11880967766046524,
+      "traffic": 0.002021953696385026,
+      "juice": 0.012855795212090015,
+      "code": 0.007118129171431065
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "service in detail .",
+    "generated_text": "taste in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs customer with service and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -40,15 +40,18 @@
       "quality"
     ],
     "expected": "quality",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "merchandise"
-    ],
+    "predicted_choice": "quality",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "patient": 0.0008913829224184155,
+      "interest": 0.006676311604678631,
+      "lesson": 0.000362826423952356,
+      "quality": 0.09697422385215759
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "financial statements , jej7b",
+    "generated_text": "price in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs merchandise with quality and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -66,17 +69,18 @@
       "harvest"
     ],
     "expected": "payment",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mortgage"
-    ],
-    "unknown_choices": [
-      "route"
-    ],
-    "generated_text": "taste in detail .",
+    "predicted_choice": "payment",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "route": 0.0006781390402466059,
+      "security": 0.00638398015871644,
+      "payment": 0.11314191669225693,
+      "harvest": 0.0002983221202157438
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "return in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs mortgage with payment and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -94,15 +98,18 @@
       "code"
     ],
     "expected": "juice",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mango"
-    ],
+    "predicted_choice": "juice",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "risk": 0.0005367690464481711,
+      "juice": 0.2016640454530716,
+      "support": 0.013067861087620258,
+      "code": 0.001408577780239284
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "kitchen about the bank :",
+    "generated_text": "fruit in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs mango with juice and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -120,15 +127,18 @@
       "learning"
     ],
     "expected": "journey",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bicycle"
-    ],
+    "predicted_choice": "journey",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "journey": 0.1510186642408371,
+      "treatment": 0.0047472091391682625,
+      "price": 5.547313776332885e-05,
+      "learning": 0.012288600206375122
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "s \u0003 \u0012 \u0004 c ? bb and the local <UNK> 5 h7j ? b . > <UNK> ; c ; dj",
+    "generated_text": "travel in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs bicycle with journey and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -146,15 +156,18 @@
       "security"
     ],
     "expected": "security",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "application"
-    ],
+    "predicted_choice": "security",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "taste": 0.0013498676707968116,
+      "student": 0.008777564391493797,
+      "payment": 0.007044689264148474,
+      "security": 0.12570534646511078
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "travel in detail .",
+    "generated_text": "data in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs application with security and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -172,15 +185,18 @@
       "delivery"
     ],
     "expected": "patient",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "surgeon"
-    ],
+    "predicted_choice": "patient",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "fruit": 0.026902494952082634,
+      "traffic": 0.009136385284364223,
+      "patient": 0.1985405832529068,
+      "delivery": 0.003616882488131523
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "price in detail .",
+    "generated_text": "health in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs surgeon with patient and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -198,15 +214,18 @@
       "design"
     ],
     "expected": "lesson",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "tutor"
-    ],
+    "predicted_choice": "lesson",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "journey": 0.016764232888817787,
+      "lesson": 0.2156154364347458,
+      "interest": 0.006127632223069668,
+      "design": 0.0004702035221271217
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "design in detail .",
+    "generated_text": "lesson in detail .",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs tutor with lesson and related domain words. The other choices belong to different domains.",
     "stage": "final",
@@ -224,14 +243,14 @@
       "kitchen"
     ],
     "expected": "store",
-    "predicted_choice": "store",
-    "score": 1,
+    "predicted_choice": "market",
+    "score": 0,
     "status": "scored",
     "choice_probabilities": {
-      "store": 0.1768798828125,
-      "market": 0.1521763801574707,
-      "bank": 0.06882282346487045,
-      "kitchen": 0.07717179507017136
+      "store": 0.17455656826496124,
+      "market": 0.20293660461902618,
+      "bank": 0.08321475237607956,
+      "kitchen": 0.1029820367693901
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
@@ -253,13 +272,16 @@
       "market"
     ],
     "expected": "market",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "merchandise"
-    ],
+    "predicted_choice": "market",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "bank": 0.08677823841571808,
+      "kitchen": 0.03474081680178642,
+      "station": 0.008882381953299046,
+      "market": 0.3419927656650543
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
     "generated_text": "hospital .",
     "prompt_truncated": false,
@@ -279,15 +301,18 @@
       "kitchen"
     ],
     "expected": "bank",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mortgage"
-    ],
+    "predicted_choice": "bank",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "station": 0.02294923923909664,
+      "office": 0.05460816249251366,
+      "bank": 0.43936699628829956,
+      "kitchen": 0.007089613471180201
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "school .",
+    "generated_text": "bank .",
     "prompt_truncated": false,
     "reason": "The starter associates mortgage and payment with the bank. Sentences containing this exact prompt are reserved before training.",
     "stage": "final",
@@ -305,15 +330,18 @@
       "office"
     ],
     "expected": "kitchen",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mango"
-    ],
+    "predicted_choice": "kitchen",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "hospital": 0.13297785818576813,
+      "kitchen": 0.37972691655158997,
+      "station": 0.1451164335012436,
+      "office": 0.029892995953559875
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "hospital .",
+    "generated_text": "kitchen .",
     "prompt_truncated": false,
     "reason": "The starter associates mango and juice with the kitchen. Sentences containing this exact prompt are reserved before training.",
     "stage": "final",
@@ -331,13 +359,16 @@
       "school"
     ],
     "expected": "station",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bicycle"
-    ],
+    "predicted_choice": "station",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "station": 0.35745516419410706,
+      "office": 0.032915569841861725,
+      "hospital": 0.05938379466533661,
+      "school": 0.17607727646827698
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
     "generated_text": "station .",
     "prompt_truncated": false,
@@ -357,15 +388,18 @@
       "office"
     ],
     "expected": "office",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "application"
-    ],
+    "predicted_choice": "office",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "store": 0.07635035365819931,
+      "market": 0.07904734462499619,
+      "bank": 0.0874171108007431,
+      "office": 0.4173600375652313
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "hospital .",
+    "generated_text": "office .",
     "prompt_truncated": false,
     "reason": "The starter associates application and security with the office. Sentences containing this exact prompt are reserved before training.",
     "stage": "final",
@@ -383,15 +417,18 @@
       "market"
     ],
     "expected": "hospital",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "surgeon"
-    ],
+    "predicted_choice": "hospital",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "bank": 0.07527010142803192,
+      "kitchen": 0.09606271982192993,
+      "hospital": 0.3793000876903534,
+      "market": 0.015531470999121666
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "price .",
+    "generated_text": "school .",
     "prompt_truncated": false,
     "reason": "The starter associates surgeon and patient with the hospital. Sentences containing this exact prompt are reserved before training.",
     "stage": "final",
@@ -409,15 +446,18 @@
       "kitchen"
     ],
     "expected": "school",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "tutor"
-    ],
+    "predicted_choice": "school",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "station": 0.11248424649238586,
+      "school": 0.41684138774871826,
+      "bank": 0.16881906986236572,
+      "kitchen": 0.01949702762067318
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "office .",
+    "generated_text": "school .",
     "prompt_truncated": false,
     "reason": "The starter associates tutor and lesson with the school. Sentences containing this exact prompt are reserved before training.",
     "stage": "final",
@@ -435,15 +475,18 @@
       "juice"
     ],
     "expected": "health",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "nurse"
-    ],
+    "predicted_choice": "health",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "health": 0.07845409214496613,
+      "traffic": 0.0003435314865782857,
+      "price": 0.028881456702947617,
+      "juice": 0.0008770986460149288
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "station focused on <UNK> .",
+    "generated_text": "health at the bank .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -461,15 +504,18 @@
       "student"
     ],
     "expected": "student",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "educator"
-    ],
+    "predicted_choice": "student",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "security": 0.006119180005043745,
+      "risk": 0.020290248095989227,
+      "harvest": 0.00013248699542600662,
+      "student": 0.058269187808036804
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "important system .",
+    "generated_text": "return .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -487,15 +533,18 @@
       "care"
     ],
     "expected": "return",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bond"
-    ],
+    "predicted_choice": "return",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "code": 0.0014193857787176967,
+      "taste": 1.923058516695164e-05,
+      "return": 0.10056787729263306,
+      "care": 0.0004904264933429658
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "risk <UNK> .",
+    "generated_text": "credit <UNK> of $ <UNK> . <UNK> per share",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -513,15 +562,18 @@
       "payment"
     ],
     "expected": "fruit",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "pear"
-    ],
+    "predicted_choice": "fruit",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "data": 0.0005773130105808377,
+      "fruit": 0.10670401901006699,
+      "order": 0.0075209192000329494,
+      "payment": 7.801150786690414e-05
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "different <UNK> .",
+    "generated_text": "store .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -539,17 +591,18 @@
       "patient"
     ],
     "expected": "route",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bus"
-    ],
-    "unknown_choices": [
-      "route"
-    ],
-    "generated_text": "offering after checking about the 7b .",
+    "predicted_choice": "route",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "route": 0.02446233481168747,
+      "lesson": 0.0005894098430871964,
+      "design": 0.0002638745354488492,
+      "patient": 0.00026504654670134187
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "consumer .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -567,15 +620,18 @@
       "update"
     ],
     "expected": "update",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "platform"
-    ],
+    "predicted_choice": "update",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "harvest": 1.8334167180000804e-05,
+      "journey": 7.517051562899724e-05,
+      "treatment": 3.297211878816597e-05,
+      "update": 0.018941892310976982
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "new <UNK> <UNK> ,",
+    "generated_text": "local sales and the financial statements .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -597,14 +653,14 @@
     "score": 1,
     "status": "scored",
     "choice_probabilities": {
-      "health": 0.001254990347661078,
-      "interest": 0.0006936103454791009,
-      "support": 0.006694245617836714,
-      "traffic": 0.00044595010695047677
+      "health": 0.007156555075198412,
+      "interest": 0.0007986485725268722,
+      "support": 0.08415314555168152,
+      "traffic": 0.00418798066675663
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "important package .",
+    "generated_text": "local orange and the kitchen .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -626,14 +682,14 @@
     "score": 1,
     "status": "scored",
     "choice_probabilities": {
-      "code": 0.00023964284628164023,
-      "delivery": 0.0004599214007612318,
-      "student": 0.0001475693570682779,
-      "juice": 0.00023780479386914521
+      "code": 0.010228697210550308,
+      "delivery": 0.04299025610089302,
+      "student": 9.108451195061207e-05,
+      "juice": 9.890487854136154e-05
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "local <UNK> taxes .",
+    "generated_text": "different pear .",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "final",
@@ -661,7 +717,7 @@
     "unknown_choices": [
       "am"
     ],
-    "generated_text": "related to time to <UNK>",
+    "generated_text": "statement of the <UNK> <UNK>",
     "prompt_truncated": false,
     "reason": "A singular third-person subject takes is in the present tense.",
     "stage": "final",
@@ -720,7 +776,7 @@
       "walked",
       "walks"
     ],
-    "generated_text": "the <UNK> our <UNK> may be <UNK> or the shopper , <UNK> on its",
+    "generated_text": ", the <UNK> to <UNK> to <UNK> <UNK> .",
     "prompt_truncated": false,
     "reason": "The explicit past-time cue calls for the past-tense form walked.",
     "stage": "final",
@@ -752,7 +808,7 @@
       "warm",
       "heavy"
     ],
-    "generated_text": "<UNK> the <UNK> - or",
+    "generated_text": "<UNK> <UNK> , if restaurants",
     "prompt_truncated": false,
     "reason": "Hot and cold form the intended temperature contrast.",
     "stage": "final",
@@ -784,7 +840,7 @@
       "early",
       "soft"
     ],
-    "generated_text": "<UNK> tax rate in costs $ 1 , <UNK> . 0 million",
+    "generated_text": "the <UNK> of our economic , including",
     "prompt_truncated": false,
     "reason": "Empty and full contrast how much a container holds.",
     "stage": "final",
@@ -816,7 +872,7 @@
       "late",
       "quiet"
     ],
-    "generated_text": "<UNK> a <UNK> on the <UNK> <UNK> <UNK> <UNK> of any of our <UNK> ,",
+    "generated_text": "<UNK> to the <UNK> to <UNK> on <UNK> of the company - k and <UNK>",
     "prompt_truncated": false,
     "reason": "Noisy and quiet contrast the amount of sound.",
     "stage": "final",
@@ -849,7 +905,7 @@
       "blue",
       "red"
     ],
-    "generated_text": "<UNK> as is not <UNK> on <UNK> <UNK> are <UNK>",
+    "generated_text": "<UNK> the <UNK> with <UNK> , <UNK> <UNK> and <UNK>",
     "prompt_truncated": false,
     "reason": "Use the positive color statement rather than the explicitly rejected color.",
     "stage": "final",
@@ -886,7 +942,7 @@
       "tea",
       "bread"
     ],
-    "generated_text": "",
+    "generated_text": "<UNK> , <UNK> <UNK> <UNK> <UNK> , <UNK> <UNK> , <UNK> <UNK> and <UNK> <UNK>",
     "prompt_truncated": false,
     "reason": "The purchase is milk; the tea purchase is explicitly negated.",
     "stage": "final",
@@ -991,7 +1047,7 @@
       "finn",
       "ella"
     ],
-    "generated_text": "<UNK> <UNK> of <UNK> .",
+    "generated_text": "<UNK> <UNK>",
     "prompt_truncated": false,
     "reason": "Finn is the recipient rather than the giver.",
     "stage": "final",
@@ -1026,7 +1082,7 @@
       "nina",
       "luca"
     ],
-    "generated_text": "<UNK> of the",
+    "generated_text": "<UNK> of our business",
     "prompt_truncated": false,
     "reason": "Omar is the caller; Nina is the person answering.",
     "stage": "final",
@@ -1063,7 +1119,7 @@
       "buy",
       "fill"
     ],
-    "generated_text": "<UNK> and the company -",
+    "generated_text": "<UNK> <UNK> in the <UNK>",
     "prompt_truncated": false,
     "reason": "Drying follows washing in the stated sequence.",
     "stage": "final",
@@ -1123,18 +1179,11 @@
     "unknown_prompt_words": [
       "arrived",
       "before",
-      "bus",
       "later",
-      "train",
       "vehicle"
     ],
-    "unknown_choices": [
-      "taxi",
-      "car",
-      "bus",
-      "train"
-    ],
-    "generated_text": "company and time , our <UNK> <UNK>",
+    "unknown_choices": [],
+    "generated_text": "long - k .",
     "prompt_truncated": false,
     "reason": "Reverse the stated before relation to identify the later arrival.",
     "stage": "final",
@@ -1168,7 +1217,7 @@
       "shelf",
       "desk"
     ],
-    "generated_text": "",
+    "generated_text": "<UNK> <UNK> on our financial <UNK> course of <UNK>",
     "prompt_truncated": false,
     "reason": "Restate inside as the inverse relation contains.",
     "stage": "final",
@@ -1231,10 +1280,9 @@
     "unknown_choices": [
       "left",
       "north",
-      "south",
-      "right"
+      "south"
     ],
-    "generated_text": "company’s <UNK> of <UNK> and operations .",
+    "generated_text": "<UNK> <UNK> that <UNK> to <UNK> of our <UNK> <UNK>",
     "prompt_truncated": false,
     "reason": "Reverse the stated horizontal relation; complete with right.",
     "stage": "final",
@@ -1258,7 +1306,6 @@
     "choice_probabilities": {},
     "unknown_prompt_words": [
       "freezes",
-      "into",
       "water"
     ],
     "unknown_choices": [
@@ -1267,7 +1314,7 @@
       "ice",
       "steam"
     ],
-    "generated_text": "in 2016 , and <UNK> other <UNK> <UNK> to its <UNK> <UNK> or <UNK> <UNK> are <UNK> on <UNK> , <UNK> as <UNK>",
+    "generated_text": "<UNK> and <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> .",
     "prompt_truncated": false,
     "reason": "Freezing changes liquid water into ice.",
     "stage": "final",
@@ -1301,7 +1348,7 @@
       "wet",
       "hungry"
     ],
-    "generated_text": "",
+    "generated_text": "average average of <UNK> , the <UNK> of <UNK> <UNK> to 14 .",
     "prompt_truncated": false,
     "reason": "An umbrella typically keeps a person dry in rain.",
     "stage": "final",
@@ -1335,7 +1382,7 @@
       "spoon",
       "shoe"
     ],
-    "generated_text": "<UNK> to <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> and",
+    "generated_text": "<UNK> of its <UNK> <UNK> , <UNK> <UNK> <UNK> <UNK> , our <UNK> <UNK> <UNK> <UNK>",
     "prompt_truncated": false,
     "reason": "A light illuminates a dark room.",
     "stage": "final",
@@ -1393,7 +1440,6 @@
     "unknown_prompt_words": [
       "dog",
       "grows",
-      "into",
       "kitten",
       "puppy"
     ],
@@ -1403,7 +1449,7 @@
       "cat",
       "horse"
     ],
-    "generated_text": "<UNK> <UNK> of",
+    "generated_text": "new <UNK> the <UNK> that could continue to its <UNK> <UNK> of this",
     "prompt_truncated": false,
     "reason": "Match the young animal to its adult category.",
     "stage": "final",
@@ -1426,7 +1472,6 @@
     "status": "out_of_vocabulary",
     "choice_probabilities": {},
     "unknown_prompt_words": [
-      "apple",
       "carrot",
       "vegetable"
     ],

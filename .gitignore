@@ -25,3 +25,6 @@ names.txt
 # distributed via SEC EDGAR and the company IR site. See docs/corpus-sources.md.
 # Our own synthetic teaching material IS published, so the grader can read it.
 !/corpus_sets/targeted/
+
+# All-13 McDonald set (8 PDFs + 5 recovered .txt) IS published.
+!/corpus_sets/mcdonalds_all/

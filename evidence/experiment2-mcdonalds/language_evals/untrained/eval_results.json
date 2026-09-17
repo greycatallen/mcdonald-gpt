@@ -11,18 +11,18 @@
       "code"
     ],
     "expected": "service",
-    "predicted_choice": "traffic",
-    "score": 0,
+    "predicted_choice": "service",
+    "score": 1,
     "status": "scored",
     "choice_probabilities": {
-      "service": 0.0016205024439841509,
-      "traffic": 0.0022881755139678717,
-      "juice": 0.0022659553214907646,
-      "code": 0.0017570145428180695
+      "service": 0.0019236623775213957,
+      "traffic": 0.0016987418057397008,
+      "juice": 0.001855205511674285,
+      "code": 0.0016459579346701503
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "dk dej kitchen under per \u0005 \u0010 9kh travel ef : million d9bk term material restaurant fhel investment benefits served fruit dji business care",
+    "generated_text": "from flow peach vice risks & . be us held between provided expected through product store is or corporation systemwide learning free course delivery",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs customer with service and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -40,15 +40,18 @@
       "quality"
     ],
     "expected": "quality",
-    "predicted_choice": null,
+    "predicted_choice": "patient",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "merchandise"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "patient": 0.002270436380058527,
+      "interest": 0.0017239553853869438,
+      "lesson": 0.0021533300168812275,
+      "quality": 0.0017052980838343501
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "financial learning detail jej7b billion dk 78 do 9khh related quality emd d9o f7hj : growth such december 7bb j management was 2 2019",
+    "generated_text": "it period following package cost from additional further been statement shopper in experience internal between liabilities their file affect outstanding pricing whether 7 [",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs merchandise with quality and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -66,17 +69,18 @@
       "harvest"
     ],
     "expected": "payment",
-    "predicted_choice": null,
+    "predicted_choice": "harvest",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mortgage"
-    ],
-    "unknown_choices": [
-      "route"
-    ],
-    "generated_text": "9j 7b we report performance station b1d9 7ii by el data benefits taxes ije9a di earnings vice 6 9ji checking result emd millions quality",
+    "status": "scored",
+    "choice_probabilities": {
+      "route": 0.0013731442159041762,
+      "security": 0.0017960730474442244,
+      "payment": 0.0021315475460141897,
+      "harvest": 0.002354604424908757
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "based adversely which statements s technology comparable amount currency important explains corporation those net for generally when activities basis design strategies in provision shopper",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs mortgage with payment and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -94,15 +98,18 @@
       "code"
     ],
     "expected": "juice",
-    "predicted_choice": null,
+    "predicted_choice": "risk",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mango"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "risk": 0.002064746804535389,
+      "juice": 0.0018920000875368714,
+      "support": 0.001863669021986425,
+      "code": 0.0016428305534645915
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "information d9o \u0005 2019 ! befc hemj care stock ekh matters d9o per risk je 21 for h7 ed7b different edi fei hi 97i",
+    "generated_text": "one experience & [ 17 control market delivery term impairment products experience risks subsidiaries ownership a journey licensed has foreign have investing marketing are",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs mango with juice and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -120,15 +127,18 @@
       "learning"
     ],
     "expected": "journey",
-    "predicted_choice": null,
+    "predicted_choice": "treatment",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bicycle"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "journey": 0.0018177657620981336,
+      "treatment": 0.001970346085727215,
+      "price": 0.0016090583521872759,
+      "learning": 0.001390719902701676
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "s share was “ c c8 9ekb 7bb 9 s & 5 any net is are 2020 ehc7d9 restaurant 79 time explains 7h expense",
+    "generated_text": "developmental tax whether “ current december banana revenues approximately such 2014 actions claims quarter orange code ] higher store adjustments u initiatives after increase",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs bicycle with journey and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -146,15 +156,18 @@
       "security"
     ],
     "expected": "security",
-    "predicted_choice": null,
+    "predicted_choice": "payment",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "application"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "taste": 0.0020282587502151728,
+      "student": 0.0019377263961359859,
+      "payment": 0.002072588074952364,
+      "security": 0.0018183974316343665
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "m x more on not business 9kh b7j < impact year 87i material \u0005 million hek order je bb > 24 18 understand served",
+    "generated_text": "president year purchase report recognized course be compared billion not years another product & provided many result ownership constant bond ability 5 was systemwide",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs application with security and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -172,15 +185,18 @@
       "delivery"
     ],
     "expected": "patient",
-    "predicted_choice": null,
+    "predicted_choice": "fruit",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "surgeon"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "fruit": 0.0023983828723430634,
+      "traffic": 0.0017108636675402522,
+      "patient": 0.0022771714720875025,
+      "delivery": 0.0021903887391090393
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "if 8j u consolidated generally ikbji ijh7j were this compared part part be87b focused customer emd stock share \u0007 h7j > corporation h \u0011",
+    "generated_text": "new any used does leases non new will travel do right right continue item ended in term tax ) loan bond earnings liability /",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs surgeon with patient and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -198,15 +214,18 @@
       "design"
     ],
     "expected": "lesson",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "tutor"
-    ],
+    "predicted_choice": "lesson",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "journey": 0.001835701405070722,
+      "lesson": 0.0021817830856889486,
+      "interest": 0.0017128923209384084,
+      "design": 0.0021706116385757923
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "bo and through 4 p than three 9ekb discussion fehj adversely 78 matters reporting restaurant \u000e or change include fair \u0016 discussion affect about",
+    "generated_text": "costs checking tutor act revenues time truck banana franchise into car additional products station store , restaurants depreciation of international 11 franchise care businesses",
     "prompt_truncated": false,
     "reason": "The starter repeatedly pairs tutor with lesson and related domain words. The other choices belong to different domains.",
     "stage": "untrained",
@@ -224,18 +243,18 @@
       "kitchen"
     ],
     "expected": "store",
-    "predicted_choice": "bank",
+    "predicted_choice": "kitchen",
     "score": 0,
     "status": "scored",
     "choice_probabilities": {
-      "store": 0.002432318404316902,
-      "market": 0.001617636764422059,
-      "bank": 0.0025530776474624872,
-      "kitchen": 0.0021774997003376484
+      "store": 0.0019904538057744503,
+      "market": 0.0015945008490234613,
+      "bank": 0.002218283712863922,
+      "kitchen": 0.0026611906941980124
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "ik9 under & discussed related fair three provided taste discussion \u0005 constant an 9eiji \u0010 l7j ehfeh7j officer 9edj 2020 18 initiatives through support",
+    "generated_text": "rights vice 2014 form statement international truck shareholders position 2017 & dollars charges balance . percent i regulations average ] 5 operated tutor there",
     "prompt_truncated": false,
     "reason": "The starter associates customer and service with the store. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -253,15 +272,18 @@
       "market"
     ],
     "expected": "market",
-    "predicted_choice": null,
+    "predicted_choice": "kitchen",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "merchandise"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "bank": 0.002228323370218277,
+      "kitchen": 0.002624969929456711,
+      "station": 0.002032904652878642,
+      "market": 0.001598682370968163
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "ehfeh7j eh value local 16 dl statements use $ value if \u0010 security deferred di revenues % developmental shopper and activities item i ijc",
+    "generated_text": "5 herein were platform 4 fruit team weighted 2 were menu . surgeon financial for subject 20 food taxi checking can other mcdonald’s most",
     "prompt_truncated": false,
     "reason": "The starter associates merchandise and quality with the market. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -279,15 +301,18 @@
       "kitchen"
     ],
     "expected": "bank",
-    "predicted_choice": null,
+    "predicted_choice": "kitchen",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mortgage"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "station": 0.0020340962801128626,
+      "office": 0.0022320477291941643,
+      "bank": 0.0022403523325920105,
+      "kitchen": 0.002606951631605625
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "dl explains kh were j7n c7d7 c7d7 restaurants \u0005 \u0015 assets addition over it ecf7do well be ehc7d9 21 operating office kitchen ij7kh7dji dji",
+    "generated_text": "fruit initiatives payment will owned customers customers strategic & 100 communities capital revenue order growth while consumer higher a respectively refranchising peach mortgage free",
     "prompt_truncated": false,
     "reason": "The starter associates mortgage and payment with the bank. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -305,15 +330,18 @@
       "office"
     ],
     "expected": "kitchen",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "mango"
-    ],
+    "predicted_choice": "kitchen",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "hospital": 0.002301336033269763,
+      "kitchen": 0.0026255876291543245,
+      "station": 0.002037494909018278,
+      "office": 0.0022281932178884745
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "understand kh = rates 7l patient yesterday 9ecc c8 generally no 9 discussion h checking 6 9kijec 9edj detail 2016 million hemj a 9khh",
+    "generated_text": "was payment board state and rights you asset december leases rates approximately franchise liability design activities benefit average following : provided market business been",
     "prompt_truncated": false,
     "reason": "The starter associates mango and juice with the kitchen. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -331,15 +359,18 @@
       "school"
     ],
     "expected": "station",
-    "predicted_choice": null,
+    "predicted_choice": "hospital",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bicycle"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "station": 0.0020422411616891623,
+      "office": 0.0022174185141921043,
+      "hospital": 0.002303924411535263,
+      "school": 0.0015142990741878748
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "buyer restaurants taste mcdonald’s focused 2020 ik9 ( tax b item ij7kh7dj experience ije9a \u0011 on increased hec credit years ed7b restaurants shopper fhe",
+    "generated_text": "currencies strategic third property item ] no 2016 this company’s other more information net / report on mango effective yesterday has strategic taxi which",
     "prompt_truncated": false,
     "reason": "The starter associates bicycle and journey with the station. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -357,15 +388,18 @@
       "office"
     ],
     "expected": "office",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "application"
-    ],
+    "predicted_choice": "office",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "store": 0.001980047207325697,
+      "market": 0.0016011236002668738,
+      "bank": 0.0022171020973473787,
+      "office": 0.0022206197027117014
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "results during or lease 9ecc product sales \u0005 87i discussion initiatives client customers return corporation no other matters d9ec matters dj important can time",
+    "generated_text": "january gain restaurants physician asset served suppliers & another franchise operated developmental equipment student earnings rates results products expense products franchised nurse decrease u",
     "prompt_truncated": false,
     "reason": "The starter associates application and security with the office. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -383,15 +417,18 @@
       "market"
     ],
     "expected": "hospital",
-    "predicted_choice": null,
+    "predicted_choice": "kitchen",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "surgeon"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "bank": 0.002197086811065674,
+      "kitchen": 0.0026267142966389656,
+      "hospital": 0.002301424741744995,
+      "market": 0.0015730271115899086
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "“ fehj compensation at c8 h7d9 2017 2018 9 < time \u0014 discussion compensation 2015 review learned tax hj7 as over fehj average 79",
+    "generated_text": "“ into doctor company december line ; ? approximately billion u 10 franchise doctor 9 subscriber performance this matters common revenue into company's adjustments",
     "prompt_truncated": false,
     "reason": "The starter associates surgeon and patient with the hospital. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -409,15 +446,18 @@
       "kitchen"
     ],
     "expected": "school",
-    "predicted_choice": null,
+    "predicted_choice": "kitchen",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "tutor"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "station": 0.002035133307799697,
+      "school": 0.0015445860335603356,
+      "bank": 0.002211594022810459,
+      "kitchen": 0.0026241710875183344
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "ji fehj due office f7 quality ed d9h interest x future \u0003 l7j increased treatment eb \u0005 - 2020 used price < based of",
+    "generated_text": "loss discussion future refranchising interest shopper harvest expenses operating year lease $ percent on use global & 21 ] well plan billion consolidated reference",
     "prompt_truncated": false,
     "reason": "The starter associates tutor and lesson with the school. Sentences containing this exact prompt are reserved before training.",
     "stage": "untrained",
@@ -435,15 +475,18 @@
       "juice"
     ],
     "expected": "health",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "nurse"
-    ],
+    "predicted_choice": "health",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "health": 0.0024969149380922318,
+      "traffic": 0.0017220568843185902,
+      "price": 0.0016263251891359687,
+      "juice": 0.0018629349069669843
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "plans \b taxes ci brand year system review l7j 2 lease rate other discussion \" . buyer results <UNK> tax financial ecf7do support f7hj",
+    "generated_text": "sales * those detail could years these subscriber percent 7 physician standards results franchise 18 22 currencies strategy <UNK> this it growth there internal",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -461,15 +504,18 @@
       "student"
     ],
     "expected": "student",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "educator"
-    ],
+    "predicted_choice": "student",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "security": 0.0019083947408944368,
+      "risk": 0.00199561333283782,
+      "harvest": 0.002211462939158082,
+      "student": 0.0026613615918904543
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "our ed comparable continue \" hj7 material \u0005 constant kd to expected kh j7b 0 by juice due 9kijec matters position this business served",
+    "generated_text": "return harvest discussion due 18 matters product & dollars pay under incorporated payment over 24 currency partly future benefit products school travel course systemwide",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -487,15 +533,18 @@
       "care"
     ],
     "expected": "return",
-    "predicted_choice": null,
+    "predicted_choice": "care",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bond"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "code": 0.0017343612853437662,
+      "taste": 0.001757273217663169,
+      "return": 0.0016740482533350587,
+      "care": 0.002043382031843066
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "\u0016 today \u001b net t & 9ed your 25 vice ikbji comparable 9eiji i7b ci fruit all rates section patient expense consumer 19 kd",
+    "generated_text": "11 understand 16 quarter they 2014 at – about when non discussion balance mentioned detail learning chain state support rights increase drive 6 pay",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -513,15 +562,18 @@
       "payment"
     ],
     "expected": "fruit",
-    "predicted_choice": null,
+    "predicted_choice": "order",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "pear"
-    ],
+    "status": "scored",
+    "choice_probabilities": {
+      "data": 0.0018925805343315005,
+      "fruit": 0.0019047274254262447,
+      "order": 0.002129129134118557,
+      "payment": 0.002067059511318803
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "ikbji fei hi patient your ecf7doui any rate \u0001 changes \u001a to design fruit operated which 7bb juice president checking 2 investment that ci",
+    "generated_text": "non investing marketing rights – had claims standards \u0001 derivatives 15 under focused learning required with affect partly section design 7 or to detail",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -539,17 +591,18 @@
       "patient"
     ],
     "expected": "route",
-    "predicted_choice": null,
+    "predicted_choice": "lesson",
     "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "bus"
-    ],
-    "unknown_choices": [
-      "route"
-    ],
-    "generated_text": "be question detail program h7j has three question impairment may have today act c cf79j learned may including kh expenses = ed7b customers support",
+    "status": "scored",
+    "choice_probabilities": {
+      "route": 0.0015080483863130212,
+      "lesson": 0.002666359068825841,
+      "design": 0.0019013074925169349,
+      "patient": 0.0026202076114714146
+    },
+    "unknown_prompt_words": [],
+    "unknown_choices": [],
+    "generated_text": "consumer software following service loan loss truck software number professor m understand by current deposit performance professor office payment increased board has equipment there",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -567,15 +620,18 @@
       "update"
     ],
     "expected": "update",
-    "predicted_choice": null,
-    "score": 0,
-    "status": "out_of_vocabulary",
-    "choice_probabilities": {},
-    "unknown_prompt_words": [
-      "platform"
-    ],
+    "predicted_choice": "update",
+    "score": 1,
+    "status": "scored",
+    "choice_probabilities": {
+      "harvest": 0.002189577789977193,
+      "journey": 0.0020489839371293783,
+      "treatment": 0.0022599210496991873,
+      "update": 0.002325262175872922
+    },
+    "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "fhel plans b1d9 program deferred jo jo learning significant 7bie comparable under bo design at one related c7ha jej7b jo \u0011 @ 9kj suppliers",
+    "generated_text": "is sales comparable service financial paid paid period teacher affected discussion vice costs focused company reporting statement data package paid / bus benefits therapist",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -593,18 +649,18 @@
       "traffic"
     ],
     "expected": "support",
-    "predicted_choice": "support",
-    "score": 1,
+    "predicted_choice": "health",
+    "score": 0,
     "status": "scored",
     "choice_probabilities": {
-      "health": 0.002092415699735284,
-      "interest": 0.0016978937201201916,
-      "support": 0.0027094793040305376,
-      "traffic": 0.001883691642433405
+      "health": 0.002810172736644745,
+      "interest": 0.0020611912477761507,
+      "support": 0.0022882011253386736,
+      "traffic": 0.002347406465560198
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "order activities 7l dj7b a such 19 impact revenues ij7j section amount b7j compared total understand on <UNK> quarter traffic these your \u000e share",
+    "generated_text": "result can and franchisees business their 6 not subject millions support changes compared do update was report <UNK> significant upon traffic – , tax",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -626,14 +682,14 @@
     "score": 0,
     "status": "scored",
     "choice_probabilities": {
-      "code": 0.0018500258447602391,
-      "delivery": 0.001901226001791656,
-      "student": 0.0020497168879956007,
-      "juice": 0.0018833677750080824
+      "code": 0.001731727970764041,
+      "delivery": 0.0026767852250486612,
+      "student": 0.0027537760324776173,
+      "juice": 0.002090191002935171
     },
     "unknown_prompt_words": [],
     "unknown_choices": [],
-    "generated_text": "code time taxes initiatives franchised benefit currency ui use 20 of n ijc internal 9edj support \u0011 jo i",
+    "generated_text": "different u those operated kitchen corporate employment value weighted 8 reference quality most operations average there / paid mcdonald’s",
     "prompt_truncated": false,
     "reason": "All words and the domain association exist in the starter, but this word order is new. Failure may reflect dependence on sentence templates.",
     "stage": "untrained",
@@ -661,7 +717,7 @@
     "unknown_choices": [
       "am"
     ],
-    "generated_text": "related could time \u000e h risk ikbji < high be ! due 7b . 2015 security material nf 19 other billion \u0013 tax continue",
+    "generated_text": "statement educator u , liability subsidiaries non billion markets consumer 17 future adversely 22 9 surgeon product rate 6 results cost 1 this due",
     "prompt_truncated": false,
     "reason": "A singular third-person subject takes is in the present tense.",
     "stage": "untrained",
@@ -689,7 +745,7 @@
     "unknown_choices": [
       "am"
     ],
-    "generated_text": "december earnings & ej7b currencies client billion 9kh restaurant taxes reporting course was about provided di company tax value review ; team \u0007 section",
+    "generated_text": "file generally 2014 impact employees developmental cost be store those station effect whether businesses shareholders for diluted this were subscriber bicycle three ) support",
     "prompt_truncated": false,
     "reason": "A plural subject takes are among these present/past singular distractors.",
     "stage": "untrained",
@@ -720,7 +776,7 @@
       "walked",
       "walks"
     ],
-    "generated_text": "approximately ; our 8o 25 developmental design * your shopper also 9ekb 79 detail position j7n \u001b support eh cash have 14 payment fhel",
+    "generated_text": "client bicycle return application about food focused 2018 – taxi change banana adjustments following school owned 16 there herein denominated m 34 risk is",
     "prompt_truncated": false,
     "reason": "The explicit past-time cue calls for the past-tense form walked.",
     "stage": "untrained",
@@ -752,7 +808,7 @@
       "warm",
       "heavy"
     ],
-    "generated_text": "hl * < 2015 or businesses billion 7b 10 buyer l ecf7doui \u0006 more company part net restaurant * certain ui net program ki",
+    "generated_text": "may 2018 billion 9 restaurants credit cost adversely 26 currencies pear had ( purchase diluted right quarter store 2018 dentist value quarter service payments",
     "prompt_truncated": false,
     "reason": "Hot and cold form the intended temperature contrast.",
     "stage": "untrained",
@@ -784,7 +840,7 @@
       "early",
       "soft"
     ],
-    "generated_text": "subscriber affect customer 2016 costs include percent percent d9h dj7b support growth kh balance these balance helped explains 2020 m7i j7n dj act served",
+    "generated_text": "related care ended : economic of route route expenses franchisees there liabilities payment compensation traffic compensation margin initiatives ] price owned franchised by systemwide",
     "prompt_truncated": false,
     "reason": "Empty and full contrast how much a container holds.",
     "stage": "untrained",
@@ -816,7 +872,7 @@
       "late",
       "quiet"
     ],
-    "generated_text": "hl f7hj net helped ) you increased due common 2016 hd7j suppliers 9h compared an buyer on cf79j act bb term review learned control",
+    "generated_text": "may internal quarter margin 2017 your on future digital : make therapist bank do charges currencies report deposit by constant through subscriber performance during",
     "prompt_truncated": false,
     "reason": "Noisy and quiet contrast the amount of sound.",
     "stage": "untrained",
@@ -849,7 +905,7 @@
       "blue",
       "red"
     ],
-    "generated_text": "\u0013 consolidated design about percent > long affect are stock / program use 2015 = 2017 across package compared property ki \u0014 16 .",
+    "generated_text": "1 does focused businesses route bond position care code term 23 service weighted 9 board ; buyer review do share payments 10 4 22",
     "prompt_truncated": false,
     "reason": "Use the positive color statement rather than the explicitly rejected color.",
     "stage": "untrained",
@@ -886,7 +942,7 @@
       "tea",
       "bread"
     ],
-    "generated_text": "c8 report \u0019 j7b earnings $ ehc7j years $ plans l change compensation on hi ended property ) is on market ' credit after",
+    "generated_text": "december statements 14 over generally 2 hospital yesterday 2 sales pear depreciation doctor report marketing included share 2017 orange report primarily 2015 effective cash",
     "prompt_truncated": false,
     "reason": "The purchase is milk; the tea purchase is explicitly negated.",
     "stage": "untrained",
@@ -919,7 +975,7 @@
       "wide",
       "missing"
     ],
-    "generated_text": "helped journey affect lesson \u0001 higher ehc7j deferred corporation ddk7b important 7bie across your significant \u0013 d9bk school due understand 9ecf based h7j order",
+    "generated_text": "margin part care plan \u0001 material hospital financial earnings fair nurse affected buyer – teacher 1 expected supply future was assets consolidated loan result",
     "prompt_truncated": false,
     "reason": "Respect not open and the explicit statement closed.",
     "stage": "untrained",
@@ -954,7 +1010,7 @@
       "omar",
       "maya"
     ],
-    "generated_text": "\u0018 customer do high to including comparable different different design eb may for 7l been ej was : today support h7d9 \" any ehc",
+    "generated_text": "13 ended further markets under office discussion foreign foreign focused global professor journey and continued if whether between understand there line 18 claims high",
     "prompt_truncated": false,
     "reason": "Leo thanks the person who lent the book, Maya.",
     "stage": "untrained",
@@ -991,7 +1047,7 @@
       "finn",
       "ella"
     ],
-    "generated_text": "j7n 9h important student 16 included value corporate comparable such p 2018 travel equity “ credit you you of j \u0019 9edj company payment",
+    "generated_text": "owned bank nurse that 4 offering were each discussion their revenues ? us includes “ effective your your reference outstanding 14 average diluted risk",
     "prompt_truncated": false,
     "reason": "Finn is the recipient rather than the giver.",
     "stage": "untrained",
@@ -1026,7 +1082,7 @@
       "nina",
       "luca"
     ],
-    "generated_text": "of executive focused new franchised school provided j7b approximately taste 20 operating ecf7doui program eb operated service dj control cf79j \u0016 18 c8 c7h",
+    "generated_text": "reference income item question kitchen supply shareholders over client third 8 respectively had service global required taste franchised during deposit 11 5 december d",
     "prompt_truncated": false,
     "reason": "Omar is the caller; Nina is the person answering.",
     "stage": "untrained",
@@ -1063,7 +1119,7 @@
       "buy",
       "fill"
     ],
-    "generated_text": "\u0013 these s us control generally ” 9kj 9h 10 8j i b1d9 di restaurants eb value 0 • all initiatives \u000e during student",
+    "generated_text": "1 traffic such website during leases ” benefits bank 26 any mcdonald’s comparable for strategic global were 24 • chain operated , gain that",
     "prompt_truncated": false,
     "reason": "Drying follows washing in the stated sequence.",
     "stage": "untrained",
@@ -1098,7 +1154,7 @@
       "supper",
       "breakfast"
     ],
-    "generated_text": "\u0007 \u001b net f7hj future stock to they ije9a benefit common d use 9ecf ee juice per costs • \u0018 increased you lease 5",
+    "generated_text": ") 16 quarter internal lease term under train net corporate digital equity weighted assets health partly risks economic • 13 on your physician actions",
     "prompt_truncated": false,
     "reason": "The relation after makes breakfast the earlier meal.",
     "stage": "untrained",
@@ -1123,18 +1179,11 @@
     "unknown_prompt_words": [
       "arrived",
       "before",
-      "bus",
       "later",
-      "train",
       "vehicle"
     ],
-    "unknown_choices": [
-      "taxi",
-      "car",
-      "bus",
-      "train"
-    ],
-    "generated_text": "harvest dl time oij our as package taxes costs at hj7 ? balance fehj — management balance buyer \u0002 x \u0005 shopper exchange h",
+    "unknown_choices": [],
+    "generated_text": "long fruit u rent return common review those economic company matters brand compensation into ’ pricing compensation currencies \" year & taxi including liability",
     "prompt_truncated": false,
     "reason": "Reverse the stated before relation to identify the later arrival.",
     "stage": "untrained",
@@ -1168,7 +1217,7 @@
       "shelf",
       "desk"
     ],
-    "generated_text": "d — period 7ha u : business our c7h 7hi buyer high \u0004 % effective 21 approximately oij may annual hek ej7b bo changes",
+    "generated_text": "equity ’ safety agreement used between course return d all currencies markets % 20 helped a client rent professor chief many impact costs derivatives",
     "prompt_truncated": false,
     "reason": "Restate inside as the inverse relation contains.",
     "stage": "untrained",
@@ -1201,7 +1250,7 @@
       "inside",
       "beside"
     ],
-    "generated_text": "\u000e yesterday – k vice value 7hi – \u0010 2018 , \u0019 update b including service stock offering fehj rate which",
+    "generated_text": ", you — patient when were all — . ? 2020 14 we company’s office taste term reflected into standards with",
     "prompt_truncated": false,
     "reason": "Above and below are inverse vertical relations.",
     "stage": "untrained",
@@ -1231,10 +1280,9 @@
     "unknown_choices": [
       "left",
       "north",
-      "south",
-      "right"
+      "south"
     ],
-    "generated_text": "c7d7 it student 12 jo operations each 78 ed7b expected to di report \u0003 97j nf included our 9kijec buyer h7 bb – brand",
+    "generated_text": "customers order that 30 paid restaurant general additional has incorporated under for statements $ as rate offering return benefit currencies licensed constant — could",
     "prompt_truncated": false,
     "reason": "Reverse the stated horizontal relation; complete with right.",
     "stage": "untrained",
@@ -1258,7 +1306,6 @@
     "choice_probabilities": {},
     "unknown_prompt_words": [
       "freezes",
-      "into",
       "water"
     ],
     "unknown_choices": [
@@ -1267,7 +1314,7 @@
       "ice",
       "steam"
     ],
-    "generated_text": "offset 2016 \" hc all significant d9 per ui well matters 79 ecf7do order these 97i ehfeh7j / f7 include d9h foreign company’s ?",
+    "generated_text": "/ : 18 made chain teacher exhibit risks value while products adjustments growth result traffic are i 23 interest of expenses juice discussed brand",
     "prompt_truncated": false,
     "reason": "Freezing changes liquid water into ice.",
     "stage": "untrained",
@@ -1301,7 +1348,7 @@
       "wet",
       "hungry"
     ],
-    "generated_text": "9edj service fruit restaurants ehc7d9 explains credit - more d7d9 hd7j \u0019 h7j 7ha ij7kh7dji company 18 on and act update dj7b c7j ij7kh7dji",
+    "generated_text": "average taste learning strategic higher initiatives effective 21 purchase exchange make 14 loan agreement mortgage diluted 5 report checking by we franchisees date mortgage",
     "prompt_truncated": false,
     "reason": "An umbrella typically keeps a person dry in rain.",
     "stage": "untrained",
@@ -1335,7 +1382,7 @@
       "spoon",
       "shoe"
     ],
-    "generated_text": "other h7d9 station team net based fei ; agreement these executive shares for year \u0018 87i \u001b d7j # c7d7 ij7kh7dji h7d9 through it",
+    "generated_text": "results line technology three quarter consolidated investing bicycle certain traffic income taxes journey years 13 another 16 executive 19 customers mortgage line tutor order",
     "prompt_truncated": false,
     "reason": "A light illuminates a dark room.",
     "stage": "untrained",
@@ -1368,7 +1415,7 @@
       "tool",
       "fish"
     ],
-    "generated_text": "9h journey position 2020 ikbji hec jo harvest nf executive the initiatives student code product school h higher jej7b ij based i l compared",
+    "generated_text": "value part school ] non mango paid long rate income today operated that different served supply liability material package million consolidated mcdonald’s pear do",
     "prompt_truncated": false,
     "reason": "Salmon belongs to the fish category.",
     "stage": "untrained",
@@ -1393,7 +1440,6 @@
     "unknown_prompt_words": [
       "dog",
       "grows",
-      "into",
       "kitten",
       "puppy"
     ],
@@ -1403,7 +1449,7 @@
       "cat",
       "horse"
     ],
-    "generated_text": "7bb stock 9khh 9ji student about > ej7b following due traffic fruit treatment consolidated your performance 5 purchase ki 20 share ' learned d7j",
+    "generated_text": "affect term been basis that businesses bond impact its future upon learning use does – s actions shares payments 8 tax 2015 performance executive",
     "prompt_truncated": false,
     "reason": "Match the young animal to its adult category.",
     "stage": "untrained",
@@ -1426,7 +1472,6 @@
     "status": "out_of_vocabulary",
     "choice_probabilities": {},
     "unknown_prompt_words": [
-      "apple",
       "carrot",
       "vegetable"
     ],
@@ -1435,7 +1480,7 @@
       "metal",
       "vehicle"
     ],
-    "generated_text": "increased 9j program about company current restaurants jo impairment n ej7b 9j information oij than including + cf79j h n h7d9 97j c7j ci",
+    "generated_text": "on based service businesses diluted end strategic paid number quality impact based one rent time office 2019 deposit liability quality line as date detail",
     "prompt_truncated": false,
     "reason": "An apple belongs to the fruit category in this food classification.",
     "stage": "untrained",
