@@ -7,9 +7,8 @@ state. Source: [`assignment-brief.txt`](assignment-brief.txt) (§ "What You Are 
 
 Legend: ✅ done · 🟡 partly done · ⬜ not started
 
-**Outstanding before submission:** section E (conceptual write-ups, must be in the student's
-own words), README §12 (drafted, needs review), and F3/F4/F7 (verify rendering signed out,
-then submit the URL).
+**Outstanding before submission:** README §12 (drafted, needs a read-through) and F7 (submit
+the URL). Everything else is complete and verified.
 
 ---
 
@@ -25,7 +24,7 @@ then submit the URL).
 | A6 | Three choices + reasons (corpus, steps, learning rate) | README §3 | ✅ README §3 |
 | A7 | Why ≥2 extension categories were chosen and how the new material addresses their gaps | README §9 | ✅ README §9 — 4 taught + 4 control |
 | A8 | Prediction written **before** training | README §4 | ✅ committed `16faf8e` pre-training |
-| A9 | Learning process explained with actual token/embedding/gradient/loss evidence | README §7, §11 | 🟡 evidence in §7; §11 prose outstanding |
+| A9 | Learning process explained with actual token/embedding/gradient/loss evidence | README §7, §11 | ✅ |
 
 ## B. Testing & evaluation (3 points)
 
@@ -83,12 +82,12 @@ then submit the URL).
 
 | # | Question | State |
 |---|---|---|
-| E1 | Corpus: what it teaches, what's missing, why hold data out | ⬜ |
-| E2 | Token vs. token ID vs. vector vs. embedding | ⬜ |
-| E3 | What makes this a neural network; loss → gradients → optimizer → weights | ⬜ |
-| E4 | What attention combines; why it cannot see future tokens | ⬜ |
-| E5 | Probabilities → generated text; temperature; whether weights changed | ⬜ |
-| E6 | Did samples + both loss curves support the prediction; honest conclusion | ⬜ |
+| E1 | Corpus: what it teaches, what's missing, why hold data out | ✅ README §11 |
+| E2 | Token vs. token ID vs. vector vs. embedding | ✅ README §11 |
+| E3 | What makes this a neural network; loss → gradients → optimizer → weights | ✅ README §11 |
+| E4 | What attention combines; why it cannot see future tokens | ✅ README §11 |
+| E5 | Probabilities → generated text; temperature; whether weights changed | ✅ README §11 |
+| E6 | Did samples + both loss curves support the prediction; honest conclusion | ✅ README §11 |
 | E7 | One observed limitation + one proposed next experiment with predicted effect | ⬜ |
 
 ## F. Submission mechanics

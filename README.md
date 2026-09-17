@@ -25,7 +25,7 @@ No API keys, no pretrained weights, no other model. CPU only.
 > | Experiment 3: + category-targeted material | ✅ [`evidence/experiment3-targeted/`](evidence/experiment3-targeted/) |
 > | Seed sweep (42–45) to measure run-to-run noise | ✅ [`evidence/variance/`](evidence/variance/) |
 > | Chat transcript (6 real interactions) | ✅ [`evidence/chat/`](evidence/chat/) |
-> | Conceptual write-ups (in my own words) | ⬜ **outstanding — §11, mine to write** |
+> | Conceptual write-ups (in my own words) | ✅ §11 |
 >
 > ### Headline result
 >
@@ -1232,17 +1232,159 @@ architecture prevents that.
 > These are mine to write, not the assistant's. Each one is answered against actual values
 > from my run.
 
-1. **What is my corpus, what can it teach, and what is missing? Why hold data out?** ⬜ PENDING
-2. **How do a token, a token ID, a vector, and an embedding differ?** ⬜ PENDING
-3. **What makes this a neural network? How did loss, gradients, and the optimizer change its
-   weights?** ⬜ PENDING
-4. **What does attention combine, and why can it not look at future tokens?** ⬜ PENDING
-5. **How do probabilities become generated text? What changed with temperature, and did any
-   weights change then?** ⬜ PENDING
-6. **Did the samples and both loss curves support my prediction? What can I honestly
-   conclude?** ⬜ PENDING
+1. **What is my corpus, what can it teach, and what is missing? Why hold data out?**
 
----
+   I actually have three corpora, one per experiment, and they all share the same base: the
+   classroom sentences the notebook generates in code. That base is 6,360 sentences built by a
+   loop, which dedupe down to 4,592 unique passages and only 136 different words.
+
+   Experiment 2 adds my McDonald's material — 10 annual reports from 2016 to 2025 and 3 CEO
+   letters to shareholders (2023, 2024, 2025). Experiment 3 adds teaching sentences I wrote for
+   four eval categories instead.
+
+   What the classroom base can teach is word association inside one sentence: it drills
+   `customer` with `service`, `surgeon` with `patient`. It got 16/16 on those. What it cannot
+   teach is anything it never mentions — 24 of the 48 test cases were at 0% coverage in
+   Experiment 1 because words like `cold`, `ice` and `salmon` simply are not in it. The
+   McDonald's filings do not fix that either, because annual reports do not talk about salmon.
+   Only the teaching sentences I wrote raised coverage, from 50% to 75%.
+
+   **Why hold data out:** it is not about doing less training. It is the only way to tell
+   whether the model learned a pattern or just memorized the exact sentences it saw. If I only
+   looked at training loss I could not tell those apart. My validation loss was 0.7061 against
+   a training loss of 0.6783, a gap of 0.028, so it was not memorizing.
+
+   But I should be honest that this is weak evidence. Both halves of my split come out of the
+   same template loop, so a held-out passage looks almost exactly like a training one. It
+   proves the model did not memorize strings; it does not prove it can handle new language.
+   The `starter_transfer` group is the real test of that, and Experiment 1 only scored 4/8.
+
+2. **How do a token, a token ID, a vector, and an embedding differ?**
+
+   A **token** is one unit of text. My tokenizer splits on words and punctuation, so `customer`
+   is a token and so is `.`.
+
+   A **token ID** is just that token's row number in the vocabulary list. `customer` is ID 28
+   in Experiment 1. The number is arbitrary — it is alphabetical position, it means nothing.
+
+   A **vector** is the actual list of 64 numbers stored for that token. For `customer` the
+   first of those 64 numbers started at `-0.057592` and ended at `+0.036634` after training.
+
+   The **embedding** is that vector once it is being used as the model's representation of the
+   word — the lookup table has one row per token, and the ID picks the row.
+
+   So the ID carries no meaning and the vector carries all of it. The relationships between
+   words are not stored anywhere; they show up when you compare vectors. Before training,
+   `customer`'s closest neighbours were `bus` and `helped` at about 0.2 cosine, which is random
+   noise. After training they were `shopper` 0.978, `client` 0.977, `buyer` 0.977.
+
+   The thing I did not expect: that does not mean the model knows what a customer is. Those
+   five words all sit in the same slot in the same sentence frames, so the model learned they
+   are interchangeable. Similarity here means "fills the same blank", not "means the same".
+
+3. **What makes this a neural network? How did loss, gradients, and the optimizer change its
+   weights?**
+
+   It is a neural network because it is a big pile of numbers — 111,872 of them in Experiment 1
+   — that all get nudged automatically until the output improves. Nobody writes any rules.
+
+   The loop is: the model sees a prefix and outputs a probability for every word in the
+   vocabulary. **Loss** measures how wrong that was. At step 0 my loss was 4.9263, and
+   `ln(136)` is 4.913 — those match because an untrained model is just guessing uniformly
+   across 136 words. **Backpropagation** then computes a gradient for every weight, which says
+   which direction that weight should move to make the loss smaller. The **optimizer** (AdamW)
+   applies it.
+
+   My saved example, one weight on one step:
+
+   | | |
+   |---|---|
+   | before | `-0.057591915` |
+   | gradient | `+0.000692587` |
+   | learning rate | `0.00001` |
+   | after | `-0.057601906` |
+
+   `-0.05759192 − (0.00001 × 0.00069) ≈ -0.05760191`. That is a change of about one
+   hundred-thousandth — basically nothing. It only becomes visible after 3,000 steps, which is
+   how that same number ended up at `+0.036634`.
+
+   Two things I got wrong at first. The learning rate on that step is `0.00001`, not the 0.001
+   I set, because the notebook warms up and then decays it — 0.001 is the peak, not a constant.
+   And there is no reward or punishment anywhere in this. It is not learning from being told
+   "good" or "bad"; it is only ever predicting the next word and following the gradient
+   downhill.
+
+4. **What does attention combine, and why can it not look at future tokens?**
+
+   Attention combines the earlier tokens in the sentence into a weighted average, so each
+   position can use what came before it. My saved attention rows for `the customer`:
+
+   ```
+   token 1 attends: [1.000, 0.000, 0.000]
+   token 2 attends: [0.610, 0.390, 0.000]
+   token 3 attends: [0.364, 0.392, 0.245]
+   ```
+
+   Every row adds up to 1, and everything above the diagonal is exactly 0. Token 1 cannot see
+   tokens 2 or 3; token 2 cannot see 3.
+
+   My first instinct was that it cannot look ahead because the future text does not exist yet.
+   That is true when generating, but it is not the real reason. During training the whole
+   sentence is already there. The zeros are put in deliberately, because the task is to predict
+   the next word — if a position could see ahead it would just read the answer off the input
+   and learn nothing.
+
+   My model has the mechanism but does not use it well. Given `an oak is a tree . a pine is a`
+   it answered **`bird`**. Every one of those words is in its vocabulary, so this is not a
+   coverage problem — it just never learned to carry the relation across the full stop.
+
+5. **How do probabilities become generated text? What changed with temperature, and did any
+   weights change then?**
+
+   The model turns its output into a probability for every word in the vocabulary, one word is
+   sampled from that, it gets added to the text, and the whole thing runs again for the next
+   word.
+
+   After `the customer`, before training, everything sat at roughly 1/136 ≈ 0.74% — the top
+   pick was `customer` again, which is nonsense. After training, six verbs held **98.4%** of
+   all the probability: `reviewed` 17.82%, `recommended` 17.12%, `ordered` 16.85%, and so on.
+   The model had learned what kind of word comes next.
+
+   Temperature divides the numbers before they become probabilities: low makes the distribution
+   peakier and more repetitive, high flattens it and makes it more random. In my run it barely
+   did anything — temperature 0.8 and 1.2 produced **identical** text, and the first three
+   lines were the same at all three settings. That makes sense given the table above: when six
+   words are splitting 98% almost evenly (17.8% versus 14.3%), flattening or sharpening rarely
+   changes which one gets picked.
+
+   **And no, no weights changed.** All three temperature outputs came from the same trained
+   model. Weights only change during training, when gradients are applied. Generation just
+   reads the finished weights — temperature is a sampling setting, not a learning one.
+
+6. **Did the samples and both loss curves support my prediction? What can I honestly
+   conclude?**
+
+   Partly. My prediction was that McDonald's material on its own would significantly improve
+   the results, and I set "significant" at 5 more correct cases before running anything. I got
+   **+3** (20/48 → 23/48), so by the bar I set myself, **P2 failed.**
+
+   But the direction was right, and the assistant's counter-prediction that it would actively
+   make things worse was wrong. Experiment 2 has exactly the same 50% coverage as the baseline,
+   so it is a fair like-for-like comparison, and on the cases both models could actually answer
+   it went from 20/24 to 23/24. `starter_transfer` went from 4/8 to a perfect 8/8. So
+   McDonald's filings were not enough on their own, but they were not useless either.
+
+   The loss curves and samples support a narrower claim than I originally made. The samples go
+   from complete word salad at step 0 to grammatical sentences by step 1500, and then barely
+   change at all between 1500 and 3000 — the first two lines are word-for-word identical. The
+   loss curve says the same thing: 4.93 down to 0.68 in the first half, then 0.0038 across the
+   entire second half. So most of my training budget did nothing.
+
+   What I can honestly conclude is that the model learned **form**, not meaning. It produces
+   correct-looking sentences and it is good at word association, but `categories_and_analogies`
+   scores 1/3 even with 100% coverage, and in the chat it answered `the opposite of big is` with
+   `noisy`. I also have to be careful about small differences: a seed sweep showed run-to-run
+   variation of about half a case, so anything under roughly 1.5 cases is noise, not a result.
 
 ## 12. One limitation and my next experiment
 
