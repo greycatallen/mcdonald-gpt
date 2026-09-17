@@ -790,6 +790,71 @@ clean word_forms.txt
 RESULT: CLEAN - no eval prompt appears in any file
 ```
 
+### Independent audit of the actual training text
+
+The notebook's guard checks files at import time. [`scripts/audit_leakage.py`](scripts/audit_leakage.py)
+additionally audits the corpus each model was **really trained on**
+(`evidence/*/corpus.txt`), across all three experiments:
+
+| # | Check | Result |
+|---|---|---|
+| 1 | Eval prompt verbatim in training text | ✅ clean — 0 of 48, all experiments |
+| 2 | Prompt **+ its answer** together | ✅ clean — 0 of 48 |
+| 3 | A line holding all four answer choices (leaked key) | ✅ clean — none |
+| 4 | Eval/chat/results files inside a corpus folder | ✅ clean — none |
+| 5 | Reservation withheld passages before the split | ✅ 160 passages, 16 cases, every run |
+| 6 | **Answer co-occurring with its own prompt context on one line** | ✅ clean — none |
+
+Check 6 is the one that matters most: contamination that changes a score is the model having
+seen a question next to its answer. That never happens in any experiment.
+
+```
+RESULT: ALL CHECKS CLEAN
+```
+
+### Disclosed: overlap the automated checks cannot rule on
+
+Mechanical checks passing is not the same as the corpus being pristine, so here is what they
+do **not** cover, stated rather than glossed.
+
+**The targeted corpus teaches some of the same object pairs the suite tests.** A case is only
+scorable when every prompt word *and all four answer choices* are in vocabulary, so
+`lang_46`'s choices (`bird`, `tree`, `tool`, `fish`) must all be taught or the case cannot be
+scored at all. In teaching them, some pairings coincide with the suite's:
+
+| Teaching list | Pairs used | Same pair as the suite | Which |
+|---|---:|---:|---|
+| Opposites frame | 16 | **0** | — (deliberately avoided) |
+| Containers | 6 | 1 | `bag`/`book` |
+| Above/below | 5 | 1 | `lamp`/`desk` |
+| Left/right | 5 | 1 | `ball`/`box` |
+| Grows-into | 7 | 2 | `puppy`/`dog`, `kitten`/`cat` |
+| Is-a | 25 | 4 | `robin`/`bird`, `salmon`/`fish`, `carrot`/`vegetable`, `apple`/`fruit` |
+
+The suite's own guidance permits this — *"The underlying facts may overlap"* — and the
+sentences are written differently from the eval prompts, which is why checks 1–6 pass. But
+the facts themselves do overlap, and a reader deserves to know that rather than infer it.
+
+**The measured results argue against this being memorization**, in the most direct way
+available: the relationship between overlap and score is **inverse**.
+
+| Category | Pairs shared with suite | Score |
+|---|---:|---|
+| `opposites` | **0** | **3/3** |
+| `spatial_relations` | 3 | 2/3 |
+| `categories_and_analogies` | **6** | **1/3** |
+
+The category with **zero** shared pairs scores perfectly. The category with the **most**
+shared pairs scores worst. If the model were retrieving taught facts, that ordering would be
+reversed. `a robin is a bird . a salmon is a` → the model answers `bird`, despite
+`a salmon is a fish .` appearing in its training data — it learned the *shape* of the
+sentence, not the fact.
+
+**The cleanest way to strengthen this** would be to teach every required word in pairings the
+suite never uses (`a robin sings in the garden .`, `a salmon swims upstream .`), so vocabulary
+coverage is achieved with no factual overlap at all. That was not done here, and it is the
+first thing I would change.
+
 **Limits of this, stated plainly.** Every check above is a *normalized exact substring match*.
 It normalizes case, punctuation spacing and whitespace, and nothing more. It does **not**
 detect paraphrase, translation, semantic overlap, or a leaked answer list written in different
