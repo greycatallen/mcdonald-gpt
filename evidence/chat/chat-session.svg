@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="464" viewBox="0 0 820 464" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12.5">
+<rect width="820" height="464" rx="8" fill="#1e2430"/>
+<rect width="820" height="28" rx="8" fill="#2b323f"/><rect y="20" width="820" height="8" fill="#2b323f"/>
+<circle cx="16" cy="14" r="5" fill="#ff5f57"/><circle cx="34" cy="14" r="5" fill="#febc2e"/><circle cx="52" cy="14" r="5" fill="#28c840"/>
+<text x="410.0" y="18" fill="#9aa4b2" text-anchor="middle" font-size="11">python scripts/demo_chat.py — McDonald GPT</text>
+<text x="14" y="46" fill="#8b94a3"  xml:space="preserve">^Dnumber of parameters: 0.13M</text>
+<text x="14" y="63" fill="#8b94a3"  xml:space="preserve">Tiny language model: short continuations, not a general assistant.</text>
+<text x="14" y="80" fill="#8b94a3"  xml:space="preserve">Each prompt starts fresh. Context: 48 tokens. Type /quit to exit.</text>
+<text x="14" y="97" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: the customer</text>
+<text x="14" y="114" fill="#e6edf3"  xml:space="preserve">Model: selected the merchandise after checking the price .</text>
+<text x="14" y="131" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: the opposite of big is</text>
+<text x="14" y="148" fill="#e6edf3"  xml:space="preserve">Model: oak is old .</text>
+<text x="14" y="165" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: the spoon is inside the drawer . the drawer contains the</text>
+<text x="14" y="182" fill="#e6edf3"  xml:space="preserve">Model: vehicle .</text>
+<text x="14" y="199" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: an oak is a tree . a pine is a</text>
+<text x="14" y="216" fill="#e6edf3"  xml:space="preserve">Model: bird .</text>
+<text x="14" y="233" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: quantum entanglement causes decoherence in</text>
+<text x="14" y="250" fill="#e6edf3"  xml:space="preserve">Model: the air cold hammer old .</text>
+<text x="14" y="267" fill="#f0a868"  xml:space="preserve">Unknown words: causes, decoherence, entanglement, quantum</text>
+<text x="14" y="284" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: the customer reviewed the service and the product at the store today the customer reviewed </text>
+<text x="14" y="301" fill="#8b94a3"  xml:space="preserve">    the service and the product at the store today the customer reviewed the service and the pro</text>
+<text x="14" y="318" fill="#8b94a3"  xml:space="preserve">    duct at the store today the customer reviewed the service and the product at the store today</text>
+<text x="14" y="335" fill="#8b94a3"  xml:space="preserve">     the customer reviewed the service and the product at the store today the customer reviewed </text>
+<text x="14" y="352" fill="#8b94a3"  xml:space="preserve">    the service and the product at the store today</text>
+<text x="14" y="369" fill="#e6edf3"  xml:space="preserve">Model: the price the important product after checking the design was mentioned in the price repo</text>
+<text x="14" y="386" fill="#8b94a3"  xml:space="preserve">    rt yesterday .</text>
+<text x="14" y="403" fill="#f0a868"  xml:space="preserve">Long prompt: only the most recent context tokens were used.</text>
+<text x="14" y="420" fill="#7fd1b9" font-weight="600" xml:space="preserve">You: /quit</text>
+<text x="14" y="437" fill="#8b94a3"  xml:space="preserve">Saved transcript: evidence/chat/chat_transcript.json</text>
+</svg>

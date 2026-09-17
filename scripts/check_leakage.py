@@ -19,14 +19,21 @@ SUITE = load_suite("evals/language_evals.json")
 def main():
     folder = Path(sys.argv[1] if len(sys.argv) > 1 else "corpus_sets/targeted")
     files = sorted(p for p in folder.rglob("*")
-                   if p.is_file() and p.suffix.lower() in {".txt", ".md"})
+                   if p.is_file() and p.suffix.lower() in {".txt", ".md", ".pdf"})
     if not files:
-        print(f"no .txt/.md files under {folder}")
+        print(f"no .txt/.md/.pdf files under {folder}")
         return 0
 
     total = 0
     for path in files:
-        text = path.read_text(encoding="utf-8")
+        if path.suffix.lower() == ".pdf":
+            import pypdf
+            reader = pypdf.PdfReader(path)
+            if reader.is_encrypted:
+                reader.decrypt("")
+            text = "\n".join((page.extract_text() or "") for page in reader.pages)
+        else:
+            text = path.read_text(encoding="utf-8")
         hits = matching_cases(text, SUITE)
         total += len(hits)
         if hits:

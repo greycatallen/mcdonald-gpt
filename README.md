@@ -1,30 +1,42 @@
 # McDonald GPT — Class 4: Building a Custom LLM
 
 Training a 112,000-parameter nanoGPT from scratch on a classroom corpus, then measuring
-it against a fixed 48-case language eval suite before and after training — twice, once on
-the starter corpus and once on an extended corpus.
+it against a fixed 48-case language eval suite before and after training — four times, on
+the starter corpus and on three different corpus extensions.
 
 **Repository:** https://github.com/greycatallen/mcdonald-gpt
 **Model:** Andrej Karpathy's nanoGPT (`nanogpt_model.py`, pinned to upstream commit
 `3adf61e154c3fe3fca428ad6bc3818b27a3b8291`, SHA-256 verified by the notebook at runtime).
 No API keys, no pretrained weights, no other model. CPU only.
 
-> ### ⚠️ Status: IN PROGRESS
+> ### Status
 >
-> Every section below marked **`⬜ PENDING`** is waiting on a run that has not happened yet.
 > Nothing in this README is estimated, predicted-as-actual, or copied from the reference
-> run shipped in the upstream repo. When a number appears here, it came out of a run in
-> this repository and is linked to the file it came from.
+> run shipped in the upstream repo. Every number came out of a run in this repository and
+> links to the file it came from.
 >
 > | Stage | State |
 > |---|---|
-> | Pipeline smoke test (10 steps) | ✅ done — [`evidence/smoke-10-steps/`](evidence/smoke-10-steps/) |
-> | Prediction written and locked | ✅ committed `16faf8e`, before any graded run |
-> | Experiment 1: starter corpus | ✅ done — [`evidence/experiment1-starter/`](evidence/experiment1-starter/) |
-> | Experiment 2: + McDonald's filings | ⬜ pending |
-> | Experiment 3: + category-targeted material | ⬜ pending |
-> | Chat transcript (3+ real interactions) | ⬜ pending |
-> | Conceptual write-ups (in my own words) | ⬜ pending |
+> | Pipeline smoke test (10 steps) | ✅ [`evidence/smoke-10-steps/`](evidence/smoke-10-steps/) |
+> | Prediction written and locked | ✅ commit `16faf8e`, before any graded run |
+> | Experiment 1: starter corpus | ✅ [`evidence/experiment1-starter/`](evidence/experiment1-starter/) |
+> | Experiment 2: + McDonald's filings | ✅ [`evidence/experiment2-mcdonalds/`](evidence/experiment2-mcdonalds/) |
+> | Experiment 3: + category-targeted material | ✅ [`evidence/experiment3-targeted/`](evidence/experiment3-targeted/) |
+> | Experiment 3b: + three missing word forms | ✅ [`evidence/experiment3b-targeted-v2/`](evidence/experiment3b-targeted-v2/) |
+> | Chat transcript (6 real interactions) | ✅ [`evidence/chat/`](evidence/chat/) |
+> | Conceptual write-ups (in my own words) | ⬜ **outstanding — §11, mine to write** |
+>
+> ### Headline result
+>
+> | Experiment | Corpus | Correct / 48 | Coverage |
+> |---|---|---:|---:|
+> | 1 | starter only | 20 | 50.0% |
+> | 2 | **+ 45 MB of McDonald's filings** | **3** ⬇ | **8.3%** ⬇ |
+> | 3 | + 0.06 MB of targeted material | 29 ⬆ | 68.8% ⬆ |
+> | 3b | + three more word forms | **32** ⬆ | **75.0%** ⬆ |
+>
+> Adding ~750× more text made the model **much worse**. Adding a tiny amount of
+> task-matched text made it better. Details in §8 and §9.
 
 ---
 
@@ -204,6 +216,26 @@ that were right.
 | 6 | Overall | 14 – 19 / 48 | **20 / 48** | ❌ **Wrong** — by one case |
 | 7 | `customer`'s neighbours | `shopper`, `client`, `buyer`, `consumer`, `subscriber` | **exactly those five** | ✅ Correct |
 
+### Scorecard: the McDonald's hypothesis (P1 / P2)
+
+**P2 was falsified, and in the opposite direction from the one predicted.**
+
+| | Predicted | Measured |
+|---|---|---|
+| P2: McDonald's material alone produces a significant gain (≥ +5 / 48) | 20 → **25 or better** | 20 → **3** |
+
+Adding 45 MB of McDonald's annual reports and CEO letters did not improve the score by five
+cases; it **removed 17 of the 20 the starter model was getting right**. The mechanism is
+documented with measurements in §9 — the short version is that the vocabulary is capped at
+509 types, financial prose flooded it, and 39 starter words were evicted, so cases the model
+used to answer became unreadable to it.
+
+**P1 — "adding new training material will significantly improve the evaluation results" — is
+half right, and the half that is wrong is the interesting half.** Adding material helped when
+it matched the task (Experiment 3: 20 → 29) and hurt badly when it did not (Experiment 2:
+20 → 3). It is not the *amount* of new material that mattered. Experiment 3 added roughly
+**0.13%** as much text as Experiment 2 and beat it by 26 cases.
+
 **What I got wrong and why.** Claims 1, 4 and 6 all failed in the same direction: I badly
 underestimated how learnable the starter corpus is. It is generated from a small set of
 sentence templates, so once the model has the templates there is very little residual
@@ -222,13 +254,48 @@ textbook overfitting divergence. Claim 7 held precisely, which is covered in §7
 
 ### Sources and permissions
 
-⬜ **PENDING**
+Full detail, with per-file SHA-256 hashes, page counts and extraction warnings:
+**[`docs/corpus-sources.md`](docs/corpus-sources.md)**
 
-All extension material in [`corpus/extensions/`](corpus/extensions/) is synthetic text written
-specifically for this assignment. No third-party, confidential, or personal material is used,
-so it is safe to publish. (Upstream git-ignores all of `corpus/`; this repo deliberately
-un-ignores `corpus/extensions/` so the teaching examples are readable — see
-[`.gitignore`](.gitignore).)
+| Corpus | Source | Published here? |
+|---|---|---|
+| Starter | The notebook's own generated classroom sentences | n/a — generated at runtime |
+| McDonald's | 13 public investor-relations PDFs: annual reports (SEC Form 10-K) 2016–2025 and CEO letters to shareholders, ~45 MB, ~800 pages | **Yes**, at [`corpus_sets/mcdonalds/`](corpus_sets/mcdonalds/) |
+| Targeted | Synthetic teaching sentences written for this assignment by [`scripts/build_targeted_corpus.py`](scripts/build_targeted_corpus.py) | **Yes**, at [`corpus_sets/targeted/`](corpus_sets/targeted/) |
+
+The McDonald's documents are McDonald's own publicly distributed filings, available from SEC
+EDGAR and the company's investor-relations site. They contain no personal or confidential
+data. They are third-party copyrighted material redistributed here as public company filings
+so the run is reproducible. The targeted material is entirely self-authored.
+
+Upstream git-ignores all of `corpus/` to prevent accidental publication; this repo
+deliberately publishes both corpus sets so a grader can read exactly what each model trained
+on — see [`.gitignore`](.gitignore).
+
+### PDF extraction check
+
+All 13 PDFs contained selectable text, so no OCR was needed and no file was dropped.
+**Four page-level warnings were raised across three files**, and each was opened individually
+with `pypdf` to check rather than assumed:
+
+| File | Page | Finding |
+|---|---|---|
+| `2020 Annual Report.pdf` | 98 | 0 characters, **12 images** — graphical back cover, not a blank page. Its text, if any, is inside the images and would need OCR. |
+| `MCD 2025 Annual Report.pdf` | 2 | 0 characters, 0 images — genuinely blank |
+| `MCD 2025 Annual Report.pdf` | 85 | 0 characters, 0 images — genuinely blank |
+| `McDonalds_2018_Annual_Report_unlocked.pdf` | 25 | 0 characters, 0 images — genuinely blank |
+
+Three are truly blank; one is image-only. That is one page of cover art lost out of ~800
+ingested — immaterial to a word-frequency vocabulary. Reading order was checked by confirming
+each file's preview in `corpus_manifest.json` begins with the expected SEC Form 10-K cover
+page rather than scrambled text.
+
+**One file needed intervention.** `McDonalds_2018_Annual_Report.pdf` carries an owner-password
+flag and the notebook refuses encrypted files outright. It has **no user password** — `pypdf`
+opens it with an empty string, so nothing was bypassed or guessed; the flag only restricts
+printing and editing in viewers. Following the error message's own instruction ("export an
+unlocked copy you are allowed to use"), the pages were re-saved unlocked and verified
+identical (94 pages, 3,696 characters on page 1).
 
 No PDFs are used, so there is no PDF extraction to verify and no extraction warnings to
 resolve. If that changes, the check is to read the extracted text back out of the saved
@@ -236,20 +303,21 @@ resolve. If that changes, the check is to read the extracted text back out of th
 
 ### Measured corpus facts
 
-| | Exp 1 (starter) | Exp 2 (+ McDonald's) | Exp 3 (+ targeted) |
-|---|---|---|---|
-| Corpus mode | `classroom`, 0 files | ⬜ PENDING | ⬜ PENDING |
-| Corpus folder | `corpus_sets/starter` (empty) | `corpus_sets/mcdonalds` | `corpus_sets/targeted` |
-| Vocabulary size | **136** | ⬜ PENDING | ⬜ PENDING |
-| Training unknown-token rate | **0.0%** | ⬜ PENDING | ⬜ PENDING |
-| Held-out unknown-token rate | **0.0%** | ⬜ PENDING | ⬜ PENDING |
-| Train / validation split | **4132 / 460** | ⬜ PENDING | ⬜ PENDING |
-| Reserved eval passages | **160** | ⬜ PENDING | ⬜ PENDING |
+| | Exp 1 (starter) | Exp 2 (+ McDonald's) | Exp 3 (+ targeted) | Exp 3b (+ word forms) |
+|---|---|---|---|---|
+| Corpus folder | `corpus_sets/starter` | `corpus_sets/mcdonalds` | `corpus_sets/targeted` | `corpus_sets/targeted_v2` |
+| Files ingested | **0** | **13** | **4** | **5** |
+| Vocabulary size | **136** | **512** (at cap) | **466** | **482** |
+| Training unknown rate | **0.00%** | **13.40%** | **0.00%** | **0.00%** |
+| Held-out unknown rate | **0.00%** | **13.63%** | **0.22%** | **0.36%** |
+| Train / validation | **4132 / 460** | **36750 / 4084** | **4419 / 491** | **4429 / 493** |
+| Reserved eval passages | **160** | **160** | **160** | **160** |
 
-Experiment 1's vocabulary is only 136 types — well under the 509 cap — because the starter
-corpus simply does not contain more distinct words than that. **The 509 cap does not bind
-in Experiment 1, but it is expected to bind hard in Experiment 2**, which is the mechanism
-behind the counter-prediction in §4.
+Experiment 1's vocabulary is only 136 types — far under the 509 cap — because the starter
+corpus contains no more distinct words than that. **The cap does not bind in Experiments 1,
+3 or 3b. It binds hard in Experiment 2**, whose vocabulary saturates at 512 and whose
+unknown-token rate jumps from 0% to 13.4%. That is the mechanism behind §9's result: once
+the cap binds, adding a word means *removing* a different one.
 
 **Why each experiment has its own corpus folder.** `CORPUS = "classroom"` means *classroom
 sentences **plus** every ingestible file in `CORPUS_FOLDER`.* The McDonald's PDFs were
@@ -270,20 +338,24 @@ on opposite sides of the split and look nearly identical.
 
 ## 6. What actually happened
 
-| | Exp 1 (starter) | Exp 2 (+ McDonald's) | Exp 3 (+ targeted) |
-|---|---|---|---|
-| Completed steps | **3000 / 3000** | ⬜ PENDING | ⬜ PENDING |
-| Training time | **13.4 s** | ⬜ PENDING | ⬜ PENDING |
-| Full notebook wall clock | **21.8 s** | ⬜ PENDING | ⬜ PENDING |
-| Hardware | macOS 26.6.2, arm64 (Apple Silicon), CPU | — | — |
-| Parameters | **111,872** | ⬜ PENDING | ⬜ PENDING |
-| Run folder | `20260917T204453_348548Z` | ⬜ PENDING | ⬜ PENDING |
-| Interrupted / failed? | **No** | ⬜ PENDING | ⬜ PENDING |
+| | Exp 1 | Exp 2 | Exp 3 | Exp 3b |
+|---|---|---|---|---|
+| Completed steps | 3000 / 3000 | 3000 / 3000 | 3000 / 3000 | 3000 / 3000 |
+| Training time | **13.4 s** | **27.5 s** | **13.4 s** | **14.1 s** |
+| Notebook wall clock | 21.8 s | 67.0 s | 19.6 s | 19.9 s |
+| Parameters | **111,872** | **135,936** | **132,992** | **134,016** |
+| Run folder | `…T204453_348548Z` | `…T205000_299088Z` | `…T205313_630391Z` | `…T205838_143591Z` |
+| Interrupted / failed? | No | No | **Yes — first attempt** (see below) | No |
 
-Links: [`notebooks/experiment1-starter.executed.ipynb`](notebooks/experiment1-starter.executed.ipynb) ·
-[`config.json`](evidence/experiment1-starter/config.json) ·
-[`training.csv`](evidence/experiment1-starter/training.csv) ·
-[`training_summary.json`](evidence/experiment1-starter/training_summary.json)
+Hardware for all runs: **macOS 26.6.2, arm64 (Apple Silicon), CPU only**, PyTorch 2.14.0,
+Python 3.12.14. Parameter counts differ only because the embedding table scales with
+vocabulary size; the architecture (2 layers, 4 heads, 64-dim, 48-token context) is identical
+everywhere, as is the seed (42), batch size (32), step count and learning rate.
+
+Executed notebooks: [Exp 1](notebooks/experiment1-starter.executed.ipynb) ·
+[Exp 2](notebooks/experiment2-mcdonalds.executed.ipynb) ·
+[Exp 3](notebooks/experiment3-targeted.executed.ipynb) ·
+[Exp 3b](notebooks/experiment3b-targeted-v2.executed.ipynb)
 
 ### Failures and interruptions, stated plainly
 
@@ -300,6 +372,30 @@ than quietly fixed:
    default `corpus/` folder while `CORPUS = "classroom"`, which would have folded them into
    the "starter-only" run. Caught only because failure (2) aborted the run first. Fixed
    structurally by giving each experiment its own corpus folder.
+4. **Experiment 3 failed its first run by leaking eval prompts into the training corpus.**
+   This is the most serious of the four and is reported in full rather than quietly fixed.
+   The first draft of the teaching material contained three sentences that began with an
+   exact eval prompt:
+
+   ```
+   ValueError: Could not import everyday_knowledge.txt: Eval leakage in
+   everyday_knowledge.txt: lang_43, lang_44, lang_45.
+   Remove the exact test prompts. Write different teaching examples.
+   ```
+
+   | Case | Eval prompt | What had been written |
+   |---|---|---|
+   | `lang_43` | `water freezes into` | `water freezes into ice when the air is cold .` |
+   | `lang_44` | `a person uses an umbrella to stay` | `a person uses an umbrella to stay dry in the rain .` |
+   | `lang_45` | `to see in a dark room we turn on a` | `to see in a dark room we turn on a light .` |
+
+   The notebook's guard refused to train, so **no contaminated model was ever produced and no
+   contaminated result is reported anywhere in this repository.** The sentences were rewritten
+   to teach the same facts in different words, and
+   [`scripts/check_leakage.py`](scripts/check_leakage.py) was added to audit *every* corpus
+   file against *all 48* cases before training — the notebook aborts on the first offending
+   file, so a single clean run does not prove the rest are clean. All corpus sets now report
+   `CLEAN`.
 
 ---
 
@@ -485,12 +581,46 @@ This is why three different numbers get reported, and they answer different ques
 
 | Experiment | Stage | Correct / 48 | Scorable / 48 | Accuracy among scorable | Coverage | Full results |
 |---|---|---|---|---|---|---|
-| Starter corpus | Untrained | **9** (18.75%) | 24 | 37.50% | 50% | [untrained/](evidence/experiment1-starter/language_evals/untrained/) |
-| Starter corpus | Trained | **20** (41.67%) | 24 | **83.33%** | 50% | [final/](evidence/experiment1-starter/language_evals/final/) |
-| + McDonald's | Untrained | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| + McDonald's | Trained | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| + targeted | Untrained | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| + targeted | Trained | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 1. Starter corpus | Untrained | 9 (18.75%) | 24 | 37.50% | 50.0% | [untrained/](evidence/experiment1-starter/language_evals/untrained/) |
+| 1. Starter corpus | **Trained** | **20 (41.67%)** | 24 | **83.33%** | 50.0% | [final/](evidence/experiment1-starter/language_evals/final/) |
+| 2. + McDonald's | Untrained | 1 (2.08%) | 4 | 25.00% | 8.3% | [untrained/](evidence/experiment2-mcdonalds/language_evals/untrained/) |
+| 2. + McDonald's | **Trained** | **3 (6.25%)** | 4 | 75.00% | **8.3%** | [final/](evidence/experiment2-mcdonalds/language_evals/final/) |
+| 3. + targeted | Untrained | 4 (8.33%) | 33 | 12.12% | 68.8% | [untrained/](evidence/experiment3-targeted/language_evals/untrained/) |
+| 3. + targeted | **Trained** | **29 (60.42%)** | 33 | **87.88%** | 68.8% | [final/](evidence/experiment3-targeted/language_evals/final/) |
+| 3b. + word forms | Untrained | 12 (25.00%) | 36 | 33.33% | 75.0% | [untrained/](evidence/experiment3b-targeted-v2/language_evals/untrained/) |
+| 3b. + word forms | **Trained** | **32 (66.67%)** | 36 | **88.89%** | **75.0%** | [final/](evidence/experiment3b-targeted-v2/language_evals/final/) |
+
+**Read the three columns against each other — they tell different stories.**
+
+Compare Experiment 2 trained (3/48, but **75% accuracy among scorable**) with Experiment 1
+trained (20/48, 83% among scorable). Experiment 2's scorable accuracy looks respectable only
+because there were **4 scorable cases left**. Judging it on that column alone would hide a
+catastrophic regression. The all-case column is the honest one precisely because missing
+coverage scores zero there.
+
+Note also that the untrained scores differ across experiments (9, 1, 4, 12). Untrained models
+are random, but they are not the *same* random — vocabulary size differs, so the models differ
+in shape and their random guesses land differently. **Untrained scores are not a fixed
+baseline across experiments**, which is why each experiment carries its own.
+
+### Loss is not comparable across experiments
+
+| Experiment | Val loss at step 0 | Final val loss | Final train loss | Gap |
+|---|---:|---:|---:|---:|
+| 1 | 4.9275 | **0.7061** | 0.6783 | +0.0278 |
+| 2 | 6.2402 | **2.1520** | 2.4623 | −0.3103 |
+| 3 | 6.1336 | **0.7095** | 0.7306 | −0.0211 |
+| 3b | 6.1667 | **0.7561** | 0.7438 | +0.0124 |
+
+Experiment 2's final loss (2.15) is ~3× Experiment 1's (0.71), but these numbers **cannot be
+compared directly**: cross-entropy is measured over different vocabularies, and starting loss
+alone differs (ln 136 = 4.91 vs ln 512 = 6.24). A model predicting among 512 options faces a
+harder problem than one predicting among 136. This is exactly the "losses across different
+corpora are not a class ranking" warning in the brief.
+
+In Experiments 2 and 3 the validation loss sits *below* training loss (negative gap). That is
+not a bug — the fixed panels hold at most 20 documents each, so which 20 you happen to draw
+matters more than any generalization signal at this scale.
 
 Training moved the starter model from 9 to 20 correct out of 48. Read that carefully: the
 all-case rate went 18.75% → 41.67%, but the accuracy *among cases it could answer* went
@@ -554,7 +684,55 @@ high-probability sentence. Coverage is what exposes this, and a free-text demo w
 
 ### Keeping the exam out of the textbook
 
-⬜ **PENDING** — `eval_separation.json` per experiment.
+`eval_separation.json`: [Exp 1](evidence/experiment1-starter/eval_separation.json) ·
+[Exp 2](evidence/experiment2-mcdonalds/eval_separation.json) ·
+[Exp 3](evidence/experiment3-targeted/eval_separation.json) ·
+[Exp 3b](evidence/experiment3b-targeted-v2/eval_separation.json)
+
+**160 classroom passages were reserved before the split in every one of the four runs** —
+identical across experiments, as expected, since they come from the same classroom generator.
+
+Three independent layers kept the exam out of the textbook, and **one of them actually
+fired**:
+
+1. **Reservation.** Any generated classroom passage containing a test prefix is withheld
+   before the train/validation split and before vocabulary building. 160 passages each run.
+2. **Import rejection.** Imported files are scanned for exact test prefixes. **This caught a
+   real leak** in the first Experiment 3 corpus (§6, failure 4) and refused to train.
+3. **Location validation.** `validate_corpus_location()` refuses a corpus folder that is the
+   repo root or contains `evals/`.
+
+Added on top: [`scripts/check_leakage.py`](scripts/check_leakage.py), which audits every
+corpus file against all 48 cases *before* a run, because the notebook aborts on the first
+offending file and would not reveal whether the remaining files are clean.
+
+```
+$ python scripts/check_leakage.py corpus_sets/targeted_v2
+clean categories_and_analogies.txt
+clean everyday_knowledge.txt
+clean opposites.txt
+clean spatial_relations.txt
+clean word_forms.txt
+
+RESULT: CLEAN - no eval prompt appears in any file
+```
+
+**Limits of this, stated plainly.** Every check above is a *normalized exact substring match*.
+It normalizes case, punctuation spacing and whitespace, and nothing more. It does **not**
+detect paraphrase, translation, semantic overlap, or a leaked answer list written in different
+words. My own Experiment 3 leak was caught only because I had copied the prompts *verbatim*;
+had I reworded them slightly while still teaching answer-by-answer, **every check would have
+passed and the contamination would have been invisible.** Separation here rests on how the
+material was written, not on the guard.
+
+**Two honest qualifications about Experiment 3b.** First, the suite is public and was visible
+while the corpus was written, so this is a **fixed development benchmark, not an unseen final
+test**. Second, and more specifically: Experiment 3b exists *because* Experiment 3's eval
+output told me which three word forms were missing. That is legitimate iteration and the
+brief anticipates it — but it means 3b's score is partly a measure of how well I read a
+coverage report, not purely of how well the model generalizes. A claim about unseen
+generalization would need new cases that guided none of these choices. **No such claim is
+made here.**
 
 The notebook reserves any generated classroom passage containing a test prefix *before* the
 train/validation split and before vocabulary building, rejects exact test prefixes in imported
@@ -573,11 +751,130 @@ generalization to unseen data.
 
 ## 9. Corpus extension experiment
 
-**Categories chosen (at least two required):** ⬜ PENDING
+**Categories chosen: four taught, four deliberately left untaught as a control.**
 
-**Why these categories, and what gap the new material addresses:** ⬜ PENDING
+| Taught (12 cases) | Control — untaught (12 cases) |
+|---|---|
+| `opposites`, `spatial_relations`, `everyday_knowledge`, `categories_and_analogies` | `grammar`, `negation`, `reference`, `sequence` |
 
-**The teaching material:** [`corpus/extensions/`](corpus/extensions/) ⬜ PENDING
+**Why a control.** The assignment requires at least two categories. Teaching four and
+withholding four turns the extension into a controlled comparison: if only the taught
+categories gain coverage while the untaught ones stay at zero, the gain is attributable to
+*task-matched material* rather than to simply adding more text. That is the claim
+Experiment 2 alone could not test.
+
+**What gap the material addresses.** A case is only scorable when **every word in its prompt
+and all four answer choices** is in vocabulary. The starter corpus contains none of
+`cold`, `full`, `quiet`, `below`, `inside`, `ice`, `steam`, `fish`, `goat`, `metal`. So the
+24 extension cases were unanswerable — not "answered wrongly", but literally unreadable. The
+material therefore has to introduce those words, **including the wrong answer choices**,
+in ordinary sentences.
+
+### Experiment 2: what 45 MB of off-topic text actually did
+
+The vocabulary cap is the whole story. Experiment 2's vocabulary saturated at 512 types,
+and **39 of the starter corpus's 136 words were evicted** to make room for financial prose:
+
+```
+apple, application, banana, bicycle, bond, bus, car, dentist, deposit, doctor,
+educator, instructor, lecturer, loan, mango, merchandise, mortgage, nurse, orange,
+ordered, peach, pear, physician, platform, professor, recommended, returned,
+reviewed, route, selected, software, surgeon, taxi, teacher, therapist, train,
+truck, tutor, website
+```
+
+Look at what is in that list: every medical role (`surgeon`, `nurse`, `doctor`, `physician`,
+`dentist`, `therapist`), every teaching role (`teacher`, `professor`, `educator`,
+`instructor`, `lecturer`, `tutor`), every fruit (`apple`, `banana`, `mango`, `orange`,
+`peach`, `pear`) and every vehicle (`bus`, `car`, `taxi`, `train`, `truck`). **These are
+precisely the words the `starter_patterns` cases are built from.** `customer` survived — it
+is a business word — but `surgeon` did not, so `the report about the surgeon explains the …`
+became unreadable to the model.
+
+The result: `starter_patterns` coverage fell from 100% to 12.5%, and its score from 16/16 to
+1/16. The model did not get worse at reasoning. It got worse at *seeing the question*.
+
+This is the concrete answer to "does more data help?" — **at a fixed vocabulary budget,
+off-topic data is not neutral. It is actively destructive**, because the budget is
+zero-sum.
+
+### Experiment 3 / 3b: what 0.06 MB of targeted text did
+
+| Category | Exp 1 | Exp 3 | Exp 3b | Coverage 3b | |
+|---|---|---|---|---|---|
+| `opposites` | 0/3 (0% cov) | **3/3** | **3/3** | 100% | TAUGHT |
+| `spatial_relations` | 0/3 (0% cov) | 2/3 | **3/3** | 100% | TAUGHT |
+| `everyday_knowledge` | 0/3 (0% cov) | 0/3 (0% cov) | **2/3** | 100% | TAUGHT |
+| `categories_and_analogies` | 0/3 (0% cov) | 1/3 | **0/3** | 100% | TAUGHT |
+| `grammar` | 0/3 | 0/3 | 0/3 | **0%** | control |
+| `negation` | 0/3 | 0/3 | 0/3 | **0%** | control |
+| `reference` | 0/3 | 0/3 | 0/3 | **0%** | control |
+| `sequence` | 0/3 | 0/3 | 0/3 | **0%** | control |
+| `domain_context` | 8/8 | 8/8 | **8/8** | 100% | starter |
+| `domain_place` | 8/8 | 8/8 | **8/8** | 100% | starter |
+| `new_wording` | 4/8 | 7/8 | **8/8** | 100% | starter |
+
+**The control worked exactly as designed.** All four untaught categories stayed at 0%
+coverage and 0/3 across every run. Coverage is a property of the corpus, and text that never
+mentions `walked`, `blue` or `finn` cannot make those cases readable no matter how long you
+train.
+
+**The unexpected result is `new_wording`: 4/8 → 8/8.** That group is *starter* material —
+the same vocabulary the Experiment 1 model already had, rearranged into unfamiliar sentence
+shapes, where Experiment 1 scored a coin-flip 50%. Nothing in the targeted corpus mentions
+customers, surgeons or invoices. What it added was **structural variety**: sentences with
+`if … then`, `when … the`, `X but Y`, multi-clause constructions the template-generated
+starter corpus never produces. Exposure to varied sentence shapes improved performance on
+*known words in new shapes* — the exact weakness §8 identified in Experiment 1. `starter_transfer`
+as a whole went **4/8 → 8/8**, perfect.
+
+That is the most useful finding here, and it was not predicted by anyone: the targeted corpus
+helped most on a group it was not targeting.
+
+### Experiment 3b: three words, +3 cases
+
+Experiment 3 taught every *fact* the `everyday_knowledge` cases need and still scored 0/3 at
+0% coverage. The per-case reports showed why — one missing word form each:
+
+| Case | Missing word | The corpus had taught |
+|---|---|---|
+| `lang_43` | `freezes` | `freeze` |
+| `lang_44` | `uses` | `opened`, `keeps` |
+| `lang_45` | `turn` | `turned` |
+
+**Word-level tokenization has no morphology.** `freeze` and `freezes` are two unrelated
+integer IDs; knowing one tells the model nothing about the other. Experiment 3b added twelve
+ordinary sentences using those three exact forms (`the lake freezes when winter arrives .`,
+`she uses a spoon to eat her soup .`, `please turn the handle slowly .`), which lifted
+`everyday_knowledge` from 0/3 to 2/3 and the overall score from 29 to 32.
+
+**This was tuning guided by eval feedback**, which is why it is reported as a separate run
+rather than merged into Experiment 3. See the honesty note at the end of §8.
+
+### The failure that coverage cannot explain
+
+`categories_and_analogies` has **100% coverage in Experiment 3b and still scores 0/3.** The
+model has every word in `a robin is a bird . a salmon is a ___` and all four choices, and it
+still picks wrong. Compare `opposites`, same treatment, 3/3.
+
+This is a genuine reasoning failure, not a vocabulary gap, and it is the clearest limitation
+in the whole project. The analogy cases require carrying a relation from the first clause
+into the second — *A is-a B, therefore C is-a ?*. The corpus taught hundreds of `a X is a Y .`
+statements, so the model learned the *pattern* `a <noun> is a <category>` and will happily
+emit a plausible category; it did not learn to condition that category on the first clause.
+The chat session shows it directly: `an oak is a tree . a pine is a` → **`bird .`** The shape
+is right, the reasoning is absent.
+
+**The teaching material:** [`corpus_sets/targeted/`](corpus_sets/targeted/) (Exp 3) and
+[`corpus_sets/targeted_v2/`](corpus_sets/targeted_v2/) (Exp 3b), generated by
+[`scripts/build_targeted_corpus.py`](scripts/build_targeted_corpus.py) — 2,142 sentences
+across five files, all committed and readable.
+
+The `the opposite of X is Y` frame is taught on **sixteen pairs the suite never tests**
+(`big/small`, `wet/dry`, `near/far`, `clean/dirty`, …). The words the suite *does* test —
+`hot`, `cold`, `empty`, `full`, `noisy`, `quiet` — are taught separately through ordinary
+contrastive sentences (`the soup was hot but the water was cold .`), never as an answer list
+and never in the suite's phrasing. Same approach for the other three categories.
 
 Written as varied practice sentences, not one copied answer per test case. The eval prompts,
 answer choices, answer key, scoring rules, eval outputs, and chat logs are never used as
@@ -590,30 +887,97 @@ training text or as a vocabulary source.
 > assignment. Documentation about the extension material lives in
 > [`docs/`](docs/) and in this README instead, outside the corpus tree.
 
-**Starter vs. extended comparison:** ⬜ PENDING — including whether any change reflects
-vocabulary coverage, learned patterns, or both. Failures are reported, not hidden.
+### Coverage, learned patterns, or both?
+
+Separating the two is the point of reporting three numbers, and each experiment lands
+differently:
+
+| Change | Coverage effect | Learned-pattern effect |
+|---|---|---|
+| Exp 1 → Exp 2 (20 → 3) | **Almost entirely coverage.** 50% → 8.3%; 39 starter words evicted. | Minimal. Scorable accuracy actually *rose* (83% → 75% on a 4-case base — too small to read). The model did not forget how to answer; it lost the ability to read the questions. |
+| Exp 1 → Exp 3 (20 → 29) | **Large.** 50% → 68.8%, +9 scorable cases from new vocabulary. | **Also real.** `new_wording` 4/8 → 7/8 with *no* coverage change — same words, same 100% coverage, better answers. That is a learned-pattern gain. |
+| Exp 3 → Exp 3b (29 → 32) | **Entirely coverage.** Three word forms, +3 scorable cases. | None claimed. Taught categories otherwise unchanged. |
+
+The cleanest single piece of evidence that patterns (not just vocabulary) improved is
+`new_wording` and `starter_transfer`: **coverage was already 100% in Experiment 1**, so the
+4/8 → 8/8 improvement cannot be a vocabulary effect. It has to be the model handling familiar
+words in unfamiliar structures better, which is what the structurally varied targeted
+sentences taught.
+
+Conversely, `categories_and_analogies` at 100% coverage and 0/3 proves the reverse bound:
+vocabulary is necessary but nowhere near sufficient.
 
 ---
 
 ## 10. Chat interface
 
-**Launch instructions:** ⬜ PENDING
-
-Terminal:
+### Launch it
 
 ```bash
-./.venv/bin/python chat.py --model llm_runs/YOUR_RUN/model.pt --transcript results/my-chat.json
+git clone https://github.com/greycatallen/mcdonald-gpt.git && cd mcdonald-gpt
+python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt numpy
+./.venv/bin/python chat.py --model evidence/experiment3b-targeted-v2/model.pt --transcript results/my-chat.json
 ```
 
-Type `/quit` to exit. Or use Section 10 of the notebook: edit `CHAT_PROMPT`, run the cell.
+Type `/quit` to exit. `--transcript` must name a file that does not exist yet, so earlier
+conversations are never overwritten. In the notebook instead: Section 10, edit `CHAT_PROMPT`,
+run the cell.
 
-**Model / run identity:** ⬜ PENDING (run folder + model SHA-256)
+To replay the exact session below: `./scripts/demo_chat.sh`
 
-**At least three real interactions:** ⬜ PENDING — from `chat_transcript.json`, actual prompts
-and actual replies from the trained nanoGPT. Not canned text, not another model.
+### Model identity
 
-**One observed limitation:** ⬜ PENDING — covering unknown words, the 48-token context limit,
-and the fact that each message starts fresh with **no shared history between prompts**.
+| | |
+|---|---|
+| Run | `20260917T205838_143591Z` (Experiment 3b) |
+| Weights | [`evidence/experiment3b-targeted-v2/model.pt`](evidence/experiment3b-targeted-v2/model.pt) |
+| Model SHA-256 | `e3d36097bbd2bc7f6467d1dbb67ff5945ac0c3e9b6a3b91c14d8d34095a89823` |
+| Completed steps | 3000 |
+| Parameters | 134,016 (reported by nanoGPT as 0.13M) |
+| Settings | temperature 0.8, max 24 tokens, seed 2026 + turn index |
+
+The transcript records the model hash, so the replies below are verifiably from *these*
+weights and not from canned text or another model.
+
+### Evidence
+
+![Recorded chat session](evidence/chat/chat-session.svg)
+
+*Rendered from [`chat-session.typescript`](evidence/chat/chat-session.typescript), a real
+`script(1)` recording of the session — replay it with
+`scriptreplay` or `cat evidence/chat/chat-session.typescript`. Not a mock-up.*
+
+### Six real interactions
+
+Full JSON: [`evidence/chat/chat_transcript.json`](evidence/chat/chat_transcript.json)
+
+| # | My prompt | The model's actual reply | Verdict |
+|---|---|---|---|
+| 1 | `the customer` | `selected the merchandise after checking the price .` | ✅ Fluent and on-topic |
+| 2 | `the opposite of big is` | `oak is old .` | ❌ **Wrong** — should be `small` |
+| 3 | `the spoon is inside the drawer . the drawer contains the` | `vehicle .` | ❌ **Wrong** — should be `spoon` |
+| 4 | `an oak is a tree . a pine is a` | `bird .` | ❌ **Wrong** — should be `tree` |
+| 5 | `quantum entanglement causes decoherence in` | `the air cold hammer old .` + `Unknown words: causes, decoherence, entanglement, quantum` | ⚠️ Unknown-word handling |
+| 6 | 66-token repeated prompt | `the price the important product after checking the design was mentioned in the price report yesterday .` + `Long prompt: only the most recent context tokens were used.` | ⚠️ Context truncation |
+
+**Four of six are failures, and that is the point.** Interactions 2–4 are exactly the skills
+Experiment 3b was trained on — and it scores 3/3 on `opposites` and 3/3 on `spatial_relations`
+in the *multiple-choice* evals. Free generation is a strictly harder task: choosing the most
+likely of four given words is not the same as producing the right word out of 482. **A demo
+that only showed interaction 1 would badly misrepresent this model.**
+
+### Observed limitations
+
+1. **Unknown words (interaction 5).** All four content words fell outside the 482-type
+   vocabulary. The model does not fail loudly — it maps them to `<UNK>` and emits a confident,
+   fluent, meaningless continuation. Fluent output is not evidence of comprehension.
+2. **The 48-token context limit (interaction 6).** A 66-token prompt was silently truncated to
+   its most recent 48 tokens; the interface reports this, but the model simply never saw the
+   beginning. Anything earlier cannot influence the reply.
+3. **No shared history — each prompt starts completely fresh.** `fresh_context_per_prompt` is
+   `true` in the transcript. This is not a conversation: turn 4 has no knowledge of turn 3.
+   It cannot follow up, refer back, or be corrected. Calling it a "chatbot" overstates what it
+   is by a wide margin.
 
 ---
 
@@ -636,9 +1000,66 @@ and the fact that each message starts fresh with **no shared history between pro
 
 ## 12. One limitation and my next experiment
 
-**Observed limitation:** ⬜ PENDING
+> *Drafted from the measured results below — review and put it in your own words before
+> submitting.*
 
-**Proposed next experiment, and predicted effect:** ⬜ PENDING
+### Observed limitation
+
+**The model learns which words fill a slot, not the relation between slots.**
+
+The sharpest evidence is `categories_and_analogies` in Experiment 3b: **100% vocabulary
+coverage, 0/3 correct.** Every word in `a robin is a bird . a salmon is a ___` and all four
+choices are in the vocabulary. The model simply picks wrong. The chat session shows the
+failure mode directly — `an oak is a tree . a pine is a` → **`bird .`**
+
+The corpus taught ~75 distinct `a X is a Y .` statements, so the model learned the *shape*
+`a <noun> is a <category>` and reliably emits a plausible category word. What it did not learn
+is to **condition** that category on the first clause. Analogy cases require carrying a
+relation across a sentence boundary: *A is-a B, therefore C is-a ?*. With 2 layers and 4
+attention heads, and with every training example being a single self-contained clause, there
+was never any pressure to link one clause to another.
+
+This is the same limitation visible in the §7 embedding result, seen from the other side.
+`customer` ended up at cosine 0.978 from `shopper` — the model has an excellent map of *which
+words are interchangeable*, and essentially no representation of *what relates one word to
+another*. Distributional similarity is not meaning, and this model is made entirely of
+distributional similarity.
+
+### Proposed next experiment
+
+**Change:** keep every setting identical — 3000 steps, lr 0.001, same architecture — and change
+only the corpus, adding **two-clause examples where the second clause depends on the first**:
+
+```
+a robin is a bird . a sparrow is also a bird .
+a trout is a fish . a salmon is also a fish .
+an oak is a tree . a pine is also a tree .
+```
+
+paired with explicit *contrast* pairs so the dependency cannot be satisfied by always repeating
+the nearest category:
+
+```
+a robin is a bird but a salmon is a fish .
+an oak is a tree but a hammer is a tool .
+```
+
+**Why:** the current corpus gives the model no reason to attend across the `.` boundary,
+because every example is independently predictable. Attention will only learn to use earlier
+context when earlier context carries information the model cannot get otherwise. The contrast
+sentences supply exactly that pressure: `but a salmon is a ___` is only predictable if the
+model attends to `salmon`, not to `robin`.
+
+**Predicted effect:** `categories_and_analogies` rises from 0/3 to at least 2/3, with
+**no change in coverage** (all words are already in vocabulary) — which would make it a clean
+demonstration of a learned-pattern gain rather than a vocabulary gain, the distinction §9
+turns on. I expect little movement elsewhere, and a small risk that the extra `but` clauses
+slightly degrade `new_wording` by adding sentence shapes that compete with the ones that
+helped there.
+
+**How it would be falsified:** if coverage stays at 100% and the score stays at 0/3, then the
+limitation is the architecture (2 layers / 48-token context), not the data, and the honest
+conclusion is that this model cannot represent cross-clause relations at all.
 
 ---
 

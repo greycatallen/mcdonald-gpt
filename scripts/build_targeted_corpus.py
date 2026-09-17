@@ -23,9 +23,12 @@ Rules this generator follows
 Run:  python scripts/build_targeted_corpus.py
 """
 import random
+import sys
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "corpus_sets" / "targeted"
+# Output folder: "targeted" (Experiment 3) or "targeted_v2" (Experiment 3b).
+TARGET = sys.argv[1] if len(sys.argv) > 1 else "targeted"
+OUT = Path(__file__).resolve().parent.parent / "corpus_sets" / TARGET
 random.seed(2026)
 
 
@@ -203,3 +206,32 @@ random.shuffle(lines)
 write("categories_and_analogies.txt", lines * 6)
 
 print("\nControl categories intentionally NOT taught: grammar, negation, reference, sequence")
+
+
+# ------------------------------------------------- Experiment 3b: word forms ---
+# Experiment 3 taught every FACT the everyday_knowledge cases need, yet all three
+# scored out_of_vocabulary. The eval reports showed why: a single missing word form
+# each -- 'freezes', 'uses', 'turn'. The corpus had taught 'freeze', 'opened' and
+# 'turned'. Word-level tokenization treats 'freeze' and 'freezes' as unrelated IDs,
+# so an inflection the corpus never used simply does not exist to the model.
+#
+# This file teaches those three exact forms in ordinary sentences that do NOT
+# reproduce any eval prompt. This is development guided by eval feedback and is
+# reported as a separate run (Experiment 3b), never merged into Experiment 3.
+if TARGET.endswith("_v2"):
+    lines = [
+        "the lake freezes when winter arrives .",
+        "a puddle freezes overnight in cold weather .",
+        "the pond freezes and the children walk on it .",
+        "milk freezes if you leave it outside .",
+        "she uses a spoon to eat her soup .",
+        "he uses a tool to fix the chair .",
+        "the cook uses a bowl and a jar .",
+        "a student uses a pencil and a book .",
+        "please turn the handle slowly .",
+        "we turn the lamp on when the sky is dark .",
+        "do not turn the wrong way at the corner .",
+        "he will turn the page and read again .",
+    ]
+    random.shuffle(lines)
+    write("word_forms.txt", lines * 24)
