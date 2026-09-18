@@ -7,8 +7,7 @@ state. Source: [`assignment-brief.txt`](assignment-brief.txt) (§ "What You Are 
 
 Legend: ✅ done · 🟡 partly done · ⬜ not started
 
-**Outstanding before submission:** README §12 (drafted, needs a read-through) and F7 (submit
-the URL). Everything else is complete and verified.
+**Outstanding before submission:** F7 — submit the URL. Everything else is complete and verified.
 
 ---
 
@@ -24,7 +23,7 @@ the URL). Everything else is complete and verified.
 | A6 | Three choices + reasons (corpus, steps, learning rate) | README §3 | ✅ README §3 |
 | A7 | Why ≥2 extension categories were chosen and how the new material addresses their gaps | README §9 | ✅ README §9 — 4 taught + 4 control |
 | A8 | Prediction written **before** training | README §4 | ✅ committed `16faf8e` pre-training |
-| A9 | Learning process explained with actual token/embedding/gradient/loss evidence | README §7, §11 | ✅ |
+| A9 | Learning process explained with actual token/embedding/gradient/loss evidence | README §7, §12 | ✅ |
 
 ## B. Testing & evaluation (3 points)
 
@@ -40,9 +39,9 @@ the URL). Everything else is complete and verified.
 | B8 | Group/category breakdowns | README §8 | ✅ README §8, §9 |
 | B9 | Actual free continuations shown, distinct from MC score | README §8 | ✅ README §8 table |
 | B10 | Every case saved (CSV + JSON + summary) | `evidence/*/language_evals/` | ✅ `evidence/*/language_evals/` |
-| B11 | Separation checks saved | `evidence/*/eval_separation.json` | ✅ all 4 runs |
-| B12 | Limits of exact-match leakage checking stated | README §8 | ✅ written |
-| B13 | Described as a public development benchmark, not an unseen final test | README §8 | ✅ written |
+| B11 | Separation checks saved | `evidence/*/eval_separation.json` | ✅ all 3 experiments |
+| B12 | Limits of exact-match leakage checking stated | README §10 | ✅ |
+| B13 | Described as a public development benchmark, not an unseen final test | README §10 | ✅ |
 | B14 | Failures explained, not hidden; changes attributed to coverage vs. learned patterns | README §8, §9 | ✅ README §9 coverage-vs-pattern table |
 
 ## C. Working result (3 points)
@@ -50,11 +49,11 @@ the URL). Everything else is complete and verified.
 | # | Requirement | Where | State |
 |---|---|---|---|
 | C1 | Trained nanoGPT demonstrated | `evidence/experiment*/model.pt` | ✅ `model.pt` committed per experiment |
-| C2 | Evals re-runnable against the saved model | README §13 commands | ✅ documented |
-| C3 | Working chat interface producing real replies from the trained model | `chat.py` + notebook §10 | ✅ 6 real turns |
-| C4 | Launch instructions, tested | README §10 | ✅ tested |
-| C5 | Model / run identity recorded | README §10 | ✅ run + SHA-256 in §10 |
-| C6 | ≥3 real chat interactions | `evidence/*/chat_transcript.json` | ✅ 6 interactions |
+| C2 | Evals re-runnable against the saved model | README §2 | ✅ reproduces 30/48 exactly |
+| C3 | Working chat interface producing real replies from the trained model | `chat.py`, README §11 | ✅ 6 real turns |
+| C4 | Launch instructions, tested | README §11 | ✅ tested |
+| C5 | Model / run identity recorded | README §11 | ✅ run + SHA-256 |
+| C6 | ≥3 real chat interactions | `evidence/chat/chat_transcript.json` | ✅ 6 interactions |
 | C7 | Screenshot or recording of the interface | `evidence/chat/` | ✅ PNG screenshot **and** script(1) recording **and** JSON transcript |
 
 ## D. Specific evidence artifacts
@@ -76,19 +75,19 @@ the URL). Everything else is complete and verified.
 | D13 | `corpus_manifest.json` + `vocabulary_report.json` linked | ✅ |
 | D14 | Unique passages, vocab size, both unknown-token rates, split sizes | ✅ §5 |
 | D15 | Completed steps, elapsed time, hardware, parameter count | ✅ §6 |
-| D16 | Interruptions/failures identified | ✅ none so far; smoke test documented |
+| D16 | Interruptions/failures identified | ✅ README §6 |
 
 ## E. Conceptual explanations — **must be written by the student, in their own words**
 
 | # | Question | State |
 |---|---|---|
-| E1 | Corpus: what it teaches, what's missing, why hold data out | ✅ README §11 |
-| E2 | Token vs. token ID vs. vector vs. embedding | ✅ README §11 |
-| E3 | What makes this a neural network; loss → gradients → optimizer → weights | ✅ README §11 |
-| E4 | What attention combines; why it cannot see future tokens | ✅ README §11 |
-| E5 | Probabilities → generated text; temperature; whether weights changed | ✅ README §11 |
-| E6 | Did samples + both loss curves support the prediction; honest conclusion | ✅ README §11 |
-| E7 | One observed limitation + one proposed next experiment with predicted effect | ⬜ |
+| E1 | Corpus: what it teaches, what's missing, why hold data out | ✅ README §12 |
+| E2 | Token vs. token ID vs. vector vs. embedding | ✅ README §12 |
+| E3 | What makes this a neural network; loss → gradients → optimizer → weights | ✅ README §12 |
+| E4 | What attention combines; why it cannot see future tokens | ✅ README §12 |
+| E5 | Probabilities → generated text; temperature; whether weights changed | ✅ README §12 |
+| E6 | Did samples + both loss curves support the prediction; honest conclusion | ✅ README §12 |
+| E7 | One observed limitation + one proposed next experiment with predicted effect | ✅ README §13 |
 
 ## F. Submission mechanics
 
@@ -97,9 +96,9 @@ the URL). Everything else is complete and verified.
 | F1 | Public GitHub repository | ✅ https://github.com/greycatallen/mcdonald-gpt |
 | F2 | Notebook outputs **not** cleared | ✅ outputs preserved |
 | F3 | Notebook renders on GitHub with plot/samples/losses visible | ✅ verified — cell outputs render (e.g. `PyTorch: 2.14.0 \| device: cpu`) |
-| F4 | Repository opens correctly **signed out** | ✅ verified signed out (`signedIn: false`), README renders 52.8k chars |
+| F4 | Repository opens correctly **signed out** | ✅ verified |
 | F5 | Results ZIPs kept | ✅ kept locally in `llm_runs/`; full contents also committed under `evidence/` |
-| F6 | No eval prompts / answer keys / eval outputs in training corpus | ✅ guard fired once, fixed; `check_leakage.py` CLEAN on all sets |
+| F6 | No eval prompts / answer keys / eval outputs in training corpus | ✅ README §10; `scripts/audit_leakage.py` clean |
 | F7 | Submit repo URL through course portal | ⬜ student action |
 
 ---
@@ -112,7 +111,7 @@ the URL). Everything else is complete and verified.
 - **Do not** substitute another model or an API. Replies must come from the nanoGPT trained
   in this repo.
 - **Do not** invent, estimate, or borrow results from the upstream reference run.
-- Training material must live only in `corpus/`; the exam lives only in `evals/`.
+- Training material lives only in `corpus_sets/`; the exam lives only in `evals/`.
 - **Do not** place any `.md`/`.txt`/`.pdf` documentation inside `corpus/` subfolders.
   `custom_llm.py:175` exempts only the top-level `corpus/README.md`; anything else under
   `corpus/` becomes training text. Notes about the corpus belong in `docs/`.
