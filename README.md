@@ -504,7 +504,12 @@ Cosine similarity over all 64 numbers:
 | `selected` | 0.191 | `team` | 0.503 |
 
 Before training the neighbours are random. After training they are exactly the five words
-predicted in §4, all above 0.97, followed by a sharp drop to 0.503. These six words fill the
+predicted in §4, all above 0.97, followed by a sharp drop to 0.503.
+
+These similarities use all 64 numbers. The [embedding viewer](embedding-viewer.html) instead draws
+each word in 3D, which squeezes 64 dimensions into 3 — so two words can look close on its map
+without being close in the full space, or look far apart when they are close. The table above is
+the reliable measure; the map is a rough picture. These six words fill the
 same slot in the classroom sentence frames, so the model learned they are interchangeable — not
 that it knows what a customer is.
 
